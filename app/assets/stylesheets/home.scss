@@ -14,17 +14,32 @@
     }
   }
 
+    .description{
+      top: 5vh;
+    }
+  
   .people{
     height: 30vh;
-  }
-  .description{
-    top: 5vh;
-  }
+    }
+
+
   .information p{
     margin-top: 35px;
     text-align: justify;
     margin-left: 12px;
   }
+
+  .parent, .bride{
+    #carousel-generic{
+      height: 10vh;
+      color: #FFF;
+    }
+    .carousel-inner{
+      overflow: visible;
+      top:20vh;
+    }
+  }
+ 
   .fb{
     top: 25vh;
     left: 17vh;
@@ -40,6 +55,5 @@
         background-color: $lighter-fb-color;
       }
     }
-
   }
 }
