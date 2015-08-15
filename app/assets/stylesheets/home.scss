@@ -58,12 +58,16 @@
   }
 }
 
-#profile-creation{
-  width: 100%;
+.row-height{
   height: 100vh;
-  background-color: light-grey;
-  #profile-button{
-    text-decoration: none;
+  #profile-creation{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    #profile-button{
+      text-decoration: none;
+    }
   }
 }
 
