@@ -43,3 +43,10 @@ group :development, :test do
   gem 'spring'
 end
 
+group :development do
+  gem 'guard'
+  gem 'guard-livereload', require: false
+end
+
+gem 'bootstrap-sass'
+gem "font-awesome-rails"
