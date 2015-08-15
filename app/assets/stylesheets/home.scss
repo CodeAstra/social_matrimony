@@ -1,3 +1,34 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#land{
+  width: 100%;
+  height: 100vmin;
+  overflow: hidden;
+  font-family: 'Open Sans',sans-serif;
+  
+  .login{
+    height: 70vmin;
+  }
+
+  .people{
+    height: 20vmin;
+  }
+  .description{
+    top: 10vmin;
+  }
+  .information p{
+    margin-top: 35px;
+    text-align: justify;
+    margin-left: 12px;
+  }
+  .fb{
+    top: 30vmin;
+    left: 17vmin;
+    a{
+      font-size: 2em;
+      border: 2px solid #3A5795;
+      padding: 10px;
+      background-color: #3A5795;
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
