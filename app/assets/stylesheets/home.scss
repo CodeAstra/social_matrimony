@@ -1,18 +1,26 @@
 #land{
+  h1{
+    text-align: center;
+  }
   width: 100%;
   height: 100vmin;
   overflow: hidden;
   font-family: 'Open Sans',sans-serif;
-  
+  background-image: image-url('Home.jpg');
+  -webkit-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+  color: white;
+    
   .login{
-    height: 70vmin;
+    height: 60vmin; 
   }
 
   .people{
-    height: 20vmin;
+    height: 30vmin;
   }
   .description{
-    top: 10vmin;
+    top: 5vmin;
   }
   .information p{
     margin-top: 35px;
@@ -20,15 +28,20 @@
     margin-left: 12px;
   }
   .fb{
-    top: 30vmin;
+    top: 25vmin;
     left: 17vmin;
     a{
       font-size: 2em;
       border: 2px solid #3A5795;
-      padding: 10px;
+      padding: 3px 35px 2px 35px;
       background-color: #3A5795;
       text-decoration: none;
       color: white;
+      
+      &:hover {
+        background-color: lighten(#3A5795, 10%);
+      }
     }
+
   }
 }

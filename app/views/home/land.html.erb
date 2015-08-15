@@ -1,24 +1,25 @@
 <div id="land">
   <div class="container">
+    <h1>Social Matrimony</h1>
     <div class="row login">
       <div class="col-md-8 description">
-        <h3>About our social matrimony website</h3>
         <div class="col-md-8 information">
-          <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sunt, odio provident earum, tempore veritatis id, quibusdam labore facere fugit numquam vel velit perferendis suscipit necessitatibus explicaboanimi similique molestiae, exercitationem nihil cupiditate reiciendis minima repudiandae eveniet facilis. Excepturi, quod."</p>
-          <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sunt, odio provident earum, tempore veritatis id, quibusdam labore facere fugit numquam vel velit perferendis suscipit necessitatibus explicaboanimi similique molestiae, exercitationem nihil cupiditate reiciendis minima repudiandae eveniet facilis. Excepturi, quod."</p>
+          <p><%= fa_icon("quote-left")%>&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sunt, odio provident earum, tempore veritatis id, quibusdam labore facere fugit numquam vel velit perferendis suscipit necessitatibus explicaboanimi similique molestiae, exercitationem nihil cupiditate reiciendis minima repudiandae eveniet facilis. Excepturi, quod.&nbsp;&nbsp;&nbsp;<%= fa_icon("quote-right")%></p>
+          <p><%= fa_icon("quote-left")%>&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sunt, odio provident earum, tempore veritatis id, quibusdam labore facere fugit numquam vel velit perferendis suscipit necessitatibus explicaboanimi similique molestiae, exercitationem nihil cupiditate reiciendis minima repudiandae eveniet facilis. Excepturi, quod.&nbsp;&nbsp;&nbsp;<%= fa_icon("quote-right")%></p>
         </div>
       </div>
       <div class="col-md-4 fb">
-        <a href="#">FB Login</a>
+        <%= link_to fa_icon("facebook", text: "Login"), class: "btn btn-primary btn-lg", id: "land-login-link" %>
       </div>
     </div>
     <div class="row people">
-      <div class="col-md-6">
+      <div class="col-md-6 parent">
         <h3>Parents</h3>
-        <%= render 'main/bride' %>
+        <%= render 'main/parent' %>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 bride">
         <h3>Bride / Groom</h3>
+        <%= render 'main/bride' %>
       </div>
     </div>
   </div>
