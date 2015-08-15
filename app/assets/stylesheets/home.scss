@@ -1,0 +1,11 @@
+ #land-login-link {
+    &, &:link, &:active, &:visited {
+      background-color: #333;
+      color: white;
+      transition: background-color 0.3s ease-in;
+    }
+
+    &:hover {
+      background-color: darken(#333, 10%);
+    }
+  }
