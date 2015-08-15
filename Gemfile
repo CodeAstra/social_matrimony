@@ -23,6 +23,11 @@ group :development, :test do
   gem 'spring'
 end
 
+group :development do
+  gem 'dotenv-rails', :require => 'dotenv/rails-now'
+end
+
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'devise'
+gem 'omniauth-facebook'
