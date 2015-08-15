@@ -1,11 +1,68 @@
- #land-login-link {
-    &, &:link, &:active, &:visited {
-      background-color: #333;
-      color: white;
-      transition: background-color 0.3s ease-in;
-    }
-
-    &:hover {
-      background-color: darken(#333, 10%);
+#land{
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: 'Open Sans',sans-serif;
+  background-image: image-url('Home.jpg');
+  background-size: cover;
+  color: white;
+    
+  .login{
+    height: 70vh; 
+    h1{
+      text-align: center;
     }
   }
+
+    .description{
+      top: 5vh;
+    }
+  
+  .people{
+    height: 30vh;
+    }
+
+
+  .information p{
+    margin-top: 35px;
+    text-align: justify;
+    margin-left: 12px;
+  }
+
+  .parent, .bride{
+    #carousel-generic{
+      height: 10vh;
+      color: #FFF;
+    }
+    .carousel-inner{
+      overflow: visible;
+      top:20vh;
+    }
+  }
+ 
+  .fb{
+    top: 25vh;
+    left: 17vh;
+    a{
+      font-size: 2em;
+      border: 1px solid $dark-fb-color;
+      padding: 3px 35px 2px 35px;
+      background-color: $dark-fb-color;
+      text-decoration: none;
+      color: white;
+      
+      &:hover {
+        background-color: $lighter-fb-color;
+      }
+    }
+  }
+}
+
+//footer starts here
+
+#footer{
+  color: white;
+  #heart-icon{
+    color: red;
+  }
+}
