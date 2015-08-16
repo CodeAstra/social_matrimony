@@ -12,6 +12,9 @@
 #  last_sign_in_ip     :string
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
+#  provider            :string
+#  uid                 :string
+#  name                :string
 #
 
 class User < ActiveRecord::Base
@@ -31,7 +34,6 @@ class User < ActiveRecord::Base
     end
   end
 
-  class User < ActiveRecord::Base
     def self.new_with_session(params, session)
       super.tap do |user|
         if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
@@ -39,5 +41,4 @@ class User < ActiveRecord::Base
         end
       end
     end
-  end
 end

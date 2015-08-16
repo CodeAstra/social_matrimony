@@ -8,7 +8,6 @@ Rails.application.routes.draw do
     root :to => 'home#selection_profile', :as => :authenticated_root
   end
   root :to => redirect('/land')
->>>>>>> codeastra/develop
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
