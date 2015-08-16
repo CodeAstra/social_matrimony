@@ -9,29 +9,17 @@
         </div>
       </div>
       <div class="col-md-4 fb">
-<<<<<<< HEAD
-        <%= link_to fa_icon("facebook", text: "Login"), class: "btn btn-primary btn-lg", id: "land-login-link" %>
-=======
         <%= link_to fa_icon("facebook", text: "Login"), user_omniauth_authorize_path(:facebook), class: "btn btn-primary btn-lg", id: "land-login-link" %>
->>>>>>> codeastra/develop
       </div>
     </div>
     <div class="row people">
       <div class="col-md-6 parent">
         <h3>Parents</h3>
-<<<<<<< HEAD
-        <%= render 'main/parent' %>
-      </div>
-      <div class="col-md-6 bride">
-        <h3>Bride / Groom</h3>
-        <%= render 'main/bride' %>
-=======
         <%= render 'common/parent' %>
       </div>
       <div class="col-md-6 bride">
         <h3>Bride / Groom</h3>
         <%= render 'common/bride' %>
->>>>>>> codeastra/develop
       </div>
     </div>
   </div>

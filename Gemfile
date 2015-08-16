@@ -11,10 +11,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-group :development do
-
-  gem 'annotate'
-end
 
 group :development, :test do
 
@@ -23,17 +19,12 @@ group :development, :test do
   gem 'spring'
 end
 
-<<<<<<< HEAD
-gem 'bootstrap-sass'
-gem "font-awesome-rails"
-gem "autoprefixer-rails"
-=======
 group :development do
   gem 'dotenv-rails', :require => 'dotenv/rails-now'
+  gem 'annotate'
 end
 
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'omniauth-facebook'
->>>>>>> codeastra/develop

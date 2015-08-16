@@ -14,9 +14,5 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
-<<<<<<< HEAD
-//= require_tree
-=======
 //= require_tree .
 
->>>>>>> codeastra/develop

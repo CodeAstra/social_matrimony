@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
-  
-=======
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   devise_scope :user do
@@ -16,12 +13,8 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-<<<<<<< HEAD
-  root 'home#land'
-=======
-  # root 'home#land'
+
   get 'land' => 'home#land'
->>>>>>> codeastra/develop
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
