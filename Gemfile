@@ -11,10 +11,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-group :development do
-
-  gem 'annotate'
-end
 
 group :development, :test do
 
@@ -25,6 +21,7 @@ end
 
 group :development do
   gem 'dotenv-rails', :require => 'dotenv/rails-now'
+  gem 'annotate'
 end
 
 gem 'bootstrap-sass'
