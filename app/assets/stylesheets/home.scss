@@ -2,7 +2,11 @@
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
+<<<<<<< HEAD
   font-family: $font-stack;
+=======
+  font-family: 'Open Sans',sans-serif;
+>>>>>>> codeastra/develop
   background-image: image-url('Home.jpg');
   background-size: cover;
   color: white;
@@ -56,4 +60,29 @@
       }
     }
   }
+<<<<<<< HEAD
+=======
+}
+
+.row-height{
+  height: 100vh;
+  #profile-creation{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    #profile-button{
+      text-decoration: none;
+    }
+  }
+}
+
+//footer starts here
+
+#footer{
+  color: white;
+  #heart-icon{
+    color: red;
+  }
+>>>>>>> codeastra/develop
 }
