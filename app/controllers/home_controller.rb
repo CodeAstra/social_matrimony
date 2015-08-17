@@ -4,4 +4,7 @@ class HomeController < ApplicationController
   
   def land
   end
+
+  def selection_profile
+  end
 end

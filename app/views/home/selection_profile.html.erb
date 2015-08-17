@@ -1,12 +1,115 @@
-<div class="container">
-  <div class="row row-height" >
-    <div id="profile-creation">
-      <div class="col-xs-6">
-        <%= link_to "I am creating profile for MYSELF","", class: "btn btn-primary btn-lg" %>
+<header>
+  <% if user_signed_in? %>
+  Logged in as <%= current_user.name %>
+  <%= link_to fa_icon("sign-out", text: "Logout"), destroy_user_session_path, method: :delete, class: "btn btn-primary" %> 
+<% end %>
+</header>
+
+<div id="profile-creation">
+  <div class="container">
+    <!-- <div class="index">
+      <span class="basic">Basic</span>
+      <span class="family">Family</span>
+      <span class="education">Education</span>
+      <span class="profession">Profession</span>
+      <span class="profession">Preferances</span>
+    </div> -->
+    <!-- </nav> -->
+
+      <nav class="navbar navbar-default step">
+        <a href=""><span class="one">Basic</span></a>
+        <a href=""><span class="two">Family</span></a>
+        <a href=""><span class="three">Education</span></a>
+        <a href=""><span class="four">profession</span></a>
+        <a href=""><span class="five">Preferance</span></a>
+      </nav>
+
+    <form class="form-horizontal col-sm-7 basic-form">
+      <div class="form-group form-group-sm">
+        <label class="col-sm-2 control-label" for="formGroupInputSmall">Name</label>
+        <div class="col-sm-5">
+          <div>
+            <strong><%= current_user.name  %></strong>
+          </div>
+        </div>
       </div>
-      <div class="col-xs-6">
-        <%= link_to "I am creating profile for MYWARD","",class: "btn btn-primary btn-lg", id: "profile-button" %>
+      <div class="form-group form-group-sm email">
+        <label class="col-sm-2 control-label" for="formGroupInputSmall">Email</label>
+        <div class="col-sm-4">
+          <span>
+            <%= current_user.email %>
+          </span>
+        </div>
       </div>
+        <div class="form-group form-group-sm sex">
+          <label class="col-sm-2 control-label" for="formGroupInputSmall">Sex</label>
+          <div class="col-sm-4">
+            <label>
+              <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+              <strong>Male</strong>
+            </label>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+            <strong>Female</strong>
+          </label>
+        </div>
+      </div>
+      <hr>
+      <div class="form-group form-group-sm">
+        <label class="col-sm-2 control-label" for="formGroupInputSmall">DOB</label>
+        <div class="col-sm-4">
+          <input class="form-control" type="date" id="formGroupInputSmall">
+        </div>
+      </div>
+      <hr>
+      <div class="form-group form-group-sm">
+        <label class="col-sm-2 control-label" for="formGroupInputSmall">Nationality</label>
+        <div class="col-sm-4">
+          <input class="form-control" type="text" id="formGroupInputSmall">
+        </div>
+      </div>
+      <hr>
+      <div class="form-group form-group-sm">
+        <label class="col-sm-2 control-label" for="formGroupInputSmall">Location</label>
+        <div class="col-sm-4">
+          <input class="form-control" type="text" id="formGroupInputSmall">
+        </div>
+      </div>
+      <hr>
+      <div class="form-group form-group-sm">
+        <label class="col-sm-2 control-label" for="formGroupInputSmall">Religion</label>
+        <div class="col-sm-4">
+          <select class="form-control">
+            <option></option>
+            <option>Hindu</option>
+            <option>Muslim</option>
+            <option>Christian</option>
+            <option>Sikh</option>
+            <option>Jain</option>
+          </select>
+        </div>
+      </div>
+      <hr>
+      <div class="form-group form-group-sm">
+        <label class="col-sm-2 control-label" for="formGroupInputSmall">Marital Status</label>
+        <div class="col-sm-4">
+          <input class="form-control" type="text" id="formGroupInputSmall">
+        </div>
+      </div>
+      <hr>
+      <div class="form-group form-group-sm">
+        <label class="col-sm-2 control-label" for="formGroupInputSmall">Phone </label>
+        <div class="col-sm-4 input-group number">
+          <span class="input-group-addon">+91</span>
+          <input class="form-control" type="phone" id="formGroupInputSmall">
+        </div>
+      </div>
+    </form>
+    <div class="col-sm-offset-2 col-sm-3 image">
+       <%= image_tag current_user.image %>
+      <input type="text">
+
+      <input type="file" class="upload" >
     </div>
+
   </div>
 </div>

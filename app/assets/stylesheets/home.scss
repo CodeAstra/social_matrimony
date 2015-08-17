@@ -1,3 +1,5 @@
+// Land page
+
 #land{
   width: 100%;
   min-height: 100vh;
@@ -31,7 +33,6 @@
 
   .parent, .bride{
     #carousel-generic{
-      height: 10vh;
       color: #FFF;
     }
     .carousel-inner{
@@ -58,15 +59,70 @@
   }
 }
 
-.row-height{
-  height: 100vh;
-  #profile-creation{
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
-    #profile-button{
-      text-decoration: none;
+
+// Selection page
+
+// .row-height{
+//   height: 100vh;
+//   #profile-creation{
+//     position: relative;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     text-align: center;
+//     #profile-button{
+//       text-decoration: none;
+//     }
+//   }
+// }
+
+
+#profile-creation{
+  overflow: hidden;
+  font-family: $font-stack;
+  height: 150vh;
+  .step{
+    top: 17px;
+    .one, .two, .four{
+      padding: 10px;
+      font-weight: 300;
+      font-size: 2em;
+    }
+  }
+  .three, .five{
+    padding: 50px;
+    font-weight: 300;
+    font-size: 2em;
+  }
+  a{
+    text-decoration: none;
+    // color: #FFF;
+  
+  &:hover {
+     color: $dark-fb-color;
+   } 
+  }
+
+  .basic-form{
+    font-size: 20px;
+    .control-label{
+      font-size: 15px;
+    }
+    .number{
+      padding-left: 10px;
+    }
+    .sex{
+      padding-top: 70px;
+    }
+    .email{
+      padding-top: 30px;
+    }
+  }
+
+  .image{
+    top: 40vh;
+    .upload{
+      margin-top: 14px;
+      padding-left: 95px;
     }
   }
 }

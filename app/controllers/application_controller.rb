@@ -8,4 +8,6 @@ class ApplicationController < ActionController::Base
   def new_session_path(scope)
     root_path
   end
+
+  
 end
