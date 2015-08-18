@@ -79,11 +79,11 @@
 #profile-creation{
   overflow: hidden;
   font-family: $font-stack;
-  height: 150vh;
+  height: 1000vh;
   .step{
-    top: 17px;
+    top: 5vh;
     .one, .two, .four{
-      padding: 10px;
+      padding: 50px;
       font-weight: 300;
       font-size: 2em;
     }
@@ -95,7 +95,7 @@
   }
   a{
     text-decoration: none;
-    // color: #FFF;
+    color: #000;
   
   &:hover {
      color: $dark-fb-color;
@@ -103,7 +103,8 @@
   }
 
   .basic-form{
-    font-size: 20px;
+    height: 110vh;
+    margin-top: 10vh;
     .control-label{
       font-size: 15px;
     }
@@ -111,21 +112,77 @@
       padding-left: 10px;
     }
     .sex{
-      padding-top: 70px;
+      padding-top: 30px;
     }
     .email{
       padding-top: 30px;
     }
-  }
-
-  .image{
-    top: 40vh;
-    .upload{
-      margin-top: 14px;
-      padding-left: 95px;
+    .form-control, .email, .name{
+      font-size: 18px;
+    }
+    .image{
+      top: 40vh;
+      .upload{
+        margin-top: 14px;
+        padding-left: 95px;
+      }
+    }
+    .basic-submit{
+      float: right;
+      font-size: 17px;
+      border: 1px solid $dark-fb-color;
+      padding: 10px;
+      margin-top: 70vh;
+      text-decoration: none;
+      background-color: $dark-fb-color;
+      color: #FFF;
+      margin-left: 4vw;
     }
   }
+
+
+  #family{
+    .control-label{
+      float: left;
+    }
+    .family-submit a{
+      float: right;
+      font-size: 17px;
+      border: 1px solid $dark-fb-color;
+      padding: 10px;
+      text-decoration: none;
+      background-color: $dark-fb-color;
+      color: #FFF;
+      margin-left: 4vw;
+    }
+  }
+
+  #education{
+    height: 100vh;
+    h3{
+      float:left;
+    }
+  }
+
+  #personal{
+    height: 100vh;
+    h3{
+      float: left;
+    }
+  }
+
+  #preference{
+    .age{
+      display: -webkit-box;
+      select{
+        padding-right: 10px;
+      }
+    }
+  }
+
 }
+
+
 
 //footer starts here
 

@@ -28,6 +28,8 @@ class User < ActiveRecord::Base
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
+      user.auth_token = auth.credentials.token
+      user.auth_expires_at = Time.at(auth.credentials.expires_at)
       # user.password = Devise.friendly_token[0,20]
       user.name = auth.info.name   # assuming the user model has a name
       user.image = auth.info.image # assuming the user model has an image
@@ -41,4 +43,10 @@ class User < ActiveRecord::Base
         end
       end
     end
+
+
+     def graph
+    @graph ||= Koala::Facebook::API.new(self.auth_token)
+  end
+
 end

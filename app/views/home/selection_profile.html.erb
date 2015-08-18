@@ -1,7 +1,7 @@
 <header>
   <% if user_signed_in? %>
   Logged in as <%= current_user.name %>
-  <%= link_to fa_icon("sign-out", text: "Logout"), destroy_user_session_path, method: :delete, class: "btn btn-primary" %> 
+   <%= link_to fa_icon("sign-out", text: "Logout"), destroy_user_session_path, method: :delete, class: "btn btn-primary" %> 
 <% end %>
 </header>
 
@@ -17,18 +17,20 @@
     <!-- </nav> -->
 
       <nav class="navbar navbar-default step">
-        <a href=""><span class="one">Basic</span></a>
-        <a href=""><span class="two">Family</span></a>
-        <a href=""><span class="three">Education</span></a>
-        <a href=""><span class="four">profession</span></a>
-        <a href=""><span class="five">Preferance</span></a>
+        <a href="/"><span class="one">Basic</span></a>
+        <a href="#family"><span class="two">Family</span></a>
+        <a href="#education"><span class="three">Education</span></a>
+        <a href="#personal"><span class="four">personal</span></a>
+        <a href=""><span class="five">Preference</span></a>
       </nav>
-
-    <form class="form-horizontal col-sm-7 basic-form">
+    
+    <div class="basic-form">
+      <h3>Basic Information</h3>
+    <form class="form-horizontal col-sm-7">
       <div class="form-group form-group-sm">
         <label class="col-sm-2 control-label" for="formGroupInputSmall">Name</label>
         <div class="col-sm-5">
-          <div>
+          <div class="name">
             <strong><%= current_user.name  %></strong>
           </div>
         </div>
@@ -36,7 +38,7 @@
       <div class="form-group form-group-sm email">
         <label class="col-sm-2 control-label" for="formGroupInputSmall">Email</label>
         <div class="col-sm-4">
-          <span>
+          <span class="email">
             <%= current_user.email %>
           </span>
         </div>
@@ -48,7 +50,8 @@
               <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
               <strong>Male</strong>
             </label>
-            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+            <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
             <strong>Female</strong>
           </label>
         </div>
@@ -76,16 +79,24 @@
       </div>
       <hr>
       <div class="form-group form-group-sm">
-        <label class="col-sm-2 control-label" for="formGroupInputSmall">Religion</label>
-        <div class="col-sm-4">
-          <select class="form-control">
-            <option></option>
-            <option>Hindu</option>
-            <option>Muslim</option>
-            <option>Christian</option>
-            <option>Sikh</option>
-            <option>Jain</option>
-          </select>
+        <label class="col-sm-2 control-label" for="formGroupInputSmall">Complexion</label>
+        <div class="col-sm-7">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+            Fair
+          </label>
+          <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            Wheatish
+          </label>
+          <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            Dark
+          </label>
+          <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            Prefer not to say
+          </label>
         </div>
       </div>
       <hr>
@@ -105,11 +116,261 @@
       </div>
     </form>
     <div class="col-sm-offset-2 col-sm-3 image">
-       <%= image_tag current_user.image %>
+       <img src="<%= current_user.image %>" alt="" width="100px" height="100px">
       <input type="text">
 
       <input type="file" class="upload" >
+     </div>
+     <a href="#">
+    <span class="basic-submit">submit</span></a>
     </div>
+
+<hr>
+  <div id="family">
+    <h3>Family Information</h3>
+    <form class="form-horizontal col-sm-10">
+      <div class="form-group form-group-sm">
+        <label class="col-sm-3 control-label" for="formGroupInputSmall">Father Name</label>
+        <div class="col-sm-4">
+          <input class="form-control" type="text" id="formGroupInputSmall">
+        </div>
+      </div>
+      <hr>
+      <div class="form-group form-group-sm">
+        <label class="col-sm-3 control-label" for="formGroupInputSmall">Mother name</label>
+        <div class="col-sm-4">
+          <input class="form-control" type="text" id="formGroupInputSmall">
+        </div>
+      </div>
+      <hr>
+        <div class="form-group form-group-sm">
+          <label class="col-sm-3 control-label" for="formGroupInputSmall">Family values</label>
+          <div class="col-sm-7">
+            <label>
+              <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+              conservative
+            </label>
+            <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            moderate
+          </label>
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+            Modern
+          </label>
+        </div>
+      </div>
+      <hr>
+      <div class="form-group form-group-sm">
+        <label class="col-sm-3 control-label" for="formGroupInputSmall">Gothram</label>
+        <div class="col-sm-4">
+          <input class="form-control" type="text" id="formGroupInputSmall">
+        </div>
+      </div>
+      <hr>
+      <div class="form-group form-group-sm">
+        <label class="col-sm-3 control-label" for="formGroupInputSmall">Family Type</label>
+        <div class="col-sm-4">
+          <select class="form-control">
+            <option>none</option>
+            <option>Joint</option>
+            <option>Nuclear</option>
+          </select>
+        </div>
+      </div>
+      <hr>
+      <div class="form-group form-group-sm">
+        <label class="col-sm-3 control-label" for="formGroupInputSmall">Religion</label>
+        <div class="col-sm-4">
+          <select class="form-control">
+            <option>none</option>
+            <option>Hindu</option>
+            <option>Muslim</option>
+            <option>Christian</option>
+            <option>Sikh</option>
+            <option>Jain</option>
+          </select>
+        </div>
+      </div>
+      <hr>
+      <div class="form-group form-group-sm">
+        <label class="col-sm-3 control-label" for="formGroupInputSmall">Sub Caste</label>
+        <div class="col-sm-4">
+          <input class="form-control" type="text" id="formGroupInputSmall">
+        </div>
+      </div>
+
+    <div class="family-submit">
+      <a href=""> submit</a></div>
+    </form>
+  </div>
+
+
+<hr>
+
+  <div id="education">
+
+    <h3>Education Details</h3>
+    <form class="form-horizontal col-sm-10">
+      <div class="form-group form-group-sm">
+        <label class="col-sm-3 control-label" for="formGroupInputSmall">Education</label>
+        <div class="col-sm-4">
+          <input class="form-control" type="text" id="formGroupInputSmall">
+        </div>
+      </div>
+      <hr>
+      <div class="form-group form-group-sm">
+        <label class="col-sm-3 control-label" for="formGroupInputSmall">Working as</label>
+        <div class="col-sm-4">
+          <input class="form-control" type="text" id="formGroupInputSmall">
+        </div>
+      </div>
+      <hr>
+      <div class="form-group form-group-sm">
+        <label class="col-sm-3 control-label" for="formGroupInputSmall">Weight</label>
+        <div class="col-sm-4">
+          <input class="form-control" type="text" id="formGroupInputSmall">
+        </div>
+      </div>
+      <hr>
+    </form>
+  </div>
+
+  <hr>
+
+
+  <div id="personal">
+
+    <h3>Personal information & Hobbits</h3>
+    <form class="form-horizontal col-sm-10">
+      <div class="form-group form-group-sm">
+        <label class="col-sm-3 control-label" for="formGroupInputSmall">Body type</label>
+        <div class="col-sm-4">
+          <input class="form-control" type="text" id="formGroupInputSmall">
+        </div>
+      </div>
+      <hr>
+      <div class="form-group form-group-sm">
+        <label class="col-sm-3 control-label" for="formGroupInputSmall">Height</label>
+        <div class="col-sm-4">
+          <input class="form-control" type="text" id="formGroupInputSmall">
+        </div>
+      </div>
+      <hr>
+      <div class="form-group form-group-sm">
+        <label class="col-sm-3 control-label" for="formGroupInputSmall">Weight</label>
+        <div class="col-sm-4">
+          <input class="form-control" type="text" id="formGroupInputSmall">
+        </div>
+      </div>
+      <hr>
+      <div class="form-group form-group-sm">
+        <label class="col-sm-3 control-label" for="formGroupInputSmall">Nakshatra/Star</label>
+        <div class="col-sm-4">
+          <input class="form-control" type="text" id="formGroupInputSmall">
+        </div>
+      </div>
+      <hr>
+      <div class="form-group form-group-sm">
+        <label class="col-sm-3 control-label" for="formGroupInputSmall">Eating habits</label>
+        <div class="col-sm-4">
+          <label>
+              <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+              Veg
+            </label>
+            <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+             Non-veg
+          </label>
+        </div>
+      </div>
+      <hr>
+      <div class="form-group form-group-sm">
+        <label class="col-sm-3 control-label" for="formGroupInputSmall">Take hard Drinks</label>
+        <div class="col-sm-4">
+          <label>
+              <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+              Yes
+            </label>
+            <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+             No
+          </label>
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+             Occasionally
+          </label>
+        </div>
+      </div>
+      <hr>
+      <div class="form-group form-group-sm">
+        <label class="col-sm-3 control-label" for="formGroupInputSmall">Do you Smoke</label>
+        <div class="col-sm-4">
+          <label>
+              <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+              Yes
+            </label>
+            <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+             No
+          </label>
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+             Occasionally
+          </label>
+        </div>
+      </div>
+      <hr>
+      <div class="form-group form-group-sm">
+        <label class="col-sm-3 control-label" for="formGroupInputSmall">Mother tongue</label>
+        <div class="col-sm-4">
+          <input class="form-control" type="text" id="formGroupInputSmall">
+        </div>
+      </div>
+      <hr>
+    </form>
+  </div>
+
+
+  <div id="preference">
+    <form class="form-horizontal col-sm-10">
+      <div class="form-group form-group-sm">
+        <label class="col-sm-3 control-label" for="formGroupInputSmall">Age</label>
+        <div class="col-sm-1 age">
+            <select>
+            <%=(18..60).each do |i| %>
+            <option><%= i %></option>
+            <%  end %>
+          </select>
+          </span>
+        <p>to</p>
+          <select>
+            <%=(19..60).each do |i| %>
+            <option><%= i %></option>
+            <%  end %>
+          </select>
+        </div>
+      </div>
+      <hr>
+      <div class="form-group form-group-sm">
+        <label class="col-sm-3 control-label" for="formGroupInputSmall">Height</label>
+        <div class="col-sm-1">
+          <select>
+           
+          </select>
+        </div>
+      </div>
+      <hr>
+      <div class="form-group form-group-sm">
+        <label class="col-sm-3 control-label" for="formGroupInputSmall">Weight</label>
+        <div class="col-sm-4">
+          <input class="form-control" type="text" id="formGroupInputSmall">
+        </div>
+      </div>
+      <hr>
+    </form>
+  </div>
 
   </div>
 </div>
+

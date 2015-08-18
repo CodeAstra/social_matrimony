@@ -7,4 +7,5 @@ class HomeController < ApplicationController
 
   def selection_profile
   end
+
 end
