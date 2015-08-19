@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150819054331) do
+ActiveRecord::Schema.define(version: 20150819055408) do
 
   create_table "candidates", force: :cascade do |t|
     t.string   "name"
@@ -21,9 +21,10 @@ ActiveRecord::Schema.define(version: 20150819054331) do
     t.string   "hometown"
     t.string   "location"
     t.string   "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.integer  "user_id"
+    t.text     "dump_fb_data"
   end
 
   add_index "candidates", ["user_id"], name: "index_candidates_on_user_id"

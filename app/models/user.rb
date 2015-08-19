@@ -28,7 +28,9 @@ class User < ActiveRecord::Base
   devise :rememberable, :trackable, 
   :omniauthable, :omniauth_providers => [:facebook]
   
-  has_one :candidate
+  has_one :candidate, dependent: :destroy
+
+  after_create :populate_candidate
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -52,7 +54,14 @@ class User < ActiveRecord::Base
     @graph = Koala::Facebook::API.new(self.auth_token)
   end
 
-  def profile
+  def fb_profile
     graph.get_object("me",fields: "about,address,birthday,education,email,gender,hometown,languages,location,name,religion,work")
   end
+
+private
+  def populate_candidate
+    self.create_candidate
+    self.candidate.populate!
+  end
+
 end
