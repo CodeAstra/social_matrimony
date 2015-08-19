@@ -37,9 +37,10 @@
     <div role="tabpanel" class="tab-pane fade" id="prof-info">
       <dl class="dl-horizontal">
         <dd>Education</dd>
-        <dt></dt>
+        <dt><%= current_candidate.education %></dt>
       </dl>
-
+      <dd>Professional Info</dd>
+      <dt><%= Marshal.load current_candidate.work %></dt>
       <div>
        <a href="#" data-target="#basic-info-tab" class="next_tab_trigger">Previous<%= fa_icon("angle-double-left", class: "next") %>
        </a>
