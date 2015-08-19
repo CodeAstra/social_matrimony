@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   end
   authenticated :user do
-    root :to => 'home#selection_profile', :as => :authenticated_root
+    root :to => 'candidates#new', :as => :authenticated_root
   end
   root :to => redirect('/land')
   # The priority is based upon order of creation: first created -> highest priority.

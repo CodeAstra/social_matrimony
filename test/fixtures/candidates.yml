@@ -1,0 +1,50 @@
+# == Schema Information
+#
+# Table name: candidates
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  email      :string
+#  gender     :string
+#  birthday   :date
+#  hometown   :string
+#  location   :string
+#  image      :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  user_id    :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  email: MyString
+  gender: MyString
+  about: MyString
+  address: MyString
+  birthday: MyString
+  college: MyString
+  college_year: MyString
+  school: MyString
+  school_year: MyString
+  hometown: MyString
+  location: MyString
+  work: MyString
+  work: MyString
+
+two:
+  name: MyString
+  email: MyString
+  gender: MyString
+  about: MyString
+  address: MyString
+  birthday: MyString
+  college: MyString
+  college_year: MyString
+  school: MyString
+  school_year: MyString
+  hometown: MyString
+  location: MyString
+  work: MyString
+  work: MyString
