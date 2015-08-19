@@ -53,6 +53,6 @@ class User < ActiveRecord::Base
   end
 
   def profile
-    graph.get_object("me")
+    graph.get_object("me", fields: "birthday,gender,education")
   end
 end
