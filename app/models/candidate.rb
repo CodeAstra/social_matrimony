@@ -67,7 +67,7 @@ def work_from_dump_data
   prof = fb_data["work"]
   prof = prof.collect do |wrk|
           wrk["employer"]["name"]
-         end
+         end if prof
   return Marshal.dump(prof)
 
 end
