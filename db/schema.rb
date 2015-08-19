@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20150819055408) do
   end
 
   add_index "candidates", ["user_id"], name: "index_candidates_on_user_id"
-  
+
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.datetime "remember_created_at"
