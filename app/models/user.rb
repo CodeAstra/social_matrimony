@@ -30,8 +30,9 @@ class User < ActiveRecord::Base
   :omniauthable, :omniauth_providers => [:facebook]
   
   has_one :candidate, dependent: :destroy
+  has_one :user_search_preference, dependent: :destroy
 
-  after_create :populate_candidate
+  after_create :populate_candidate, :create_user_search_preference
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

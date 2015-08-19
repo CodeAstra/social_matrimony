@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'user_search_preferences/update'
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   devise_scope :user do
     delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
@@ -7,6 +9,7 @@ Rails.application.routes.draw do
   authenticated :user do
     root :to => 'home#welcome', :as => :authenticated_root
   end
+  resources :user_search_preferences
   root :to => 'home#land'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
