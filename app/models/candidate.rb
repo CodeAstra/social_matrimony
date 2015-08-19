@@ -25,6 +25,33 @@ class Candidate < ActiveRecord::Base
     [:name, :email, :gender, :birthday, :hometown, :location].each do |prop|
       self.send(prop.to_s + "=", fb_data[prop.to_s]) if fb_data[prop.to_s]
     end
+    # self.email = education_from_dump_data
     self.save!
+  end
+
+private
+  def education_from_dump_data
+    fb_data = Marshal.load(self.dump_fb_data)
+    edu = fb_data["education"]
+    edu = edu.select do |ed|
+      ["College", "Graduate School"].include?(ed["type"])
+    end
+    edu = edu.collect do |ed|
+      arr = []
+      arr.push(ed["school"]["name"])
+      if ed["year"]
+        arr.push(ed["year"]["name"])
+      else
+        arr.push(nil)
+      end
+      if ed["concentration"]
+        arr.push(ed["concentration"].collect{|con| con["name"]}.join(", "))
+      else
+        arr.push(nil)
+      end
+      arr
+    end
+
+    return edu.inspect
   end
 end

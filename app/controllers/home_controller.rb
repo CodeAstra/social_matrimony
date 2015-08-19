@@ -5,6 +5,5 @@ class HomeController < ApplicationController
   end
 
   def welcome
-    @candidate = current_user.candidate
   end
 end
