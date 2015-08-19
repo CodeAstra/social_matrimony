@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>SocialMatrimony</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<header>
-  <% if user_signed_in? %>
-  Logged in as <%= current_user.name %> 
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, 
-  class: "btn btn-primary" %>
-  <% end %>
-</header>
-<div class="flash_messages">
-    <%= flash_tag(notice, "notice") %>
-    <%= flash_tag(alert, "alert") %>
-</div>
-<%= yield %>
-
-<%= render 'common/footer' %>
-</body>
+  <head>
+    <title>SocialMatrimony</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      <% if user_signed_in? %>
+      Logged in as <%= current_user.name %> 
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, 
+      class: "btn btn-primary" %>
+      <% end %>
+    </header>
+    <div class="flash_messages">
+      <%= flash_tag(notice, "notice") %>
+      <%= flash_tag(alert, "alert") %>
+    </div>
+    <%= yield %>
+    <%= render 'common/footer' %>
+  </body>
 </html>

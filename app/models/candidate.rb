@@ -5,8 +5,8 @@
 #  id           :integer          not null, primary key
 #  name         :string
 #  email        :string
-#  gender       :string
-#  birthday     :string
+#  gender       :integer
+#  birthday     :date
 #  hometown     :string
 #  location     :string
 #  image        :string
@@ -14,6 +14,8 @@
 #  updated_at   :datetime         not null
 #  user_id      :integer
 #  dump_fb_data :text
+#  education    :text
+#  work         :text
 #
 
 class Candidate < ActiveRecord::Base
@@ -22,7 +24,7 @@ class Candidate < ActiveRecord::Base
   def populate!
     fb_data = user.fb_profile
     self.dump_fb_data = Marshal.dump(fb_data)
-    [:name, :email, :gender,:hometown, :location].each do |prop|
+    [:name, :email, :gender].each do |prop|
       self.send(prop.to_s + "=", fb_data[prop.to_s]) if fb_data[prop.to_s]
     end
     [:hometown, :location].each do |prop|
@@ -34,7 +36,7 @@ class Candidate < ActiveRecord::Base
     self.save!
   end
 
-  private
+private
   def education_from_dump_data
     fb_data = Marshal.load(self.dump_fb_data)
     edu = fb_data["education"]

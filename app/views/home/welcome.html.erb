@@ -18,26 +18,26 @@
         <dt>Gender</dt>
         <dd><%= current_candidate.gender %></dd>
         <dt>Date of Birth</dt>
-
         <dd><%= current_candidate.birthday %></dd>
       </dl>
     </div>
     <div role="tabpanel" class="tab-pane" id="prof-info">
-    <h3>Education Info:</h3>
+      <h3>Education Info:</h3>
       <div>
         <p>College:<%= current_candidate.education %></p>
       </div>
-    <h3>Professional Info:</h3>
+      <h3>Professional Info:</h3>
       <div>
         <p>Work:<%= Marshal.load current_candidate.work %></p>
       </div>
     </div>
     <div role="tabpanel" class="tab-pane" id="personal-info">
-      Personal Info
+      <div>
+        <%= render 'common/personalinfo' %>
+      </div>
     </div>
     <div role="tabpanel" class="tab-pane" id="partner-pref">
       Partner Preferences
     </div>
   </div>
-
 </section>

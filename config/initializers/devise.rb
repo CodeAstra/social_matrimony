@@ -239,8 +239,8 @@ Devise.setup do |config|
   config.omniauth :facebook,
       ENV['FB_APP_ID'],
       ENV['FB_APP_SECRET'],
-      scope: 'email,user_about_me,user_birthday,user_friends,user_photos,user_work_history,user_education_history,user_location,user_hometown,user_likes',
-      info_fields: 'about,address,birthday,education,email,gender,hometown,languages,location,name,religion,work'
+      scope: 'email,user_about_me,user_birthday,user_friends,user_photos,user_posts,user_work_history,user_education_history,user_location,user_hometown,user_likes',
+      info_fields: 'about,address,birthday,education,email,gender,hometown,languages,location,name,religion,work,photos'
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

@@ -3,7 +3,7 @@ class CreateCandidates < ActiveRecord::Migration
     create_table :candidates do |t|
       t.string :name
       t.string :email
-      t.string :gender
+      t.integer :gender
       t.date :birthday
       t.string :hometown
       t.string :location
