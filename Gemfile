@@ -13,14 +13,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
 
+  gem 'sqlite3'
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'dotenv-rails', :require => 'dotenv/rails-now'
 end
 
 group :development do
-  gem 'sqlite3'
-  gem 'dotenv-rails', :require => 'dotenv/rails-now'
   gem 'annotate'
 end
 
