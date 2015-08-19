@@ -1,11 +1,9 @@
-class HomeController < ApplicationController
+class HomeController < ApplicationController  
+  before_action :authenticate_user!, except: [:land]
 
-  # rails g controller home land
-  
   def land
   end
 
-  def selection_profile
+  def welcome
   end
-
 end

@@ -8,6 +8,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<header>
+  <% if user_signed_in? %>
+  Logged in as <%= current_user.name %> 
+  <%= link_to fa_icon("power-off"),  destroy_user_session_path, method: :delete, 
+  class: "btn btn-primary" %>
+  <% end %>
+</header>
+
 <div class="flash_messages">
     <%= flash_tag(notice, "notice") %>
     <%= flash_tag(alert, "alert") %>

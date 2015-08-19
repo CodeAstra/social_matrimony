@@ -10,7 +10,7 @@
   color: white;
     
   .login{
-    height: 70vh; 
+    height: 50vh; 
     h1{
       text-align: center;
     }
@@ -59,172 +59,82 @@
   }
 }
 
-
-#profile-creation{
-  h3{
-    text-decoration: underline;
-  }
-  overflow: hidden;
-  font-family: $font-stack;
-  height: 100vh;
-  .step{
-    top: 5vh;
-    position: fixed;
-    .one, .two, .four{
-      padding: 50px;
-      font-weight: 300;
-      font-size: 2em;
-    }
-  }
-
-  .three, .five{
-    padding: 50px;
-    font-weight: 300;
-    font-size: 2em;
-  }
-  a{
-    text-decoration: none;
-    color: #000;
-  
-  &:hover {
-     color: $dark-fb-color;
-   } 
-  }
-  .nav-tabs{
-    margin-top: 20vh;
-  }
-
-  #basic-form{
-    height: 110vh;
-    margin-top: 10vh;
-    .control-label{
-      font-size: 15px;
-    }
-    .number{
-      padding-left: 10px;
-    }
-    .sex{
-      padding-top: 30px;
-    }
-    .email{
-      padding-top: 30px;
-    }
-    .form-control, .email, .name{
-      font-size: 18px;
-    }
-    .image{
-      top: 40vh;
-      .upload{
-        margin-top: 14px;
-        padding-left: 95px;
-      }
-    }
-    .basic-submit{
-      float: right;
-      font-size: 17px;
-      border: 1px solid $dark-fb-color;
-      padding: 10px;
-      margin-top: 70vh;
-      text-decoration: none;
-      background-color: $dark-fb-color;
-      color: #FFF;
-      margin-left: 4vw;
-    }
-  }
-
-
-  // #family{
-  //   height: 110vh;
-  //   form{
-  //     margin-top: 12vh;
-  //   }
-  //   .control-label{
-  //     float: left;
-  //     font-size: 14px;
-  //   }
-  //   h3{
-  //     margin-top: 5vh;
-  //   }
-  //   .family-submit a{
-  //     float: right;
-  //     font-size: 17px;
-  //     border: 1px solid $dark-fb-color;
-  //     padding: 10px;
-  //     text-decoration: none;
-  //     background-color: $dark-fb-color;
-  //     color: #FFF;
-  //     margin-left: 4vw;
-  //   }
-  // }
-
-  // #education{
-  //   height: 100vh;
-  //   form{
-  //     margin-top: 10vh;
-  //   }
-  //   h3{
-  //     float:left;
-  //     margin-top: 13vh;
-  //   }
-  //   .education-submit a{
-  //     float: right;
-  //     font-size: 17px;
-  //     border: 1px solid $dark-fb-color;
-  //     padding: 10px;
-  //     text-decoration: none;
-  //     background-color: $dark-fb-color;
-  //     color: #FFF;
-  //     margin-left: 4vw;
-  //   }
-  //   .control-label{
-  //     font-size: 14px;
-  //   }
-  // }
-
-  // #personal{
-  //   height: 120vh;
-  //   form{
-  //     margin-top: 5vh;
-  //   }
-  //   h3{
-  //     float: left;
-  //     margin-top: 14vh;
-  //   }
-  //   .control-label{
-  //     font-size: 14px;
-  //   }
-  //   .personal-submit a{
-  //     float: right;
-  //     font-size: 17px;
-  //     border: 1px solid $dark-fb-color;
-  //     padding: 10px;
-  //     text-decoration: none;
-  //     background-color: $dark-fb-color;
-  //     color: #FFF;
-  //     margin-left: 4vw;
-  //   }
-  // }
-
-  // #preference{
-  //   form{
-  //     margin-top: 20vh;
-  //   }
-  //   .age{
-  //     display: -webkit-box;
-  //     select{
-  //       padding-right: 10px;
-  //     }
-  //   }
-  // }
-
+header{
+  text-align: right;
 }
 
+
+//welcome page//
+
+#welcome{
+  width:90vw;
+  font-family: $font-stack;
+  .nav-tabs{
+    margin-left: 10vw;
+    margin-right: 20vw;
+    .basic-info{
+      font-size: 19px;
+      &:hover{
+        font-size: 20px;
+      }
+    }
+    .professional-info{
+      font-size: 20px;
+      margin-left: 13px;
+    }
+    .personal-info{
+      font-size: 20px;
+      margin-left: 13px;
+    }
+    .partner-pref{
+      font-size: 20px;
+      margin-left: 13px;
+    }
+  }
+
+  #basic-info{
+    margin-top: 10vh;
+    dt{
+      margin-left: 20vw;
+      font-size: 1.5em;
+      padding-top: 30px;
+      .icon{
+        display: inline-block;
+        padding-right: 10px;
+      }
+      .name{
+        margin-top: 20vh;
+      }
+    }
+    dd{
+      margin-left: 40vw;
+      font-size: 1.5em;
+      padding-top: 28px;
+    }
+    .image{
+      float:right;
+    }
+    a{
+      float: right;
+      font-size: 1.5em;
+      text-decoration: none;
+      .next{
+        display: inline-block;
+        padding-left: 9px;
+      }
+    }
+  }
+  
+  #prof-info{
+    
+  }
+}
 
 
 //footer starts here
 
 #footer{
-  color: white;
+  color: black;
   #heart-icon{
     color: red;
   }
