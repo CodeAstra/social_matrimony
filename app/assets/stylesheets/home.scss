@@ -60,34 +60,23 @@
 }
 
 
-// Selection page
-
-// .row-height{
-//   height: 100vh;
-//   #profile-creation{
-//     position: relative;
-//     top: 50%;
-//     transform: translateY(-50%);
-//     text-align: center;
-//     #profile-button{
-//       text-decoration: none;
-//     }
-//   }
-// }
-
-
 #profile-creation{
+  h3{
+    text-decoration: underline;
+  }
   overflow: hidden;
   font-family: $font-stack;
-  height: 1000vh;
+  height: 100vh;
   .step{
     top: 5vh;
+    position: fixed;
     .one, .two, .four{
       padding: 50px;
       font-weight: 300;
       font-size: 2em;
     }
   }
+
   .three, .five{
     padding: 50px;
     font-weight: 300;
@@ -101,8 +90,11 @@
      color: $dark-fb-color;
    } 
   }
+  .nav-tabs{
+    margin-top: 20vh;
+  }
 
-  .basic-form{
+  #basic-form{
     height: 110vh;
     margin-top: 10vh;
     .control-label{
@@ -141,44 +133,89 @@
   }
 
 
-  #family{
-    .control-label{
-      float: left;
-    }
-    .family-submit a{
-      float: right;
-      font-size: 17px;
-      border: 1px solid $dark-fb-color;
-      padding: 10px;
-      text-decoration: none;
-      background-color: $dark-fb-color;
-      color: #FFF;
-      margin-left: 4vw;
-    }
-  }
+  // #family{
+  //   height: 110vh;
+  //   form{
+  //     margin-top: 12vh;
+  //   }
+  //   .control-label{
+  //     float: left;
+  //     font-size: 14px;
+  //   }
+  //   h3{
+  //     margin-top: 5vh;
+  //   }
+  //   .family-submit a{
+  //     float: right;
+  //     font-size: 17px;
+  //     border: 1px solid $dark-fb-color;
+  //     padding: 10px;
+  //     text-decoration: none;
+  //     background-color: $dark-fb-color;
+  //     color: #FFF;
+  //     margin-left: 4vw;
+  //   }
+  // }
 
-  #education{
-    height: 100vh;
-    h3{
-      float:left;
-    }
-  }
+  // #education{
+  //   height: 100vh;
+  //   form{
+  //     margin-top: 10vh;
+  //   }
+  //   h3{
+  //     float:left;
+  //     margin-top: 13vh;
+  //   }
+  //   .education-submit a{
+  //     float: right;
+  //     font-size: 17px;
+  //     border: 1px solid $dark-fb-color;
+  //     padding: 10px;
+  //     text-decoration: none;
+  //     background-color: $dark-fb-color;
+  //     color: #FFF;
+  //     margin-left: 4vw;
+  //   }
+  //   .control-label{
+  //     font-size: 14px;
+  //   }
+  // }
 
-  #personal{
-    height: 100vh;
-    h3{
-      float: left;
-    }
-  }
+  // #personal{
+  //   height: 120vh;
+  //   form{
+  //     margin-top: 5vh;
+  //   }
+  //   h3{
+  //     float: left;
+  //     margin-top: 14vh;
+  //   }
+  //   .control-label{
+  //     font-size: 14px;
+  //   }
+  //   .personal-submit a{
+  //     float: right;
+  //     font-size: 17px;
+  //     border: 1px solid $dark-fb-color;
+  //     padding: 10px;
+  //     text-decoration: none;
+  //     background-color: $dark-fb-color;
+  //     color: #FFF;
+  //     margin-left: 4vw;
+  //   }
+  // }
 
-  #preference{
-    .age{
-      display: -webkit-box;
-      select{
-        padding-right: 10px;
-      }
-    }
-  }
+  // #preference{
+  //   form{
+  //     margin-top: 20vh;
+  //   }
+  //   .age{
+  //     display: -webkit-box;
+  //     select{
+  //       padding-right: 10px;
+  //     }
+  //   }
+  // }
 
 }
 
