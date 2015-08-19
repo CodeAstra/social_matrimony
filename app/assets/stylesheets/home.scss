@@ -1,0 +1,92 @@
+#land{
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: $font-stack;
+  background-image: image-url('Home.jpg');
+  background-size: cover;
+  color: white;
+    
+  .login{
+    height: 70vh; 
+    h1{
+      text-align: center;
+    }
+  }
+
+    .description{
+      top: 5vh;
+    }
+  
+  .people{
+    height: 30vh;
+    }
+
+
+  .information p{
+    margin-top: 35px;
+    text-align: justify;
+    margin-left: 12px;
+  }
+
+  .parent, .bride{
+    #carousel-generic{
+      height: 10vh;
+      color: #FFF;
+    }
+    .carousel-inner{
+      overflow: visible;
+      top:15vh;
+    }
+  }
+ 
+  .fb{
+    top: 25vh;
+    left: 17vh;
+    a{
+      font-size: 2em;
+      border: 1px solid $dark-fb-color;
+      padding: 3px 35px 2px 35px;
+      background-color: $dark-fb-color;
+      text-decoration: none;
+      color: white;
+      
+      &:hover {
+        background-color: $lighter-fb-color;
+      }
+    }
+  }
+}
+
+<<<<<<< HEAD
+//selection page
+
+.row-height{
+  height: 100vh;
+  #profile-creation{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    #profile-button{
+      text-decoration: none;
+    }
+  }
+=======
+header{
+  text-align: right;
+>>>>>>> codeastra/develop
+}
+
+//selection page ends
+
+//footer starts here
+
+#footer{
+  color: white;
+  #heart-icon{
+    color: red;
+  }
+}
+
+// footer ends here
