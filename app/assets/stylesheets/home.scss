@@ -59,9 +59,6 @@
   }
 }
 
-header{
-  text-align: right;
-}
 
 
 //welcome page//
@@ -126,12 +123,48 @@ header{
   }
   
   #prof-info{
-    
+    margin-top: 10vh;
+    dt{
+      margin-left: 20vw;
+      font-size: 1.5em;
+      padding-top: 30px;
+    }
+    dd{
+      margin-left: 40vw;
+      font-size: 1.5em;
+      padding-top: 20px;
+      .prof{
+        padding-bottom: 10px;
+      }
+    }
+  }
+
+
+  #personal-info{
+    height: 140vh;
+    h3{
+      margin-left: 10vw;
+      text-decoration: underline;
+    }
+    .marital{
+      margin-top: 5vh;
+      margin-left: 10vw;
+    }
+    .caste, .about, .height,.father, .mother, .family, .raasi, .dosham, .body, .complexion, .eat, .drink, .smoke{
+      margin-left: 10vw;
+    }
+    button{
+      float:right;
+      margin-right: 30vw;
+      margin-top: 0;
+    }
+    .next a{
+      float: right;
+      margin-left: 60vw;
+      font-size: 1.8em;
+    }
   }
 }
-
-
-//footer starts here
 
 #footer{
   color: black;
