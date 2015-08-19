@@ -15,10 +15,22 @@
         <dd><%= current_candidate.name %></dd>
         <dt>Email</dt>
         <dd><%= current_candidate.email %></dd>
+        <dt>Gender</dt>
+        <dd><%= current_candidate.gender %></dd>
+        <dt>Date of Birth</dt>
+
+        <dd><%= current_candidate.birthday %></dd>
       </dl>
     </div>
     <div role="tabpanel" class="tab-pane" id="prof-info">
-      Prof Info
+    <h3>Education Info:</h3>
+      <div>
+        <p>College:<%= current_candidate.education %></p>
+      </div>
+    <h3>Professional Info:</h3>
+      <div>
+        <p>Work:<%= Marshal.load current_candidate.work %></p>
+      </div>
     </div>
     <div role="tabpanel" class="tab-pane" id="personal-info">
       Personal Info
