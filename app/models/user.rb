@@ -25,60 +25,17 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   # devise :database_authenticatable, :registerable,
   #        :recoverable, :rememberable, :trackable, :validatable
-<<<<<<< HEAD
-  devise :rememberable, :trackable, :registerable,
-                            :omniauthable, :omniauth_providers => [:facebook]
-=======
+
   devise :rememberable, :trackable, 
   :omniauthable, :omniauth_providers => [:facebook]
   
   has_one :candidate, dependent: :destroy
 
   after_create :populate_candidate
->>>>>>> codeastra/develop
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
-<<<<<<< HEAD
-      user.name = auth.info.name   # assuming the user model has a name
-      user.image = auth.info.image # assuming the user model has an image
-      user.auth_token = auth.credentials.token
-      user.auth_expires_at = Time.at(auth.credentials.expires_at)
-      # user.password = Devise.friendly_token[0,20]
-    end
-  end
-
-<<<<<<< HEAD
-    def self.new_with_session(params, session)
-      super.tap do |user|
-        if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
-          user.email = data["email"] if user.email.blank?
-        end
-      end
-    end
-=======
-  def self.new_with_session(params, session)
-    super.tap do |user|
-      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
-        user.email = data["email"] if user.email.blank?
-      end
-    end
-  end
-
-  def graph
-    @graph ||= Koala::Facebook::API.new(self.auth_token)
-  end
-
-  def friends
-    graph.get_connections("me", "friends")  
-  end
-
-  def profile
-    graph.get_object("me", fields: "birthday,gender,education")
-  end
->>>>>>> feature-koala
-=======
       user.auth_token = auth.credentials.token
       user.auth_expires_at = Time.at(auth.credentials.expires_at)
       user.name = auth.info.name   # assuming the user model has a name
@@ -108,5 +65,4 @@ private
     self.candidate.populate!
   end
 
->>>>>>> codeastra/develop
 end

@@ -28,13 +28,6 @@ gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'omniauth-facebook'
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 gem 'koala'
 gem 'simple_form'
->>>>>>> feature-koala
-=======
-gem 'koala'
-gem 'simple_form'
->>>>>>> codeastra/develop
+

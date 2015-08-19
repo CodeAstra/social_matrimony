@@ -11,9 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20150818092113) do
-=======
 ActiveRecord::Schema.define(version: 20150819055408) do
 
   create_table "candidates", force: :cascade do |t|
@@ -31,8 +28,7 @@ ActiveRecord::Schema.define(version: 20150819055408) do
   end
 
   add_index "candidates", ["user_id"], name: "index_candidates_on_user_id"
->>>>>>> codeastra/develop
-
+  
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.datetime "remember_created_at"
