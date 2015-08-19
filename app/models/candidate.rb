@@ -6,7 +6,7 @@
 #  name         :string
 #  email        :string
 #  gender       :string
-#  birthday     :date
+#  birthday     :string
 #  hometown     :string
 #  location     :string
 #  image        :string
@@ -22,15 +22,19 @@ class Candidate < ActiveRecord::Base
   def populate!
     fb_data = user.fb_profile
     self.dump_fb_data = Marshal.dump(fb_data)
-    [:name, :email, :gender, :hometown, :location].each do |prop|
+    [:name, :email, :gender,:hometown, :location].each do |prop|
       self.send(prop.to_s + "=", fb_data[prop.to_s]) if fb_data[prop.to_s]
     end
+    [:hometown, :location].each do |prop|
+      self.send(prop.to_s + "=", fb_data[prop.to_s]["name"]) if fb_data[prop.to_s]
+    end
     self.birthday = Date.strptime(fb_data["birthday"],"%m/%d/%Y") if fb_data["birthday"]
-    # self.email = education_from_dump_data
+    self.work = work_from_dump_data
+    self.education = education_from_dump_data
     self.save!
   end
 
-private
+  private
   def education_from_dump_data
     fb_data = Marshal.load(self.dump_fb_data)
     edu = fb_data["education"]
@@ -55,4 +59,15 @@ private
 
     return edu.inspect
   end
+end
+
+
+def work_from_dump_data
+  fb_data = Marshal.load(self.dump_fb_data)
+  prof = fb_data["work"]
+  prof = prof.collect do |wrk|
+          wrk["employer"]["name"]
+         end
+  return Marshal.dump(prof)
+
 end
