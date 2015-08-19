@@ -1,0 +1,31 @@
+<section id="welcome">
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#basic-info" aria-controls="basic-info" role="tab" data-toggle="tab">Basic Info</a></li>
+    <li role="presentation"><a href="#prof-info" aria-controls="prof-info" role="tab" data-toggle="tab">Professional Info</a></li>
+    <li role="presentation"><a href="#personal-info" aria-controls="personal-info" role="tab" data-toggle="tab">Personal Details</a></li>
+    <li role="presentation"><a href="#partner-pref" aria-controls="partner-pref" role="tab" data-toggle="tab">Partner Preferences</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="basic-info">
+      <dl>
+        <dt>Name</dt>
+        <dd><%= current_candidate.name %></dd>
+        <dt>Email</dt>
+        <dd><%= current_candidate.email %></dd>
+      </dl>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="prof-info">
+      Prof Info
+    </div>
+    <div role="tabpanel" class="tab-pane" id="personal-info">
+      Personal Info
+    </div>
+    <div role="tabpanel" class="tab-pane" id="partner-pref">
+      Partner Preferences
+    </div>
+  </div>
+
+</section>
