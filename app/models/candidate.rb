@@ -19,6 +19,8 @@
 #
 
 class Candidate < ActiveRecord::Base
+  attr_accessor :marital_status,:caste,:subcaste,:gothram,:height,:weight,:bodytype,:complexion,:physicalstatus,:salary,:food,:smoke,:drink,:dosham,:star,:raasi,:familytype,:familyvalues,:familystatus
+
   belongs_to :user
 
   def populate!
@@ -69,7 +71,7 @@ def work_from_dump_data
   prof = fb_data["work"]
   prof = prof.collect do |wrk|
           wrk["employer"]["name"]
-         end
+         end if prof
   return Marshal.dump(prof)
 
 end
