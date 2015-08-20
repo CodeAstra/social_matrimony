@@ -1,0 +1,22 @@
+<%= simple_form_for current_candidate do |f| %>
+  <%= f.input :marital_status,collection: [:Never_Married, :Divorced,:Widowed] %>
+  <%= f.input :caste %>
+  <%= f.input :subcaste %>
+  <%= f.input :gothram %>
+  <%= f.input :height %>
+  <%= f.input :weight %>
+  <%= f.input :bodytype, as: :radio_buttons %>
+  <%= f.input :complexion %>
+  <%= f.input :physicalstatus %>
+  <%= f.input :salary %>
+  <%= f.input :food %>
+  <%= f.input :smoke %>
+  <%= f.input :drink %>
+  <%= f.input :dosham %>
+  <%= f.input :star %>
+  <%= f.input :raasi %>
+  <%= f.input :familytype %>
+  <%= f.input :familyvalues %>
+  <%= f.input :familystatus, as: :radio_buttons %>
+  <%= f.submit "Save",class: "btn btn-primary" %>
+<% end %>
