@@ -18,7 +18,6 @@
         <dt>Gender</dt>
         <dd><%= current_candidate.gender %></dd>
         <dt>Date of Birth</dt>
-
         <dd><%= current_candidate.birthday %></dd>
       </dl>
     </div>
@@ -36,7 +35,7 @@
       Personal Info
     </div>
     <div role="tabpanel" class="tab-pane" id="partner-pref">
-      Partner Preferences
+      <%= render 'common/personalpreferences' %>
     </div>
   </div>
 
