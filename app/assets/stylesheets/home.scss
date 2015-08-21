@@ -60,11 +60,6 @@
 }
 
 
-<<<<<<< HEAD
-//selection page ends
-
-//footer starts here
-=======
 
 //welcome page//
 
@@ -73,7 +68,7 @@
   font-family: $font-stack;
   .nav-tabs{
     margin-left: 10vw;
-    margin-right: 20vw;
+    margin-right: 10vw;
     .basic-info{
       font-size: 19px;
       &:hover{
@@ -130,12 +125,12 @@
   #prof-info{
     margin-top: 10vh;
     dt{
-      margin-left: 20vw;
+      margin-left: 10vw;
       font-size: 1.5em;
       padding-top: 30px;
     }
     dd{
-      margin-left: 40vw;
+      margin-left: 30vw;
       font-size: 1.5em;
       padding-top: 20px;
       .prof{
@@ -161,8 +156,48 @@
       }
     }
   }
+
+  #personal-info{
+    .next a{
+      float: right;
+      margin-left: 60vw;
+      font-size: 1.5em;
+      text-decoration: none;
+      margin-top: -30px;
+    }
+    .previous a{
+      font-size: 1.5em;
+      text-decoration: none;
+      margin-top: 10vh;
+      margin-left: 5vw;
+    }
+    .double-left, .double-right{
+      display: inline-block;
+      padding: 5px;
+    }
+  }
+
+  #partner-pref{
+    .next a{
+      float: right;
+      margin-left: 60vw;
+      font-size: 1.5em;
+      text-decoration: none;
+      margin-top: -30px;
+    }
+    .previous a{
+      font-size: 1.5em;
+      text-decoration: none;
+      margin-top: 10vh;
+      margin-left: 5vw;
+    }
+    .double-left, .double-right{
+      display: inline-block;
+      padding: 5px;
+    }
+  }
 }
->>>>>>> rakesh/feature-personal-information
+
 
 #footer{
   color: black;

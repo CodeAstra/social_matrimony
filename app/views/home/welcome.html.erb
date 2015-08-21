@@ -1,4 +1,4 @@
-<section id="welcome">
+<section id="welcome" class="container">
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="basic-info active"><a href="#basic-info" id="basic-info-tab" aria-controls="basic-info" role="tab" data-toggle="tab">Basic Info</a></li>
@@ -17,14 +17,11 @@
         <dd><%= current_candidate.email %></dd>
         <dt>Gender</dt>
         <dd><%= current_candidate.gender %></dd>
-<<<<<<< HEAD
-        <dt>Date of Birth</dt>
-=======
         <div class="image">
           <img src="<%= current_candidate.image %>" alt="image">
         </div>
         <dt><%= fa_icon("calendar", class: "icon") %>Birthday</dt>
->>>>>>> rakesh/feature-personal-information
+
         <dd><%= current_candidate.birthday %></dd>
         <dt><%= fa_icon("home", class: "icon") %>Hometown</dt>
         <dd><%= current_candidate.hometown %></dd>
@@ -40,63 +37,41 @@
      <div role="tabpanel" class="tab-pane fade" id="prof-info">
       <dl class="dl-horizontal">
         <dt>Education</dt>
-        <dd><%= current_candidate.education[0] %></dd>
+        <dd><%= current_candidate.education %></dd>
+        <dt>Profession Info</dt>
+        <dd><%= current_candidate.work %></dd>
       </dl>
-<<<<<<< HEAD
-    </div>
-    <div role="tabpanel" class="tab-pane" id="prof-info">
-    <h3>Education Info:</h3>
-      <div>
-        <p>College:<%= current_candidate.education %></p>
-      </div>
-    <h3>Professional Info:</h3>
-      <div>
-        <p>Work:<%= Marshal.load current_candidate.work %></p>
-      </div>
-    </div>
-    <div role="tabpanel" class="tab-pane" id="personal-info">
-      Personal Info
-    </div>
-    <div role="tabpanel" class="tab-pane" id="partner-pref">
-      <%= render 'common/personalpreferences' %>
-    </div>
-  </div>
-=======
-      <dt>Professional Info</dt>
-      <dd class="prof"><%= Marshal.load current_candidate.work %></dd>
-      <div class="previous">
-       <a href="#" data-target="#basic-info-tab" class="next_tab_trigger"><%= fa_icon("angle-double-left", class: "double-left") %>Previous
-       </a>
-     </div>
-     <div class="next">
-       <a href="#" data-target="#personal-info-tab" class="next_tab_trigger">Next<%= fa_icon("angle-double-right", class: "double-right") %>
-       </a>
-     </div>
-   </div>
-   <div role="tabpanel" class="tab-pane fade" id="personal-info">
-    <h3>Personal Info</h3>
-    <div class="previous">
-     <a href="#" data-target="#prof-info-tab" class="next_tab_trigger"><%= fa_icon("angle-double-left", class: "double-left") %>Previous
-     </a>
-   </div>
-   <span class="next">
-     <a href="#" data-target="#partner-pref-tab" class="next_tab_trigger ">Next<%= fa_icon("angle-double-right", class: "double-right") %>
-     </a>
-   </span>
- </div>
- <div role="tabpanel" class="tab-pane fade" id="partner-pref">
-  Partner Preferences
-
-  <div>
-   <a href="#" data-target="#personal-info-tab" class="next_tab_trigger">Previous<%= fa_icon("angle-double-left", class: "next") %>
+  <div class="previous">
+   <a href="#" data-target="#basic-info-tab" class="next_tab_trigger"><%= fa_icon("angle-double-left", class: "double-left") %>Previous
    </a>
  </div>
- <div>
-   <a href="#" data-target="#prof-info-tab" class="next_tab_trigger">Next<%= fa_icon("angle-double-right", class: "next") %>
+ <div class="next">
+   <a href="#" data-target="#personal-info-tab" class="next_tab_trigger">Next<%= fa_icon("angle-double-right", class: "double-right") %>
+   </a>
+ </div>
+    </div>
+    
+<div role="tabpanel" class="tab-pane fade" id="personal-info">
+  <h3>Personal Info</h3>
+  <div class="previous">
+   <a href="#" data-target="#basic-info-tab" class="next_tab_trigger"><%= fa_icon("angle-double-left", class: "double-left") %>Previous
+   </a>
+ </div>
+ <div class="next">
+   <a href="#" data-target="#personal-info-tab" class="next_tab_trigger">Next<%= fa_icon("angle-double-right", class: "double-right") %>
+   </a>
+ </div>
+</div>
+<div role="tabpanel" class="tab-pane fade" id="partner-pref">
+   <%= render 'common/personalpreferences' %>
+  <div class="previous">
+   <a href="#" data-target="#personal-info-tab" class="next_tab_trigger">Previous<%= fa_icon("angle-double-left", class: "double-left") %>
+   </a>
+ </div>
+ <div class="next">
+   <a href="#" data-target="#prof-info-tab" class="next_tab_trigger">Next<%= fa_icon("angle-double-right", class: "double-right") %>
    </a>
  </div>
 </div>
 </div>
->>>>>>> rakesh/feature-personal-information
-
 </section>

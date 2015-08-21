@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
 
   get 'user_search_preferences/update'
-
-=======
->>>>>>> rakesh/feature-personal-information
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   devise_scope :user do
     delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
