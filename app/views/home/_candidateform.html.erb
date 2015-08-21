@@ -1,0 +1,22 @@
+<%= simple_form_for current_candidate do |f| %>
+  <%= f.input :marital_status,:as => :radio_buttons, :item_wrapper_class => 'inline',collection: ["Never Married", "Divorced","Widower","Awaiting divorce"] %>
+  <%= f.input :caste %>
+  <%= f.input :subcaste %>
+  <%= f.input :gothram %>
+  <%= f.input :height %>
+  <%= f.input :weight %>
+  <%= f.input :bodytype, :as => :radio_buttons, :item_wrapper_class => 'inline', :collection => [ :slim, :athletic,:heavy ] %>
+  <%= f.input :complexion, :as => :radio_buttons, :item_wrapper_class => 'inline', :collection => [ :Fair,:wheatish,:dark]%>
+  <%= f.input :physicalstatus,:as => :radio_buttons, :item_wrapper_class => 'inline', :collection => [ "Physical Disability","Normal"]  %>
+  <%= f.input :salary%>
+  <%= f.input :food, :as => :radio_buttons, :item_wrapper_class => 'inline', :collection => [ "Vegan","Vegetarian","Non-Vegetarian"]%>
+  <%= f.input :smoke,:as => :radio_buttons, :item_wrapper_class => 'inline', :collection => [ :Yes,:No,:Ocassionally] %>
+  <%= f.input :drink,:as => :radio_buttons, :item_wrapper_class => 'inline', :collection => [ :Yes,:No,:Ocassionally] %>
+  <%= f.input :dosham,:as => :radio_buttons %>
+  <%= f.input :star %>
+  <%= f.input :rashi %>
+  <%= f.input :familytype,:as => :radio_buttons, :item_wrapper_class => 'inline', :collection => [ :joint,:nuclear] %>
+  <%= f.input :familyvalues,:as => :radio_buttons, :item_wrapper_class => 'inline', :collection => [ :orthodox  ,:traditional,:moderate,:liberal] %>
+  <%= f.input :familystatus,:as => :radio_buttons, :item_wrapper_class => 'inline', :collection => ["Middle class","Upper middle class","Rich","Affluent"] %>
+  <%= f.submit "Save",class: "btn btn-primary" %>
+<% end %>
