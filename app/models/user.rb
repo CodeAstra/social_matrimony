@@ -51,7 +51,6 @@ class User < ActiveRecord::Base
       end
     end
   end
-
   def graph
     @graph = Koala::Facebook::API.new(self.auth_token)
   end
@@ -65,5 +64,4 @@ private
     self.create_candidate
     self.candidate.populate!
   end
-
 end
