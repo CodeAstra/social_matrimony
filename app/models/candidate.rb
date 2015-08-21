@@ -19,7 +19,8 @@
 #
 
 class Candidate < ActiveRecord::Base
-  attr_accessor :marital_status,:caste,:subcaste,:gothram,:height,:weight,:bodytype,:complexion,:physicalstatus,:salary,:food,:smoke,:drink,:dosham,:star,:raasi,:familytype,:familyvalues,:familystatus
+
+  attr_accessor :marital_status,:caste,:subcaste,:gothram,:height,:weight,:bodytype,:complexion,:physicalstatus,:salary,:food,:smoke,:drink,:dosham,:star,:rashi,:familytype,:familyvalues,:familystatus
 
   belongs_to :user
 

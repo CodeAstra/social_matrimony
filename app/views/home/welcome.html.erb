@@ -32,10 +32,12 @@
       </div>
     </div>
     <div role="tabpanel" class="tab-pane" id="personal-info">
-      <%= render "home/candidate_form" %>
+      <div>
+        <%= render 'candidateform' %>
+      </div>
     </div>
     <div role="tabpanel" class="tab-pane" id="partner-pref">
-      Partner Preferences
+      <%= render 'common/personalpreferences' %>
     </div>
   </div>
 </section>
