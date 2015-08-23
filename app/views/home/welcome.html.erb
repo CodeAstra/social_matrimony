@@ -4,7 +4,7 @@
     <li role="presentation" class="active"><a href="#basic-info" aria-controls="basic-info" role="tab" data-toggle="tab">Basic Info</a></li>
     <li role="presentation"><a href="#prof-info" aria-controls="prof-info" role="tab" data-toggle="tab">Professional Info</a></li>
     <li role="presentation"><a href="#personal-info" aria-controls="personal-info" role="tab" data-toggle="tab">Personal Details</a></li>
-    <li role="presentation"><a href="#partner-pref" aria-controls="partner-pref" role="tab" data-toggle="tab">Partner Preferences</a></li>
+    <li role="presentation"><a href="#partner-pref" aria-controls="partner-pref" role="tab" data-toggle="tab" id="partner-pref-trigger">Partner Preferences</a></li>
   </ul>
 
   <!-- Tab panes -->
@@ -32,12 +32,12 @@
       </div>
     </div>
     <div role="tabpanel" class="tab-pane" id="personal-info">
-      <div>
-        <%= render 'candidateform' %>
-      </div>
+    <div id="details">
+      <%= render 'common/candidate_form' %>
+    </div>
     </div>
     <div role="tabpanel" class="tab-pane" id="partner-pref">
-      <%= render 'common/personalpreferences' %>
+      <%= render 'common/personal_preferences' %>
     </div>
   </div>
 </section>

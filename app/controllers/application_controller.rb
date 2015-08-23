@@ -12,17 +12,4 @@ class ApplicationController < ActionController::Base
   def new_session_path(scope)
     root_path
   end
-
-  def update
-    current_candidate.update_attributes(personalinfo_params)
-    current_candidate.save!
-  end
-
-private
-  def personalinfo_params
-   params.require(:current_candidate).permit(:marital_status,:caste,:subcaste,:gothram,:height,:weight,
-                                                  :bodytype,:complexion,:physicalstatus,:salary,:food,
-                                                  :smoke,:drink,:dosham,:star,:rashi,:familytype,
-                                                  :familyvalues,:familystatus) 
-  end
 end

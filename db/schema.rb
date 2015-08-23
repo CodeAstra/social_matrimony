@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20150821103100) do
     t.string   "hometown"
     t.string   "location"
     t.string   "image"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.integer  "user_id"
     t.text     "dump_fb_data"
     t.text     "education"
@@ -33,9 +33,9 @@ ActiveRecord::Schema.define(version: 20150821103100) do
     t.string   "gothram"
     t.string   "height"
     t.string   "weight"
-    t.integer  "bodytype"
+    t.integer  "body_type"
     t.integer  "complexion"
-    t.integer  "physicalstatus"
+    t.integer  "physical_status"
     t.string   "salary"
     t.integer  "food"
     t.integer  "smoke"
@@ -43,9 +43,9 @@ ActiveRecord::Schema.define(version: 20150821103100) do
     t.integer  "dosham"
     t.string   "star"
     t.string   "rashi"
-    t.integer  "familytype"
-    t.integer  "familyvalues"
-    t.integer  "familystatus"
+    t.integer  "family_type"
+    t.integer  "family_values"
+    t.integer  "family_status"
   end
 
   add_index "candidates", ["user_id"], name: "index_candidates_on_user_id"

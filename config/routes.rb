@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-
-  get 'user_search_preferences/update'
+  # get 'welcome' => 'home#welcome', :as => :welcome
 
   resources :candidates
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
