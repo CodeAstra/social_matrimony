@@ -6,7 +6,7 @@
   background-image: image-url('Home.jpg');
   background-size: cover;
   color: white;
-    
+
   .login{
     height: 70vh; 
     h1{
@@ -14,13 +14,13 @@
     }
   }
 
-    .description{
-      top: 5vh;
-    }
-  
+  .description{
+    top: 5vh;
+  }
+
   .people{
     height: 30vh;
-    }
+  }
 
 
   .information p{
@@ -39,7 +39,7 @@
       top:15vh;
     }
   }
- 
+
   .fb{
     top: 25vh;
     left: 17vh;
@@ -50,7 +50,7 @@
       background-color: $dark-fb-color;
       text-decoration: none;
       color: white;
-      
+
       &:hover {
         background-color: $lighter-fb-color;
       }
@@ -58,8 +58,36 @@
   }
 }
 
+#welcome{
+  #personal-info{
+    height: 140vh;
 
-//selection page ends
+    #details{
+      padding-bottom: 5em;
+    }
+
+    h3{
+      margin-left: 10vw;
+      text-decoration: underline;
+    }
+    .marital{
+      margin-top: 5vh;
+      margin-left: 10vw;
+    }
+    .caste, .about, .height,.father, .mother, .family, .rashi, .dosham, .body, .complexion, .eat, .drink, .smoke{
+      margin-left: 10vw;
+    }
+    button{
+      float:right;
+      margin-right: 30vw;
+      margin-top: 0;
+    }
+  }
+}
+
+.form_control{
+  display: inline-block;
+}
 
 //footer starts here
 

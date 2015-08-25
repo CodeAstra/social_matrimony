@@ -4,7 +4,7 @@ class UserSearchPreferencesController < ApplicationController
     @user_search_preference.update_attributes(preference_params)
     redirect_to root_path
   end
-
+  
 private
   def preference_params
     params.require(:user_search_preference).permit(:caste_pref_wt,:height_pref_wt,

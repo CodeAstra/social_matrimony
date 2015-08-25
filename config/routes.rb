@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  # get 'welcome' => 'home#welcome', :as => :welcome
 
-  get 'user_search_preferences/update'
-
+  resources :candidates
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   devise_scope :user do
     delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session

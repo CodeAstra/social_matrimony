@@ -1,0 +1,22 @@
+<%= simple_form_for current_candidate, remote: true do |f| %>
+  <%= f.input :marital_status,:as => :radio_buttons, :item_wrapper_class => 'inline',collection: Candidate::MARITAL_STATUS.all, label_method: :title, value_method: :code %>
+  <%= f.input :caste %>
+  <%= f.input :subcaste %>
+  <%= f.input :gothram %>
+  <%= f.input :height %>
+  <%= f.input :weight %>
+  <%= f.input :body_type, :as => :radio_buttons, :item_wrapper_class => 'inline', collection: Candidate::BODY_TYPE.all, label_method: :title, value_method: :code %>
+  <%= f.input :complexion, :as => :radio_buttons, :item_wrapper_class => 'inline',collection: Candidate::COMPLEXION.all, label_method: :title, value_method: :code %>
+  <%= f.input :physical_status,:as => :radio_buttons, :item_wrapper_class => 'inline', collection: Candidate::PHYSICAL_STATUS.all, label_method: :title, value_method: :code  %>
+  <%= f.input :salary%>
+  <%= f.input :food, :as => :radio_buttons, :item_wrapper_class => 'inline', collection: Candidate::FOOD.all, label_method: :title, value_method: :code%>
+  <%= f.input :smoke,:as => :radio_buttons, :item_wrapper_class => 'inline',collection: Candidate::SMOKE.all, label_method: :title, value_method: :code  %>
+  <%= f.input :drink,:as => :radio_buttons, :item_wrapper_class => 'inline',collection: Candidate::DRINK.all, label_method: :title, value_method: :code  %>
+  <%= f.input :dosham,:as => :radio_buttons %>
+  <%= f.input :star %>
+  <%= f.input :rashi %>
+  <%= f.input :family_type,:as => :radio_buttons, :item_wrapper_class => 'inline',collection: Candidate::FAMILY_TYPE.all, label_method: :title, value_method: :code  %>
+  <%= f.input :family_values,:as => :radio_buttons, :item_wrapper_class => 'inline', collection: Candidate::FAMILY_VALUES.all, label_method: :title, value_method: :code %>
+  <%= f.input :family_status,:as => :radio_buttons, :item_wrapper_class => 'inline',collection: Candidate::FAMILY_STATUS.all, label_method: :title, value_method: :code  %>
+  <%= f.submit "Save",class: "btn btn-primary" %>
+<% end %>

@@ -11,22 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150819173730) do
+ActiveRecord::Schema.define(version: 20150821103100) do
 
   create_table "candidates", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "gender"
+    t.integer  "gender"
     t.date     "birthday"
     t.string   "hometown"
     t.string   "location"
     t.string   "image"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.integer  "user_id"
     t.text     "dump_fb_data"
     t.text     "education"
     t.text     "work"
+    t.integer  "marital_status"
+    t.integer  "caste"
+    t.integer  "subcaste"
+    t.string   "gothram"
+    t.string   "height"
+    t.string   "weight"
+    t.integer  "body_type"
+    t.integer  "complexion"
+    t.integer  "physical_status"
+    t.string   "salary"
+    t.integer  "food"
+    t.integer  "smoke"
+    t.integer  "drink"
+    t.integer  "dosham"
+    t.string   "star"
+    t.string   "rashi"
+    t.integer  "family_type"
+    t.integer  "family_values"
+    t.integer  "family_status"
   end
 
   add_index "candidates", ["user_id"], name: "index_candidates_on_user_id"

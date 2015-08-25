@@ -1,10 +1,10 @@
-<section id="welcome">
+<section id="welcome" class="container">
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#basic-info" aria-controls="basic-info" role="tab" data-toggle="tab">Basic Info</a></li>
     <li role="presentation"><a href="#prof-info" aria-controls="prof-info" role="tab" data-toggle="tab">Professional Info</a></li>
     <li role="presentation"><a href="#personal-info" aria-controls="personal-info" role="tab" data-toggle="tab">Personal Details</a></li>
-    <li role="presentation"><a href="#partner-pref" aria-controls="partner-pref" role="tab" data-toggle="tab">Partner Preferences</a></li>
+    <li role="presentation"><a href="#partner-pref" aria-controls="partner-pref" role="tab" data-toggle="tab" id="partner-pref-trigger">Partner Preferences</a></li>
   </ul>
 
   <!-- Tab panes -->
@@ -22,21 +22,22 @@
       </dl>
     </div>
     <div role="tabpanel" class="tab-pane" id="prof-info">
-    <h3>Education Info:</h3>
+      <h3>Education Info:</h3>
       <div>
         <p>College:<%= current_candidate.education %></p>
       </div>
-    <h3>Professional Info:</h3>
+      <h3>Professional Info:</h3>
       <div>
         <p>Work:<%= Marshal.load current_candidate.work %></p>
       </div>
     </div>
     <div role="tabpanel" class="tab-pane" id="personal-info">
-      Personal Info
+    <div id="details">
+      <%= render 'common/candidate_form' %>
+    </div>
     </div>
     <div role="tabpanel" class="tab-pane" id="partner-pref">
-      <%= render 'common/personalpreferences' %>
+      <%= render 'common/personal_preferences' %>
     </div>
   </div>
-
 </section>
