@@ -26,9 +26,9 @@
 #  complexion      :integer
 #  physical_status :integer
 #  salary          :string
-#  food            :integer
-#  smoke           :integer
-#  drink           :integer
+#  food_habits     :integer
+#  smoking         :integer
+#  drinking        :integer
 #  dosham          :integer
 #  star            :string
 #  rashi           :string
