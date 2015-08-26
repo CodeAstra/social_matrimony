@@ -2,21 +2,45 @@
 #
 # Table name: candidates
 #
-#  id           :integer          not null, primary key
-#  name         :string
-#  email        :string
-#  gender       :string
-#  birthday     :string
-#  hometown     :string
-#  location     :string
-#  image        :string
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
-#  user_id      :integer
-#  dump_fb_data :text
+#  id              :integer          not null, primary key
+#  name            :string
+#  email           :string
+#  gender          :integer
+#  birthday        :date
+#  hometown        :string
+#  location        :string
+#  image           :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  user_id         :integer
+#  dump_fb_data    :text
+#  education       :text
+#  work            :text
+#  marital_status  :integer
+#  caste           :integer
+#  subcaste        :integer
+#  gothram         :string
+#  height          :string
+#  weight          :string
+#  body_type       :integer
+#  complexion      :integer
+#  physical_status :integer
+#  salary          :string
+#  food_habits     :integer
+#  smoking         :integer
+#  drinking        :integer
+#  dosham          :integer
+#  star            :string
+#  rashi           :string
+#  family_type     :integer
+#  family_values   :integer
+#  family_status   :integer
 #
 
+require 'candidate_profile_extensions'
 class Candidate < ActiveRecord::Base
+  include CandidateProfileExtensions
+
   belongs_to :user
 
   def populate!
@@ -35,7 +59,7 @@ class Candidate < ActiveRecord::Base
     self.save!
   end
 
-  private
+private
   def education_from_dump_data
     fb_data = Marshal.load(self.dump_fb_data)
     edu = fb_data["education"]
