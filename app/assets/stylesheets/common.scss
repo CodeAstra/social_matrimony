@@ -1,3 +1,75 @@
 header{
   text-align: right;
+  h2{
+    font-family: 'Dancing Script', cursive;
+    color: #D35400;
+    float: left;
+    margin-left: 30px;
+    font-size: 3em;
+    margin-top: 0;
+  }
+  .caption{
+    float: left;
+    font-family: 'Dancing Script', cursive;
+    margin-top: 5vh;
+    color: #26A65B;
+    font-size: 1.5em;
+  }
+  .navbar{
+    background-color: #F2F1EF;
+    margin-bottom: 0px;
+    border: 0;
+  }
+  .power{
+    border: 0.5px solid $dark-fb-color;
+    padding: 10px;
+    padding-top: 20px;
+    background-color: #E74C3C;
+    font-size:1.4em;
+    color: #fff;
+    margin-right: 20px;
+    i{
+      padding-top:9px;
+    }
+  }
+  .log{
+    font-size: 1em;
+  }
+}
+
+
+
+// footer
+
+footer{
+  color: black;
+  position: fixed;
+  bottom : 0;
+  left: 0;
+  right: 0;
+  background-color: #C5EFF7;
+  opacity: 0.8;
+  .follow{
+    float: right;
+    font-family: 'Dancing Script', cursive;
+    padding-right: 20px;
+    margin-top: 2vh;
+  }
+  p{
+    text-align: center;
+    margin-top: 2vh;
+  }
+  #heart-icon{
+    color: red;
+  }
+  .icon1{
+    float:right;
+    font-size: 2em;
+    margin-right: 2vw;
+    padding-left: 10px;
+  }
+  .icon2{
+    float:right;
+    font-size: 2em;
+  }
 }

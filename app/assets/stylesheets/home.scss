@@ -1,16 +1,16 @@
 // Land page
-
 #land{
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
   font-family: $font-stack;
-  background-image: image-url('Home.jpg');
-  background-size: cover;
   color: white;
+  background-size: cover;
+  position: relative;
+  background-image: image-url('Home.jpg');
     
   .login{
-    height: 50vh; 
+    height: 60vh; 
     h1{
       text-align: center;
     }
@@ -32,12 +32,15 @@
   }
 
   .parent, .bride{
+    top: 10vh;
     #carousel-generic{
       color: #FFF;
     }
-    .carousel-inner{
+    .carousel-inner {
+      background-color: #A79473;
+      background-color: green;
       overflow: visible;
-      top:15vh;
+      top:17vh;
     }
   }
  
@@ -57,6 +60,9 @@
       }
     }
   }
+  footer{
+    position: relative;
+  }
 }
 
 
@@ -66,35 +72,35 @@
 #welcome{
   width:90vw;
   font-family: $font-stack;
+  position: relative;
+  height: 110vh;
   .nav-tabs{
     margin-left: 10vw;
     margin-right: 10vw;
     .basic-info{
-      font-size: 19px;
-      &:hover{
-        font-size: 20px;
-      }
+      font-size: 1.2em;
     }
     .professional-info{
-      font-size: 20px;
-      margin-left: 13px;
+      font-size: 1.2em;
+      margin-left: 5vw;
     }
     .personal-info{
-      font-size: 20px;
-      margin-left: 13px;
+      font-size: 1.2em;
+      margin-left: 5vw;
     }
     .partner-pref{
-      font-size: 20px;
-      margin-left: 13px;
+      font-size: 1.2em;
+      margin-left: 5vw;
     }
   }
 
   #basic-info{
-    margin-top: 10vh;
+    margin-top: 5vh;
     dt{
       margin-left: 20vw;
-      font-size: 1.5em;
+      font-size: 1.2em;
       padding-top: 30px;
+      color: $dark-fb-color;
       .icon{
         display: inline-block;
         padding-right: 10px;
@@ -105,7 +111,7 @@
     }
     dd{
       margin-left: 40vw;
-      font-size: 1.5em;
+      font-size: 1.2em;
       padding-top: 28px;
     }
     .image{
@@ -126,12 +132,12 @@
     margin-top: 10vh;
     dt{
       margin-left: 10vw;
-      font-size: 1.5em;
+      font-size: 1.0em;
       padding-top: 30px;
     }
     dd{
       margin-left: 30vw;
-      font-size: 1.5em;
+      font-size: 1.0em;
       padding-top: 20px;
       .prof{
         padding-bottom: 10px;
@@ -178,18 +184,29 @@
   }
 
   #partner-pref{
+    .save{
+      float: right;
+    }
     .next a{
       float: right;
       margin-left: 60vw;
       font-size: 1.5em;
       text-decoration: none;
-      margin-top: -30px;
+      margin-top: 0px;
     }
-    .previous a{
-      font-size: 1.5em;
-      text-decoration: none;
-      margin-top: 10vh;
-      margin-left: 5vw;
+    .previous {
+     margin-top: 100px;
+
+      a{
+        border: 0.5px solid $dark-fb-color;
+        font-size: 1.5em;
+        text-decoration: none;
+        margin-bottom: 10px;
+        margin-left: 5vw;
+        padding: 10px;
+        color : #fff;
+        background-color: $lighter-fb-color;
+      }
     }
     .double-left, .double-right{
       display: inline-block;
@@ -198,12 +215,3 @@
   }
 }
 
-
-#footer{
-  color: black;
-  #heart-icon{
-    color: red;
-  }
-}
-
-// footer ends here
