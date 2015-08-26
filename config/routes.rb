@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  # get 'welcome' => 'home#welcome', :as => :welcome
-
+  
   resources :candidates
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   devise_scope :user do
