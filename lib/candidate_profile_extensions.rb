@@ -92,11 +92,11 @@ module CandidateProfileExtensions
     validates :family_type,    numericality: true, inclusion: FAMILY_TYPE.all_codes,    allow_nil: true
     validates :family_values,  numericality: true, inclusion: FAMILY_VALUES.all_codes,  allow_nil: true
     validates :family_status,  numericality: true, inclusion: FAMILY_STATUS.all_codes,  allow_nil: true
-    validates :height,         numericality: true, presence: true
-    validates :weight,         numericality: true, presence: true
-    validates :salary,         numericality: true, presence: true
-    validates :star,           numericality: true, presence: true
-    validates :rashi,          numericality: true, presence: true
+    validates :height,         numericality: true, allow_nil: true
+    validates :weight,         numericality: true, allow_nil: true
+    validates :salary,         numericality: true, allow_nil: true
+    validates :star,           numericality: true, allow_nil: true
+    validates :rashi,          numericality: true, allow_nil: true
   end
 
 end
