@@ -1,8 +1,8 @@
 header{
   text-align: right;
   h2{
-    font-family: 'Dancing Script', cursive;
-    color: #D35400;
+    font-family: $font-head;
+    color: $font-head-color;
     float: left;
     margin-left: 30px;
     font-size: 3em;
@@ -10,13 +10,13 @@ header{
   }
   .caption{
     float: left;
-    font-family: 'Dancing Script', cursive;
+    font-family: $font-head;
     margin-top: 5vh;
-    color: #26A65B;
+    color: $caption-head-color;
     font-size: 1.5em;
   }
   .navbar{
-    background-color: #F2F1EF;
+    background-color: $navbar-bg-color;
     margin-bottom: 0px;
     border: 0;
   }
@@ -24,7 +24,7 @@ header{
     border: 0.5px solid $dark-fb-color;
     padding: 10px;
     padding-top: 20px;
-    background-color: #E74C3C;
+    background-color: $power-bg-color;
     font-size:1.4em;
     color: #fff;
     margin-right: 20px;
@@ -47,11 +47,11 @@ footer{
   bottom : 0;
   left: 0;
   right: 0;
-  background-color: #C5EFF7;
+  background-color: $footer-bg-color;
   opacity: 0.8;
   .follow{
     float: right;
-    font-family: 'Dancing Script', cursive;
+    font-family: $font-head;
     padding-right: 20px;
     margin-top: 2vh;
   }
