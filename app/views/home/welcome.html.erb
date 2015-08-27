@@ -36,10 +36,23 @@
 
      <div role="tabpanel" class="tab-pane fade" id="prof-info">
       <dl class="dl-horizontal">
-        <dt>Education</dt>
-        <dd><%= current_candidate.education %></dd>
-        <dt>Profession Info</dt>
-        <dd><%= current_candidate.work %></dd>
+        <dt class="edu">Education</dt>
+        <dd class="edu-fb">
+           <% Marshal.load(current_candidate.education).each do |edu| %>
+              <div class="school"><%= edu[0] %></div>
+              <% if edu[1] || edu[2] %>
+                <div class="details">
+                  <span class="year"><%= edu[1] %></span>
+                  <span class="specialization"><%= edu[2] %></span>
+                </div>
+              <% end %>
+            <% end %>
+        </dd>
+        <dt class="prof">Profession Info</dt>
+        <dd class="prof-fb"><% Marshal.load(current_candidate.work).each do |prof| %>
+          <%= prof %>
+          <% end %>
+        </dd>
       </dl>
   <div class="previous">
    <a href="#" data-target="#basic-info-tab" class="next_tab_trigger"><%= fa_icon("angle-double-left", class: "double-left") %>Previous

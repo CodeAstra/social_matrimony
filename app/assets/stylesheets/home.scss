@@ -62,16 +62,6 @@
   }
 }
 
-#welcome{
-  #personal-info{
-    // height: 140vh;
-
-    #details{
-      // padding-bottom: 5em;
-    }
-  }
-}
-
 .form_control{
   display: inline-block;
 }
@@ -149,15 +139,35 @@
     margin-top: 10vh;
     dt{
       margin-left: 10vw;
-      font-size: 1.0em;
+      font-size: 1.2em;
       padding-top: 30px;
+      &.edu{
+        margin-top: 10vh;
+      }
+      &.prof{
+        margin-top: 5vh;
+      }
+      
     }
     dd{
       margin-left: 30vw;
-      font-size: 1.0em;
+      font-size: 1.2em;
       padding-top: 20px;
-      .prof{
-        padding-bottom: 10px;
+       &.edu-fb{
+        .school{
+          margin-top: 10vh;
+        }
+        .details{
+          margin-left: 30vw;
+          margin-top: -24px;
+         .specialization{
+           padding-left: 29px;
+         }
+        }
+
+      }
+      &.prof-fb{
+        margin-top: 5vh;
       }
     }
     .previous a{
