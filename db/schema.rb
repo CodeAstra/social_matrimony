@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20150821103100) do
   create_table "candidates", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.integer  "gender"
+    t.string   "gender"
     t.date     "birthday"
     t.string   "hometown"
     t.string   "location"
@@ -76,9 +76,9 @@ ActiveRecord::Schema.define(version: 20150821103100) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
-    t.string   "image"
     t.string   "auth_token"
     t.datetime "auth_expires_at"
+    t.string   "image"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
