@@ -1,14 +1,15 @@
+// Land page
 #land{
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
   font-family: $font-stack;
-  background-image: image-url('Home.jpg');
-  background-size: cover;
   color: white;
-
+  background-size: cover;
+  position: relative;
+  background-image: image-url('Home.jpg');
   .login{
-    height: 70vh; 
+    height: 60vh; 
     h1{
       text-align: center;
     }
@@ -30,13 +31,13 @@
   }
 
   .parent, .bride{
+    top: 10vh;
     #carousel-generic{
-      height: 10vh;
       color: #FFF;
     }
-    .carousel-inner{
+    .carousel-inner {
       overflow: visible;
-      top:15vh;
+      top:17vh;
     }
   }
 
@@ -56,15 +57,8 @@
       }
     }
   }
-}
-
-#welcome{
-  #personal-info{
-    height: 140vh;
-
-    #details{
-      padding-bottom: 5em;
-    }
+  footer{
+    position: relative;
   }
 }
 
@@ -72,13 +66,186 @@
   display: inline-block;
 }
 
-//footer starts here
 
-#footer{
-  color: white;
-  #heart-icon{
-    color: red;
+//welcome page//
+
+#welcome{
+  width:90vw;
+  font-family: $font-stack;
+  position: relative;
+  height: 110vh;
+  .nav-tabs{
+    margin-left: 10vw;
+    margin-right: 10vw;
+    .basic-info{
+      font-size: 1.2em;
+    }
+    .professional-info{
+      font-size: 1.2em;
+      margin-left: 5vw;
+    }
+    .personal-info{
+      font-size: 1.2em;
+      margin-left: 5vw;
+    }
+    .partner-pref{
+      font-size: 1.2em;
+      margin-left: 5vw;
+    }
+  }
+
+  #basic-info{
+    margin-top: 5vh;
+    dt{
+      margin-left: 10vw;
+      font-size: 1.2em;
+      padding-top: 30px;
+      color: $dark-fb-color;
+      .icon{
+        display: inline-block;
+        padding-right: 10px;
+      }
+      .name{
+        margin-top: 30vh;
+      }
+    }
+    dd{
+      margin-left: 30vw;
+      font-size: 1.2em;
+      padding-top: 28px;
+      &.name-fb{
+        margin-top: 60px;
+      }
+    }
+    .image{
+      float:right;
+    }
+    a{
+      float: right;
+      font-size: 1.5em;
+      text-decoration: none;
+      border: 0.5px solid $lighter-fb-color;
+      background-color: $lighter-fb-color;
+      padding: 7px;
+      color: #fff;
+      .next{
+        display: inline-block;
+        padding-left: 9px;
+      }
+    }
+  }
+  
+  #prof-info{
+    margin-top: 10vh;
+    dt{
+      margin-left: 10vw;
+      font-size: 1.2em;
+      padding-top: 30px;
+      &.edu{
+        margin-top: 10vh;
+      }
+      &.prof{
+        margin-top: 5vh;
+      }
+      
+    }
+    dd{
+      margin-left: 30vw;
+      font-size: 1.2em;
+      padding-top: 20px;
+       &.edu-fb{
+        .school{
+          margin-top: 10vh;
+        }
+        .details{
+          margin-left: 30vw;
+          margin-top: -24px;
+         .specialization{
+           padding-left: 29px;
+         }
+        }
+
+      }
+      &.prof-fb{
+        margin-top: 5vh;
+      }
+    }
+    .previous a{
+      text-decoration: none;
+      font-size: 1.5em;
+      margin-left: 5vw;
+      .double-left{
+        padding: 5px;
+        display: inline-block;
+      } 
+    }
+    .next a{
+      float: right;
+      text-decoration: none;
+      font-size: 1.5em;
+      .double-right{
+        padding: 5px;
+        display: inline-block;
+      }
+    }
+  }
+
+  #personal-info{
+    height:210vh;
+    #accordion{
+        margin-top: 5em;
+    }
+    .next a{
+      float: right;
+      margin-left: 60vw;
+      font-size: 1.5em;
+      text-decoration: none;
+      margin-top: -30px;
+    }
+    .previous a{
+      font-size: 1.5em;
+      text-decoration: none;
+      margin-top: 10vh;
+      margin-left: 5vw;
+    }
+    .double-left, .double-right{
+      display: inline-block;
+      padding: 5px;
+    }
+  }
+
+  #partner-pref{
+    .container{
+      width: 890px;
+    }
+    .save{
+      float: right;
+    }
+    .next a{
+      float: right;
+      margin-left: 60vw;
+      font-size: 1.5em;
+      text-decoration: none;
+      margin-top: 0px;
+    }
+    .previous {
+     margin-top: 100px;
+
+      a{
+        border: 0.5px solid $dark-fb-color;
+        font-size: 1.5em;
+        text-decoration: none;
+        margin-bottom: 10px;
+        margin-left: 5vw;
+        padding: 7px;
+        color : #fff;
+        background-color: $lighter-fb-color;
+      }
+    }
+    .double-left, .double-right{
+      display: inline-block;
+      padding: 5px;
+    }
   }
 }
 
-// footer ends here

@@ -1,3 +1,75 @@
 header{
   text-align: right;
+  h2{
+    font-family: $font-head;
+    color: $font-head-color;
+    float: left;
+    margin-left: 30px;
+    font-size: 3em;
+    margin-top: 0;
+  }
+  .caption{
+    float: left;
+    font-family: $font-head;
+    margin-top: 5vh;
+    color: $caption-head-color;
+    font-size: 1.5em;
+  }
+  .navbar{
+    background-color: $navbar-bg-color;
+    margin-bottom: 0px;
+    border: 0;
+  }
+  .power{
+    border: 0.5px solid $dark-fb-color;
+    padding: 10px;
+    padding-top: 20px;
+    background-color: $power-bg-color;
+    font-size:1.4em;
+    color: #fff;
+    margin-right: 20px;
+    i{
+      padding-top:9px;
+    }
+  }
+  .log{
+    font-size: 1em;
+  }
+}
+
+
+
+// footer
+
+footer{
+  color: black;
+  position: fixed;
+  bottom : 0;
+  left: 0;
+  right: 0;
+  background-color: $footer-bg-color;
+  opacity: 0.8;
+  .follow{
+    float: right;
+    font-family: $font-head;
+    padding-right: 20px;
+    margin-top: 2vh;
+  }
+  p{
+    text-align: center;
+    margin-top: 2vh;
+  }
+  #heart-icon{
+    color: red;
+  }
+  .icon1{
+    float:right;
+    font-size: 2em;
+    margin-right: 2vw;
+    padding-left: 10px;
+  }
+  .icon2{
+    float:right;
+    font-size: 2em;
+  }
 }
