@@ -39,6 +39,7 @@
 
 class Candidate < ActiveRecord::Base
   include CandidateProfile
+  include CandidateMatcher
 
   belongs_to :user
 

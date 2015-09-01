@@ -5,6 +5,10 @@ class CandidatesController < ApplicationController
     @save_success =  @candidate.update_attributes(personalinfo_params)
   end
 
+  def matches
+    @matches = current_candidate.matches
+  end
+
 private
   def personalinfo_params
     params.require(:candidate).permit(:marital_status,:caste,:subcaste,:gothram,:height,:weight,

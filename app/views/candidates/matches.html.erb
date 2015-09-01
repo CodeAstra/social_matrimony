@@ -1,0 +1,5 @@
+<ul>
+  <% @matches.each do |match| %>
+    <%= render partial: "candidates/match", locals: {match: match} %>
+  <% end %>
+</ul>
