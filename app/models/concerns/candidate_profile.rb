@@ -25,6 +25,11 @@ module CandidateProfile
     end
   end
 
+  GENDER = ProfileInfoValues.new([
+    [:male, 1, "Male"],
+    [:female, 2, "Female"]
+  ])
+
   MARITAL_STATUS =  ProfileInfoValues.new([
     [:never_married, 0, "Never Married"],
     [:divorced,      1, "Divorced"],
@@ -81,6 +86,7 @@ module CandidateProfile
   ])
 
   included do
+    validates :gender,         numericality: true, inclusion: GENDER.all_codes,         allow_nil: true
     validates :marital_status, numericality: true, inclusion: MARITAL_STATUS.all_codes, allow_nil: true
     validates :body_type,      numericality: true, inclusion: BODY_TYPE.all_codes,      allow_nil: true
     validates :complexion,     numericality: true, inclusion: COMPLEXION.all_codes,     allow_nil: true

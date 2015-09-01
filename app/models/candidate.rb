@@ -45,8 +45,13 @@ class Candidate < ActiveRecord::Base
   def populate!
     fb_data = user.fb_profile
     self.dump_fb_data = Marshal.dump(fb_data)
-    [:name, :email, :gender, :image].each do |prop|
+    [:name, :email, :image].each do |prop|
       self.send(prop.to_s + "=", fb_data[prop.to_s]) if fb_data[prop.to_s]
+    end
+    if fb_data["gender"] == "male"
+      self.gender = GENDER.code_of(:male)
+    elsif fb_data["gender"] == "female"
+      self.gender = GENDER.code_of(:female)
     end
     [:hometown, :location].each do |prop|
       self.send(prop.to_s + "=", fb_data[prop.to_s]["name"]) if fb_data[prop.to_s]
@@ -55,7 +60,6 @@ class Candidate < ActiveRecord::Base
     self.birthday = Date.strptime(fb_data["birthday"],"%m/%d/%Y") if fb_data["birthday"]
     self.work = work_from_dump_data
     self.education = education_from_dump_data
-    debugger
     self.save!
   end
 
