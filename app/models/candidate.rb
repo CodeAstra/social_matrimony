@@ -37,9 +37,8 @@
 #  family_status   :integer
 #
 
-require 'candidate_profile_extensions'
 class Candidate < ActiveRecord::Base
-  include CandidateProfileExtensions
+  include CandidateProfile
 
   belongs_to :user
 

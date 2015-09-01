@@ -1,4 +1,4 @@
-module CandidateProfileExtensions
+module CandidateProfile
   extend ActiveSupport::Concern
   include ActiveModel::Validations
 
