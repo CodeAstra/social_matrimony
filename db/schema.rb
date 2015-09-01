@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20150821103100) do
   create_table "candidates", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "gender"
+    t.integer  "gender"
     t.date     "birthday"
     t.string   "hometown"
     t.string   "location"
