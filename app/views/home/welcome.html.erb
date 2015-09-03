@@ -15,7 +15,11 @@
         <dt><%= fa_icon("envelope", class: "icon") %>Email</dt>
         <dd><%= current_candidate.email %></dd>
         <dt>Gender</dt>
-        <dd><%= current_candidate.gender %></dd>
+        <dd><%= if (current_candidate.gender == 2)
+                  "Female"
+                else
+                  "Male"
+                end %></dd>
         <div class="image">
           <img src="<%= current_candidate.image %>" alt="image">
         </div>

@@ -94,15 +94,15 @@ module CandidateProfile
     validates :food_habits,    numericality: true, inclusion: FOOD_HABITS.all_codes,    allow_nil: true
     validates :smoking,        numericality: true, inclusion: SMOKING.all_codes,        allow_nil: true
     validates :drinking,       numericality: true, inclusion: DRINKING.all_codes,       allow_nil: true
-    validates :dosham,         numericality: true, inclusion: DOSHAM.all_codes,         allow_nil: true
+    # validates :dosham,         numericality: false, inclusion: DOSHAM.all_codes,         allow_nil: true
     validates :family_type,    numericality: true, inclusion: FAMILY_TYPE.all_codes,    allow_nil: true
     validates :family_values,  numericality: true, inclusion: FAMILY_VALUES.all_codes,  allow_nil: true
     validates :family_status,  numericality: true, inclusion: FAMILY_STATUS.all_codes,  allow_nil: true
     validates :height,         numericality: true, allow_nil: true
     validates :weight,         numericality: true, allow_nil: true
-    validates :salary,         numericality: true, allow_nil: true
-    validates :star,           numericality: true, allow_nil: true
-    validates :rashi,          numericality: true, allow_nil: true
+    validates :salary,         numericality: false, allow_nil: true
+    validates :star,           numericality: false, allow_nil: true
+    validates :rashi,          numericality: false, allow_nil: true
   end
 
 end
