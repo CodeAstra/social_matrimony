@@ -20,26 +20,25 @@
 #  caste           :integer
 #  subcaste        :integer
 #  gothram         :string
-#  height          :string
-#  weight          :string
+#  height          :integer
+#  weight          :integer
 #  body_type       :integer
 #  complexion      :integer
 #  physical_status :integer
-#  salary          :string
+#  salary          :integer
+#  dosham          :integer
+#  star            :integer
+#  rashi           :integer
 #  food_habits     :integer
 #  smoking         :integer
 #  drinking        :integer
-#  dosham          :integer
-#  star            :string
-#  rashi           :string
 #  family_type     :integer
 #  family_values   :integer
 #  family_status   :integer
 #
 
-require 'candidate_profile_extensions'
 class Candidate < ActiveRecord::Base
-  include CandidateProfileExtensions
+  include CandidateProfile
 
   belongs_to :user
 
@@ -56,7 +55,6 @@ class Candidate < ActiveRecord::Base
     self.birthday = Date.strptime(fb_data["birthday"],"%m/%d/%Y") if fb_data["birthday"]
     self.work = work_from_dump_data
     self.education = education_from_dump_data
-    debugger
     self.save!
   end
 
