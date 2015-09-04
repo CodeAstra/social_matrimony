@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150821103100) do
+ActiveRecord::Schema.define(version: 20150904070143) do
 
   create_table "candidates", force: :cascade do |t|
     t.string   "name"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20150821103100) do
     t.text     "work"
     t.integer  "marital_status"
     t.integer  "caste"
-    t.integer  "subcaste"
+    t.integer  "sub_caste"
     t.string   "gothram"
     t.integer  "height"
     t.integer  "weight"
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20150821103100) do
     t.integer  "family_type"
     t.integer  "family_values"
     t.integer  "family_status"
+    t.integer  "mother_tongue"
+    t.integer  "religion"
   end
 
   add_index "candidates", ["user_id"], name: "index_candidates_on_user_id"
