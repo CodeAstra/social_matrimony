@@ -39,6 +39,7 @@ class UserSearchPreference < ActiveRecord::Base
   validates :caste_pref_wt,      presence: true, numericality: true, inclusion: Weights.all_codes
   validates :height_pref_wt,     presence: true, numericality: true, inclusion: Weights.all_codes
   validates :complexion_pref_wt, presence: true, numericality: true, inclusion: Weights.all_codes
+  validates :age_pref_wt,        presence: true, numericality: true, inclusion: Weights.all_codes
   # validates :height_pref_min,    presence: true, numericality: true, if: :height_preferred?
   # validates :height_pref_max,    presence: true, numericality: true, if: :height_preferred?
 

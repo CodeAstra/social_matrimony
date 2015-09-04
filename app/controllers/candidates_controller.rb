@@ -3,7 +3,6 @@ class CandidatesController < ApplicationController
   def update
     @candidate = current_candidate
     @save_success =  @candidate.update_attributes(personalinfo_params)
-    redirect_to root_path
   end
 
   def matches

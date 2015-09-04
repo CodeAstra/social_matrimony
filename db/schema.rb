@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150821103100) do
+ActiveRecord::Schema.define(version: 20150904110003) do
 
   create_table "candidates", force: :cascade do |t|
     t.string   "name"
@@ -59,6 +59,9 @@ ActiveRecord::Schema.define(version: 20150821103100) do
     t.integer  "user_id"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+    t.integer  "age_pref_wt",        default: 1
+    t.integer  "age_pref_min"
+    t.integer  "age_pref_max"
   end
 
   add_index "user_search_preferences", ["user_id"], name: "index_user_search_preferences_on_user_id"

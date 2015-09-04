@@ -14,11 +14,30 @@
       </tr>
       <tr>
         <td>
+          <b>Age</b><br>
+          How important is that the Age matches your preferred range?
+        </td>
+        <td>
+          <%= f.input :age_pref_wt, label: false, wrapper: false, collection: UserSearchPreference::Weights.all, value_method: :code, label_method: :title, include_blank: false %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>Preferred Age Range</b><br>
+          What is your preferred range of age?
+        </td>
+        <td>
+          <%= f.input :age_pref_min, label: false, wrapper: false %>years to 
+          <%= f.input :age_pref_max, label: false, wrapper: false %>years
+        </td>
+      </tr>
+      <tr>
+        <td>
           <b>Height</b><br>
           How important is that the height matches your preferred range?
         </td>
         <td>
-          <%= f.input :caste_pref_wt, label: false, wrapper: false, collection: UserSearchPreference::Weights.all, value_method: :code, label_method: :title, include_blank: false %>
+          <%= f.input :height_pref_wt, label: false, wrapper: false, collection: UserSearchPreference::Weights.all, value_method: :code, label_method: :title, include_blank: false %>
         </td>
       </tr>
       <tr>

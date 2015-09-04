@@ -29,7 +29,22 @@ private
   end
 
   def caste_score(match)
-    score = (match.id*5) % 7
+    return 0 if match.caste.nil?
+    return 0 if match.subcaste.nil?
+    return 0 if search_preference.age_pref_wt == UserSearchPreference::Weights::DONT_CARE
+    score = 0
+    if (self.caste == match.caste)
+      if (self.subcaste == match.subcaste)
+        score += 1
+      else
+        score += 0.5
+      end
+    else
+      score += 0
+    end
+    score *= search_preference.caste_pref_wt
+    return score
+    # score = (match.id*5) % 7
   end
 
   def height_score(match)
@@ -54,6 +69,19 @@ private
   end
 
   def age_score(match)
-    0
+    return 0 if match.birthday.nil?
+    return 0 if search_preference.age_pref_wt == UserSearchPreference::Weights::DONT_CARE
+    min_age = search_preference.age_pref_min
+    max_age = search_preference.age_pref_max
+    actual_age = (Time.now.year - match.birthday.year)
+    score = 1
+    if actual_age >= max_age || actual_age <= min_age
+      diffs = [(max_age - actual_age).abs, (min_age - actual_age).abs].sort
+      score -= (1.0*diffs[0]/diffs[1])  
+    end
+
+    score *= search_preference.age_pref_wt
+
+    return score
   end
 end
