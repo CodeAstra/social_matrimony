@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150904070143) do
+ActiveRecord::Schema.define(version: 20150904203546) do
 
   create_table "candidates", force: :cascade do |t|
     t.string   "name"
@@ -51,6 +51,21 @@ ActiveRecord::Schema.define(version: 20150904070143) do
   end
 
   add_index "candidates", ["user_id"], name: "index_candidates_on_user_id"
+
+  create_table "castes", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sub_castes", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "caste_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "sub_castes", ["caste_id"], name: "index_sub_castes_on_caste_id"
 
   create_table "user_search_preferences", force: :cascade do |t|
     t.integer  "caste_pref_wt",      default: 1

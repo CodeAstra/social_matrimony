@@ -38,14 +38,28 @@ def dot
 end
 
 puts "Populating Users"
-fb_test_users.each do |hsh|
-  User.find_or_create_by(uid: hsh[:uid]) do |usr|
-    usr.name = hsh[:name]
-    usr.auth_token = hsh[:auth_token]
-    usr.provider = "facebook"
-    usr.email = hsh[:email]
-  end
+# fb_test_users.each do |hsh|
+#   User.find_or_create_by(uid: hsh[:uid]) do |usr|
+#     usr.name = hsh[:name]
+#     usr.auth_token = hsh[:auth_token]
+#     usr.provider = "facebook"
+#     usr.email = hsh[:email]
+#   end
+#   dot
+# end
+puts ""
+
+puts "Populating Castes"
+castes_json = JSON.parse(File.read("#{Rails.root}/db/seed_data/castes.json"))
+castes_json.each do |caste_hash|
+  caste = Caste.find_or_create_by(name: caste_hash["title"])
   dot
+
+  caste_hash["subcastes"].each do |subcaste_hash|
+    SubCaste.find_or_create_by(caste_id: caste.id, name: subcaste_hash["title"])
+    dot
+  end
 end
+puts ""
 
 puts "Done"
