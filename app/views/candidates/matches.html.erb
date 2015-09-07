@@ -1,5 +1,7 @@
-<ul>
-  <% @matches.each do |match| %>
-    <%= render partial: "candidates/match", locals: {match: match} %>
-  <% end %>
-</ul>
+<div class="container-fluid">
+  <div class="row">
+    <% @matches.each do |match| %>
+      <%= render partial: "candidates/match", locals: {match: match} %>
+    <% end %>
+  </div>
+</div>

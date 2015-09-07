@@ -1,7 +1,10 @@
-<li>
-  <%= match.id %>
-  ==
-  <%= match.name %>
-  <%= link_to "Star", star_path, class: "btn btn-primary btn-sm" %>
-  <%= link_to "Ignore", '#', method: :patch, class: "btn btn-danger btn-sm" %>
-</li>
+<div class="col-sm-6 col-md-4">
+  <div class="thumbnail">
+    <!-- <img src="<%= current_user.image %>" alt="image" class = "img-responsive"> -->
+    <div class="caption">
+      <h3 class= "text-center"><%= match.name %></h3>
+      <p><%= link_to "Star", star_path, class: "btn btn-primary btn-sm" %>
+      <%= link_to "Ignore", ignore_path, class: "pull-right btn btn-danger btn-sm" %></p>
+    </div>
+  </div>
+</div>
