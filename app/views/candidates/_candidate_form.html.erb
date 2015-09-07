@@ -11,8 +11,8 @@
     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
       <div class="panel-body">
           <%= f.input :marital_status,:as => :radio_buttons,collection: Candidate::MARITAL_STATUS.all, label_method: :title, value_method: :code %>
-          <%= f.input :caste, wrapper: false, collection: Candidate::BODY_TYPE.all, label_method: :title, value_method: :code,include_blank: false %>
-          <%= f.input :subcaste, wrapper: false, collection: Candidate::BODY_TYPE.all, label_method: :title, value_method: :code,include_blank: false %>
+          <%= f.input :caste, wrapper: false, collection: Candidate::BODY_TYPE.all, label_method: :title, value_method: :code, include_blank: false %>
+          <%= f.input :subcaste, wrapper: false, collection: Candidate::BODY_TYPE.all, label_method: :title, value_method: :code, include_blank: false %>
           <%= f.input :gothram %>
           <%= f.input :height %>
           <%= f.input :weight %>

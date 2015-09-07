@@ -6,7 +6,7 @@ class CandidatesController < ApplicationController
     @save_success =  @candidate.update_attributes(personalinfo_params)
   end
 
-  def matches
+  def index
     @matches = current_candidate.matches
   end
 

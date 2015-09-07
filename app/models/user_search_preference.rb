@@ -11,6 +11,10 @@
 #  user_id            :integer
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
+#  age_pref_wt        :integer          default(1)
+#  age_pref_min       :integer
+#  age_pref_max       :integer
+#  complexion_pref    :integer          default(1)
 #
 
 class UserSearchPreference < ActiveRecord::Base
@@ -32,6 +36,24 @@ class UserSearchPreference < ActiveRecord::Base
         OpenStruct.new(code: DEAL_BREAKER, title: "It's a deal breaker")
       ]      
     end
+  end
+
+  module ComplexionSearch
+    FAIR = 1
+    WHEATISH = 2
+    DARK = 3
+
+    def self.all_codes
+      [FAIR, WHEATISH, DARK]
+    end
+
+    def self.all
+      [
+        OpenStruct.new(code: FAIR,      title: "Fair"),
+        OpenStruct.new(code: WHEATISH,  title: "Wheatish"),
+        OpenStruct.new(code: DARK,      title: "Dark")
+      ]      
+    end
   end  
 
   belongs_to :user
@@ -40,9 +62,8 @@ class UserSearchPreference < ActiveRecord::Base
   validates :height_pref_wt,     presence: true, numericality: true, inclusion: Weights.all_codes
   validates :complexion_pref_wt, presence: true, numericality: true, inclusion: Weights.all_codes
   validates :age_pref_wt,        presence: true, numericality: true, inclusion: Weights.all_codes
-  # validates :height_pref_min,    presence: true, numericality: true, if: :height_preferred?
-  # validates :height_pref_max,    presence: true, numericality: true, if: :height_preferred?
-
+  validates :complexion_pref,    presence: true, numericality: true, inclusion: ComplexionSearch.all_codes
+  
   def height_preferred?
     self.height_pref_wt != Weights::DONT_CARE
   end

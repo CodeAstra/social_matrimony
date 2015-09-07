@@ -30,7 +30,6 @@ private
 
   def caste_score(match)
     return 0 if match.caste.nil?
-    return 0 if match.subcaste.nil?
     return 0 if search_preference.age_pref_wt == UserSearchPreference::Weights::DONT_CARE
     score = 0
     if (self.caste == match.caste)
@@ -67,7 +66,7 @@ private
     return 0 if match.complexion.nil?
     return 0 if search_preference.age_pref_wt == UserSearchPreference::Weights::DONT_CARE    
     score = 0
-    if (self.complexion == match.complexion)
+    if (search_preference.complexion_pref == match.complexion)
       score += 1
     else
       score += 0.5

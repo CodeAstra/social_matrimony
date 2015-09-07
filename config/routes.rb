@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'matches' => 'candidates#matches'
+  get 'matches' => 'candidates#index'
   resources :candidates do
     member do
       post 'star'

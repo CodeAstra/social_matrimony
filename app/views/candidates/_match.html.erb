@@ -1,15 +1,13 @@
 <div id="<%= dom_id(match) %>" class="col-sm-6 col-md-4">
   <div class="thumbnail">
-    <!-- <img src="<%= current_user.image %>" alt="image" class = "img-responsive"> -->
     <div class="caption">
       <h3 class= "text-center"><%= match.name %></h3>
       <p>
         <% if current_user.starred?(match) %>
           <%= link_to "Unstar", unstar_candidate_path(match), method: :delete, remote: true, class: "btn btn-primary btn-sm" %>
-      <% else %>
+        <% else %>
           <%= link_to "Star", star_candidate_path(match), method: :post, remote: true, class: "btn btn-primary btn-sm" %>
         <% end %>
-        <%#= link_to "Ignore", ignore_path, class: "pull-right btn btn-danger btn-sm" %>
       </p>
     </div>
   </div>

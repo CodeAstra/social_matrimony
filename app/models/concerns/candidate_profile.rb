@@ -42,12 +42,12 @@ module CandidateProfile
   ])
   COMPLEXION = ProfileInfoValues.new([
     [:fair,     1, "Fair"],
-    [:wheatish, 2, "wheatish"],
+    [:wheatish, 2, "Wheatish"],
     [:dark,     3, "Dark"]
   ])
   PHYSICAL_STATUS = ProfileInfoValues.new([
     [:physical_disability, 1, "Physical Disability"],
-    [:normal,              2, "normal"]
+    [:normal,              2, "Normal"]
   ])
   DOSHAM = ProfileInfoValues.new([
     [:yes,  true, "Yes"],
