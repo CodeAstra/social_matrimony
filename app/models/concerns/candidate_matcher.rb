@@ -25,12 +25,12 @@ private
   end
 
   def search_preference
-    self.user.user_search_preference
+    @search_preference ||= self.user.user_search_preference
   end
 
   def caste_score(match)
     return 0 if match.caste.nil?
-    return 0 if search_preference.age_pref_wt == UserSearchPreference::Weights::DONT_CARE
+    return 0 if search_preference.caste_pref_wt == UserSearchPreference::Weights::DONT_CARE
     score = 0
     if (self.caste == match.caste)
       if (self.subcaste == match.subcaste)
@@ -38,8 +38,6 @@ private
       else
         score += 0.5
       end
-    else
-      score += 0
     end
     score *= search_preference.caste_pref_wt
     return score
@@ -48,8 +46,8 @@ private
   def height_score(match)
     return 0 if match.height.nil?
     return 0 if search_preference.height_pref_wt == UserSearchPreference::Weights::DONT_CARE
-    min_height = search_preference.height_pref_min
-    max_height = search_preference.height_pref_max
+    min_height = search_preference.height_pref_min || -1
+    max_height = search_preference.height_pref_max || 215
     actual_height = match.height
     score = 1
     if actual_height >= max_height || actual_height <= min_height
@@ -64,13 +62,12 @@ private
 
   def complexion_score(match)
     return 0 if match.complexion.nil?
-    return 0 if search_preference.age_pref_wt == UserSearchPreference::Weights::DONT_CARE    
-    score = 0
-    if (search_preference.complexion_pref == match.complexion)
-      score += 1
-    else
-      score += 0.5
-    end
+    return 0 if search_preference.complexion_pref_wt == UserSearchPreference::Weights::DONT_CARE    
+    score = 1
+    score -= (((match.complexion - search_preference.complexion_pref).abs)/(Candidate::COMPLEXION.all_codes.last - Candidate::COMPLEXION.all_codes.first))
+
+    score *= search_preference.complexion_pref_wt
+    return score
   end
 
   def age_score(match)
@@ -78,7 +75,7 @@ private
     return 0 if search_preference.age_pref_wt == UserSearchPreference::Weights::DONT_CARE
     min_age = search_preference.age_pref_min
     max_age = search_preference.age_pref_max
-    actual_age = (Time.now.year - match.birthday.year)
+    actual_age = match.age_in_years
     score = 1
     if actual_age >= max_age || actual_age <= min_age
       diffs = [(max_age - actual_age).abs, (min_age - actual_age).abs].sort

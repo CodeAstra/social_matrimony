@@ -26,7 +26,7 @@ module CandidateProfile
   end
 
   GENDER = ProfileInfoValues.new([
-    [:male, 1, "Male"],
+    [:male,   1, "Male"],
     [:female, 2, "Female"]
   ])
 
@@ -41,9 +41,11 @@ module CandidateProfile
     [:heavy,    3, "Heavy"]
   ])
   COMPLEXION = ProfileInfoValues.new([
-    [:fair,     1, "Fair"],
-    [:wheatish, 2, "Wheatish"],
-    [:dark,     3, "Dark"]
+    [:very_fair,      1, "Very Fair"],
+    [:fair,           2, "Fair"],
+    [:wheatish,       3, "Wheatish"],
+    [:wheatish_brown, 4, "Wheatish Brown"],
+    [:dark,           5, "Dark"]
   ])
   PHYSICAL_STATUS = ProfileInfoValues.new([
     [:physical_disability, 1, "Physical Disability"],

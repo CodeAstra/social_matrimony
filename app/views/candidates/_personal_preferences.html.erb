@@ -15,7 +15,7 @@
       <tr>
         <td>
           <b>Age</b><br>
-          How important is that the Age matches your preferred range?
+          How important is that the age matches your preferred range?
         </td>
         <td>
           <%= f.input :age_pref_wt, label: false, wrapper: false, collection: UserSearchPreference::Weights.all, value_method: :code, label_method: :title, include_blank: false %>
@@ -56,11 +56,11 @@
           How important is that the complexion matches your preferred complexion?
         </td>
         <td>
-          <%= f.input :complexion_pref, label: false, wrapper: false, collection: UserSearchPreference::ComplexionSearch.all, value_method: :code, label_method: :title, include_blank: false %>
+          <%= f.input :complexion_pref, label: false, wrapper: false, collection: Candidate::COMPLEXION.all, label_method: :title, value_method: :code, include_blank: false %>
           <%= f.input :complexion_pref_wt, label: false, wrapper: false, collection: UserSearchPreference::Weights.all, value_method: :code, label_method: :title, include_blank: false %>
         </td>
       </tr>
     </table>
-    <%= f.submit "Save and Search", class: "btn btn-primary save" %>
+    <%= f.submit "Save", class: "btn btn-primary save" %>
   <% end %>
 </div> 

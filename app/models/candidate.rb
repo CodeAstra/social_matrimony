@@ -64,6 +64,10 @@ class Candidate < ActiveRecord::Base
     self.save!
   end
 
+  def age_in_years
+    ((Time.now - self.birthday.to_time)/(365*86400)).to_i
+  end
+
 private
   def education_from_dump_data
     fb_data = Marshal.load(self.dump_fb_data)

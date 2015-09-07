@@ -38,31 +38,13 @@ class UserSearchPreference < ActiveRecord::Base
     end
   end
 
-  module ComplexionSearch
-    FAIR = 1
-    WHEATISH = 2
-    DARK = 3
-
-    def self.all_codes
-      [FAIR, WHEATISH, DARK]
-    end
-
-    def self.all
-      [
-        OpenStruct.new(code: FAIR,      title: "Fair"),
-        OpenStruct.new(code: WHEATISH,  title: "Wheatish"),
-        OpenStruct.new(code: DARK,      title: "Dark")
-      ]      
-    end
-  end  
-
   belongs_to :user
 
   validates :caste_pref_wt,      presence: true, numericality: true, inclusion: Weights.all_codes
   validates :height_pref_wt,     presence: true, numericality: true, inclusion: Weights.all_codes
   validates :complexion_pref_wt, presence: true, numericality: true, inclusion: Weights.all_codes
   validates :age_pref_wt,        presence: true, numericality: true, inclusion: Weights.all_codes
-  validates :complexion_pref,    presence: true, numericality: true, inclusion: ComplexionSearch.all_codes
+  validates :complexion_pref,    presence: true, numericality: true, inclusion: Candidate::COMPLEXION.all_codes
   
   def height_preferred?
     self.height_pref_wt != Weights::DONT_CARE

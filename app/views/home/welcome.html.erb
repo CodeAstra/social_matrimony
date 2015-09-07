@@ -26,7 +26,7 @@
           <img src="<%= current_candidate.image %>" alt="image">
         </div>
         <dt>Age</dt>
-        <dd><%= Time.now.year - current_candidate.birthday.year%> years old </dd>
+        <dd><%= current_candidate.age_in_years%> years old </dd>
         <dt><%= fa_icon("calendar", class: "icon") %>Birthday</dt>
         <dd><%= current_candidate.birthday %></dd>
         <dt><%= fa_icon("home", class: "icon") %>Hometown</dt>
