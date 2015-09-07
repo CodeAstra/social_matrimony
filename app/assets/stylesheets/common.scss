@@ -1,5 +1,9 @@
 header{
   text-align: right;
+  .main_logo{
+    text-decoration: none;
+    color: $font-head-color;
+  }
   h2{
     font-family: $font-head;
     color: $font-head-color;

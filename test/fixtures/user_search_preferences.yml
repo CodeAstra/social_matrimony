@@ -11,6 +11,10 @@
 #  user_id            :integer
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
+#  age_pref_wt        :integer          default(1)
+#  age_pref_min       :integer
+#  age_pref_max       :integer
+#  complexion_pref    :integer          default(1)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

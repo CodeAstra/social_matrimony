@@ -1,9 +1,9 @@
 <header>
 <div class="navbar navbar-default">
-  <h2>Social Matrimony</h2>
+  <h2><%= link_to "Social Matrimony",  root_path, class: "main_logo" %></h2>
   <span class="caption">Connecting two different lives</span>
   <% if user_signed_in? %>
-    <span class="log">Logged in as <strong><%= current_user.name %></strong> </span>
+    <span class="log">As <strong><%= current_user.name %><img src="<%= current_user.image %>" alt="<%= current_user.name %>" class = "img-circle"></strong> </span>
     <%= link_to fa_icon("power-off"), destroy_user_session_path, method: :delete, 
     class: "power" %>
     <% end %>
