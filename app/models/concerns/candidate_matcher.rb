@@ -44,7 +44,6 @@ private
     end
     score *= search_preference.caste_pref_wt
     return score
-    # score = (match.id*5) % 7
   end
 
   def height_score(match)
@@ -65,7 +64,13 @@ private
   end
 
   def complexion_score(match)
-    0
+    return 0 if match.complexion.nil?
+    return 0 if search_preference.age_pref_wt == UserSearchPreference::Weights::DONT_CARE    
+    if (self.complexion == match.complexion)
+      score += 1
+    else
+      score += 0.5
+    end
   end
 
   def age_score(match)
