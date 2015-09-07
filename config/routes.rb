@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'star' => 'candidates#star'
   get 'matches' => 'candidates#matches'
   resources :candidates
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }

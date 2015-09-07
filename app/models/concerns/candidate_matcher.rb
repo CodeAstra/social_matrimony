@@ -66,6 +66,7 @@ private
   def complexion_score(match)
     return 0 if match.complexion.nil?
     return 0 if search_preference.age_pref_wt == UserSearchPreference::Weights::DONT_CARE    
+    score = 0
     if (self.complexion == match.complexion)
       score += 1
     else

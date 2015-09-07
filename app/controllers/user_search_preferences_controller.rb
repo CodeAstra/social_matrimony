@@ -2,7 +2,7 @@ class UserSearchPreferencesController < ApplicationController
   def update
     @user_search_preference = current_user.user_search_preference
     @user_search_preference.update_attributes(preference_params)
-    redirect_to root_path
+    redirect_to matches_path
   end
   
 private

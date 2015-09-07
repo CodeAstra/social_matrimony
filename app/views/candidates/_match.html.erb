@@ -1,5 +1,7 @@
 <li>
   <%= match.id %>
-  ====
+  ==
   <%= match.name %>
+  <%= link_to "Star", star_path, class: "btn btn-primary btn-sm" %>
+  <%= link_to "Ignore", '#', method: :patch, class: "btn btn-danger btn-sm" %>
 </li>
