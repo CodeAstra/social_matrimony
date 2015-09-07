@@ -1,4 +1,5 @@
 class CandidatesController < ApplicationController
+  before_action :fetch_candidate, only: [:star, :unstar]
 
   def update
     @candidate = current_candidate
@@ -9,11 +10,25 @@ class CandidatesController < ApplicationController
     @matches = current_candidate.matches
   end
 
+  def star
+    current_user.star_candidate(@candidate)
+    render :reload
+  end
+
+  def unstar
+    current_user.unstar_candidate(@candidate)
+    render :reload
+  end
+
 private
   def personalinfo_params
     params.require(:candidate).permit(:marital_status,:caste,:subcaste,:gothram,:height,:weight,
                                       :body_type,:complexion,:physical_status,:salary,:food_habits,
                                       :smoking,:drinking,:dosham,:star,:rashi,:family_type,
                                       :family_values,:family_status) 
+  end
+
+  def fetch_candidate
+    @candidate = Candidate.find(params[:id])
   end
 end
