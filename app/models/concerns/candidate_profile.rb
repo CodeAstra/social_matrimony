@@ -25,11 +25,17 @@ module CandidateProfile
     end
   end
 
+  GENDER = ProfileInfoValues.new([
+    [:male,   1, "Male"],
+    [:female, 2, "Female"]
+  ])
+
   MARITAL_STATUS =  ProfileInfoValues.new([
     [:never_married, 1, "Never Married"],
     [:divorced,      2, "Divorced"],
     [:widower,       3, "Widower"]
   ])
+
   MOTHER_TONGUE = ProfileInfoValues.new([
     [:angika ,       1,  "Angika " ],
     [:arunachali,    2,  "Arunachali" ],
@@ -85,6 +91,7 @@ module CandidateProfile
     [:tulu,         52,  "Tulu" ],
     [:urdu,         53,  "Urdu" ]
   ])
+
   RELIGION = ProfileInfoValues.new([
     [:hindu ,               1,  "Hindu " ],
     [:muslim_shia,          2,  "Muslim - Shia" ],
@@ -103,24 +110,31 @@ module CandidateProfile
     [:inter_religion,      15,  "Inter-Religion"],
     [:no_religious_belief, 16,  "No Religious Belief" ]
   ])
+
   BODY_TYPE = ProfileInfoValues.new([
     [:slim,     1, "Slim"],
     [:athletic, 2, "Athletic"],
     [:heavy,    3, "Heavy"]
   ])
+
   COMPLEXION = ProfileInfoValues.new([
-    [:fair,     1, "Fair"],
-    [:wheatish, 2, "wheatish"],
-    [:dark,     3, "Dark"]
+    [:very_fair,      1, "Very Fair"],
+    [:fair,           2, "Fair"],
+    [:wheatish,       3, "Wheatish"],
+    [:wheatish_brown, 4, "Wheatish Brown"],
+    [:dark,           5, "Dark"]
   ])
+
   PHYSICAL_STATUS = ProfileInfoValues.new([
     [:physical_disability, 1, "Physical Disability"],
-    [:normal,              2, "normal"]
+    [:normal,              2, "Normal"]
   ])
+
   DOSHAM = ProfileInfoValues.new([
     [:yes,  true, "Yes"],
     [:no,   false, "No"]
   ])
+
   STAR = ProfileInfoValues.new([
     [:ashwini ,          1,  "Ashwini " ],
     [:bharani,           2,  "Bharani" ],
@@ -150,6 +164,7 @@ module CandidateProfile
     [:uttaraBhadrapada, 26,  "UttaraBhadrapada" ],
     [:revati,           27,  "Revati"]
   ])
+
   RASHI = ProfileInfoValues.new([
     [:aries,        1,  "Aries" ],
     [:taurus,       2,  "Taurus" ],
@@ -164,31 +179,37 @@ module CandidateProfile
     [:aquarius,    11,  "Aquarius" ],
     [:pisces,      12,  "Pisces" ],
   ])
+
   FOOD_HABITS = ProfileInfoValues.new([
     [:vegan,          1, "Vegan"],
     [:Vegetarian,     2, "Vegetarian"],
     [:non_vegetarian, 3, "Non Vegetarian"]
   ])
+
   SMOKING = ProfileInfoValues.new([
     [:yes,          1, "Yes"],
     [:no,           2, "No"],
     [:ocassionally, 3, "Ocassionally"]
   ])
+
   DRINKING = ProfileInfoValues.new([
     [:yes,          1, "Yes"],
     [:no,           2, "No"],
     [:ocassionally, 3, "Ocassionally"]
   ])
+
   FAMILY_TYPE = ProfileInfoValues.new([
     [:joint,    1, "Joint"],
     [:nuclear,  2, "Nuclear"]
   ])
+
   FAMILY_VALUES = ProfileInfoValues.new([
     [:orthodox,    1, "Orthodox"],
     [:traditional, 2, "Traditional"],
     [:moderate,    3, "Moderate"],
     [:liberal,     4, "Liberal"]
   ])
+
   FAMILY_STATUS = ProfileInfoValues.new([
     [:middle_class,       1, "Middle Class"],
     [:upper_middle_class, 2, "Upper Middle Class"],
@@ -217,3 +238,4 @@ module CandidateProfile
   end
 
 end
+

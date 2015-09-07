@@ -11,6 +11,10 @@
 #  user_id            :integer
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
+#  age_pref_wt        :integer          default(1)
+#  age_pref_min       :integer
+#  age_pref_max       :integer
+#  complexion_pref    :integer          default(1)
 #
 
 class UserSearchPreference < ActiveRecord::Base
@@ -32,16 +36,16 @@ class UserSearchPreference < ActiveRecord::Base
         OpenStruct.new(code: DEAL_BREAKER, title: "It's a deal breaker")
       ]      
     end
-  end  
+  end
 
   belongs_to :user
 
   validates :caste_pref_wt,      presence: true, numericality: true, inclusion: Weights.all_codes
   validates :height_pref_wt,     presence: true, numericality: true, inclusion: Weights.all_codes
   validates :complexion_pref_wt, presence: true, numericality: true, inclusion: Weights.all_codes
-  # validates :height_pref_min,    presence: true, numericality: true, if: :height_preferred?
-  # validates :height_pref_max,    presence: true, numericality: true, if: :height_preferred?
-
+  validates :age_pref_wt,        presence: true, numericality: true, inclusion: Weights.all_codes
+  validates :complexion_pref,    presence: true, numericality: true, inclusion: Candidate::COMPLEXION.all_codes
+  
   def height_preferred?
     self.height_pref_wt != Weights::DONT_CARE
   end

@@ -15,9 +15,10 @@
 #  provider            :string
 #  uid                 :string
 #  name                :string
-#  image               :string
 #  auth_token          :string
 #  auth_expires_at     :datetime
+#  image               :string
+#  star_ids            :string           default("")
 #
 
 require 'test_helper'

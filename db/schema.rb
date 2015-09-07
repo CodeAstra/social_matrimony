@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150904203546) do
+ActiveRecord::Schema.define(version: 20150907233524) do
 
   create_table "candidates", force: :cascade do |t|
     t.string   "name"
@@ -76,6 +76,10 @@ ActiveRecord::Schema.define(version: 20150904203546) do
     t.integer  "user_id"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+    t.integer  "age_pref_wt",        default: 1
+    t.integer  "age_pref_min"
+    t.integer  "age_pref_max"
+    t.integer  "complexion_pref",    default: 1
   end
 
   add_index "user_search_preferences", ["user_id"], name: "index_user_search_preferences_on_user_id"
@@ -83,19 +87,20 @@ ActiveRecord::Schema.define(version: 20150904203546) do
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",       default: 0, null: false
+    t.integer  "sign_in_count",       default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
     t.string   "auth_token"
     t.datetime "auth_expires_at"
     t.string   "image"
+    t.string   "star_ids",            default: ""
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
