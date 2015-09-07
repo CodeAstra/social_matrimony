@@ -35,4 +35,4 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'koala'
 gem 'simple_form'
-
+gem 'wow-rails'

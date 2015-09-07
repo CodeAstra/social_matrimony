@@ -4,3 +4,4 @@
 $ ->
   $('.next_tab_trigger').click ->
     $(@.dataset.target).tab('show')
+   

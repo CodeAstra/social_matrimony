@@ -1,22 +1,22 @@
-// Land page
+// Land page //
+
 #land{
   width: 100%;
-  min-height: 100vh;
+  min-height: 92vh;
   overflow: hidden;
   font-family: $font-stack;
   color: white;
   background-size: cover;
-  position: relative;
   background-image: image-url('Home.jpg');
   .login{
-    height: 60vh; 
+    height: 55vh; 
     h1{
       text-align: center;
     }
   }
 
   .description{
-    top: 5vh;
+    top: 7vh;
   }
 
   .people{
@@ -40,25 +40,24 @@
       top:17vh;
     }
   }
-
   .fb{
-    top: 25vh;
-    left: 17vh;
-    a{
-      font-size: 2em;
-      border: 1px solid $dark-fb-color;
-      padding: 3px 35px 2px 35px;
-      background-color: $dark-fb-color;
-      text-decoration: none;
-      color: white;
-
-      &:hover {
-        background-color: $lighter-fb-color;
-      }
-    }
+    margin-top: 7vh;
   }
-  footer{
-    position: relative;
+
+  @media only screen and (max-width: 767px) {
+   
+    iframe{
+      visibility: hidden;
+    }
+    .information p{
+      font-size: 12px;
+    }
+    .people .parent{
+      margin-top: -180px;
+    }
+    .people .bride{
+      margin-top: 100px;
+    }
   }
 }
 
@@ -73,32 +72,18 @@
   width:90vw;
   font-family: $font-stack;
   position: relative;
-  height: 110vh;
-  .nav-tabs{
-    margin-left: 10vw;
-    margin-right: 10vw;
-    .basic-info{
+  height: 90vh;
+  .nav{
+    li a{
       font-size: 1.2em;
-    }
-    .professional-info{
-      font-size: 1.2em;
-      margin-left: 5vw;
-    }
-    .personal-info{
-      font-size: 1.2em;
-      margin-left: 5vw;
-    }
-    .partner-pref{
-      font-size: 1.2em;
-      margin-left: 5vw;
     }
   }
 
   #basic-info{
-    margin-top: 5vh;
+   
     dt{
       margin-left: 10vw;
-      font-size: 1.2em;
+      font-size: 1.1em;
       padding-top: 30px;
       color: $dark-fb-color;
       .icon{
@@ -111,7 +96,7 @@
     }
     dd{
       margin-left: 30vw;
-      font-size: 1.2em;
+      font-size: 1.0em;
       padding-top: 28px;
       &.name-fb{
         margin-top: 60px;
@@ -126,23 +111,38 @@
       text-decoration: none;
       border: 0.5px solid $lighter-fb-color;
       background-color: $lighter-fb-color;
-      padding: 7px;
+      padding: 3px;
       color: #fff;
       .next{
         display: inline-block;
         padding-left: 9px;
       }
     }
+
+    @media only screen and (max-width: 767px) {
+      height:180vh;
+      dd{
+        margin: 0;
+        margin-left: 118px;
+        margin-top: -45px;
+          &.name-fb{
+          margin-top: 0px;
+        }
+      }
+      dt{
+        margin: 0;
+      }
+    }
   }
   
   #prof-info{
-    margin-top: 10vh;
+    height: 80vh;
     dt{
-      margin-left: 10vw;
-      font-size: 1.2em;
+      margin-left: 0vw;
+      font-size: 1.1em;
       padding-top: 30px;
       &.edu{
-        margin-top: 10vh;
+        margin-top: 5vh;
       }
       &.prof{
         margin-top: 5vh;
@@ -150,9 +150,8 @@
       
     }
     dd{
-      margin-left: 30vw;
-      font-size: 1.2em;
-      padding-top: 20px;
+      margin-left: 20vw;
+      font-size: 1.0em;
        &.edu-fb{
         .school{
           margin-top: 10vh;
@@ -167,12 +166,14 @@
 
       }
       &.prof-fb{
-        margin-top: 5vh;
+        margin-top: 10vh;
       }
     }
-    .previous a{
+    .previous {
+      margin-top: 10em;      
+    a{
       text-decoration: none;
-      font-size: 1.5em;
+      font-size: 1.3em;
       margin-left: 5vw;
       .double-left{
         padding: 5px;
@@ -182,12 +183,13 @@
     .next a{
       float: right;
       text-decoration: none;
-      font-size: 1.5em;
+      font-size: 1.3em;
       .double-right{
         padding: 5px;
         display: inline-block;
       }
     }
+   }
   }
 
   #personal-info{
@@ -196,22 +198,41 @@
         margin-top: 5em;
     }
     .next a{
+      position: fixed;
+      bottom:50;
       float: right;
       margin-left: 60vw;
       font-size: 1.5em;
       text-decoration: none;
-      margin-top: -30px;
     }
-    .previous a{
-      font-size: 1.5em;
-      text-decoration: none;
-      margin-top: 10vh;
-      margin-left: 5vw;
+    .previous{
+      position: relative;
+      bottom:50px;
+        margin-top: 68px;
+      a{
+        font-size: 1.5em;
+        text-decoration: none;
+        margin-left: 5vw;
+      }
     }
     .double-left, .double-right{
       display: inline-block;
       padding: 5px;
     }
+    .save{
+      float: right;
+    }
+   .collapsed{
+     text-decoration: none;
+     color:black;
+   }
+   a{
+     text-decoration: none;
+   }
+   #headingOne , #headingTwo , #headingThree{
+     background-color: $nav-one-bg-color;
+     color: #fff;
+   }
   }
 
   #partner-pref{
@@ -220,24 +241,16 @@
     }
     .save{
       float: right;
-    }
-    .next a{
-      float: right;
-      margin-left: 60vw;
-      font-size: 1.5em;
-      text-decoration: none;
-      margin-top: 0px;
+      margin-top: 5em;
     }
     .previous {
-     margin-top: 100px;
-
       a{
         border: 0.5px solid $dark-fb-color;
         font-size: 1.5em;
         text-decoration: none;
         margin-bottom: 10px;
         margin-left: 5vw;
-        padding: 7px;
+        padding: 3px;
         color : #fff;
         background-color: $lighter-fb-color;
       }
@@ -248,4 +261,7 @@
     }
   }
 }
+
+
+
 

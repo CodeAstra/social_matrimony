@@ -56,7 +56,6 @@ class Candidate < ActiveRecord::Base
     self.birthday = Date.strptime(fb_data["birthday"],"%m/%d/%Y") if fb_data["birthday"]
     self.work = work_from_dump_data
     self.education = education_from_dump_data
-    debugger
     self.save!
   end
 

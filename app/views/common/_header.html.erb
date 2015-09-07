@@ -3,9 +3,12 @@
   <h2>Social Matrimony</h2>
   <span class="caption">Connecting two different lives</span>
   <% if user_signed_in? %>
-    <span class="log">Logged in as <strong><%= current_user.name %></strong> </span>
+    <span class="log">Logged in as <strong><%= current_user.name %></strong><img src="<%= current_user.image %>" alt="image"> </span>
     <%= link_to fa_icon("power-off"), destroy_user_session_path, method: :delete, 
     class: "power" %>
+    <% else  %>
+    <span class="fb">
+    <%= link_to fa_icon("facebook", text: "Login"), user_omniauth_authorize_path(:facebook), class: "btn btn-default btn-lg", id: "land-login-link" %></span>
     <% end %>
 </div>
 </header>

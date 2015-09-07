@@ -40,7 +40,7 @@ class User < ActiveRecord::Base
       user.auth_token = auth.credentials.token
       user.auth_expires_at = Time.at(auth.credentials.expires_at)
       user.name = auth.info.name   # assuming the user model has a name
-      user.image = auth.info.image # assuming the user model has an image
+      user.image = auth.info.picture # assuming the user model has an image
     end
   end
 
@@ -65,3 +65,4 @@ private
     self.candidate.populate!
   end
 end
+

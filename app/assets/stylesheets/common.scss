@@ -1,3 +1,5 @@
+// header // 
+
 header{
   text-align: right;
   h2{
@@ -5,20 +7,24 @@ header{
     color: $font-head-color;
     float: left;
     margin-left: 30px;
-    font-size: 3em;
+    font-size: 2.4em;
     margin-top: 0;
+    font-weight: 700;
+    font-style: italic;
   }
   .caption{
     float: left;
     font-family: $font-head;
     margin-top: 5vh;
     color: $caption-head-color;
-    font-size: 1.5em;
+    font-size: 1em;
   }
   .navbar{
     background-color: $navbar-bg-color;
     margin-bottom: 0px;
     border: 0;
+    -webkit-border-radius: 0;
+            border-radius: 0;
   }
   .power{
     border: 0.5px solid $dark-fb-color;
@@ -34,7 +40,43 @@ header{
   }
   .log{
     font-size: 1em;
+    img{
+      -webkit-border-radius: 50%;
+              border-radius: 50%;
+    }
   }
+  .fb{
+    margin-right: 30px;
+    a{
+    margin-top: 6px;
+      font-size: 2em;
+      text-decoration: none;
+      background-color: $navbar-bg-color;
+      padding: 3px 20px 2px 19px;
+      color: $dark-fb-color;
+
+      &:hover {
+        border: 1.5px solid $dark-fb-color;
+        color: $lighter-fb-color;
+        background-color: #FFF;
+      }
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    h2{
+      font-size: 1.4em;
+      margin-top: 20px;
+    }
+    .caption{
+      visibility: hidden;
+    }
+    .fb{
+      a{
+      margin-top: 50px;
+        font-size: 1.3em;
+      }
+    }
+   }
 }
 
 
@@ -42,11 +84,12 @@ header{
 // footer
 
 footer{
-  color: black;
-  position: fixed;
-  bottom : 0;
+  color: white;
+  position: absolute;
+  bottom: 0;
   left: 0;
   right: 0;
+  height: 40px;
   background-color: $footer-bg-color;
   opacity: 0.8;
   .follow{
@@ -64,6 +107,7 @@ footer{
   }
   .icon1{
     float:right;
+    display: block;
     font-size: 2em;
     margin-right: 2vw;
     padding-left: 10px;
@@ -71,5 +115,17 @@ footer{
   .icon2{
     float:right;
     font-size: 2em;
+  }
+
+  @media only screen and (max-width: 767px) {
+    p{
+      text-align: center;
+    }
+    .follow{
+      visibility: hidden;
+    }
+    .icon1 .icon2{
+      padding: 0;
+    }
   }
 }
