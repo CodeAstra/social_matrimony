@@ -2,7 +2,7 @@ class AddPersonalinfoToCandidates < ActiveRecord::Migration
   def change
     add_column :candidates, :marital_status, :integer
     add_column :candidates, :caste,          :integer
-    add_column :candidates, :subcaste,       :integer
+    add_column :candidates, :sub_caste,      :integer
     add_column :candidates, :gothram,        :string
     add_column :candidates, :height,         :integer
     add_column :candidates, :weight,         :integer

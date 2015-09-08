@@ -1,0 +1,6 @@
+<% if @sub_castes.any? %>
+  $('#sub_castes_input_container').show();
+  $('#candidate_sub_caste_input').html("<%= j sub_castes_options_tag(@sub_castes) %>");
+<% else %>
+  $('#sub_castes_input_container').hide();
+<% end %>
