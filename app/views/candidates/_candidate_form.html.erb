@@ -11,15 +11,21 @@
     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
       <div class="panel-body">
           <%= f.input :marital_status,:as => :radio_buttons,collection: Candidate::MARITAL_STATUS.all, label_method: :title, value_method: :code %>
-          <%= f.input :caste, wrapper: false, collection: Candidate::BODY_TYPE.all, label_method: :title, value_method: :code, include_blank: false %>
-          <%= f.input :subcaste, wrapper: false, collection: Candidate::BODY_TYPE.all, label_method: :title, value_method: :code, include_blank: false %>
+          <%= f.input :mother_tongue, wrapper: false, collection: Candidate::MOTHER_TONGUE.all, label_method: :title, value_method: :code, include_blank: false %>
+          <%= f.input :religion, wrapper: false, collection: Candidate::RELIGION.all, label_method: :title, value_method: :code, include_blank: false %>
+          <%= f.input :caste, wrapper: false, collection: Caste.all,include_blank: false, input_html: {id: "candidate_caste_input"} %>
+
+          <div id="sub_castes_input_container" <% if @sub_castes.empty? %>styles="display:none"<% end %>>
+            <%= f.input :sub_caste, wrapper: false, collection: @sub_castes,include_blank: true, input_html: {id: "candidate_sub_caste_input"} %>
+          </div>
+
           <%= f.input :gothram %>
           <%= f.input :height %>
           <%= f.input :weight %>
           <%= f.input :body_type, :as => :radio_buttons, collection: Candidate::BODY_TYPE.all, label_method: :title, value_method: :code %>
           <%= f.input :complexion, :as => :radio_buttons,collection: Candidate::COMPLEXION.all, label_method: :title, value_method: :code %>
           <%= f.input :physical_status,:as => :radio_buttons, collection: Candidate::PHYSICAL_STATUS.all, label_method: :title, value_method: :code  %>
-          <%= f.input :salary%>
+          <%= f.input :salary, :label => "Salary (per annum)"%>
           <%= f.input :dosham,:as => :radio_buttons %>
           <%= f.input :star, wrapper: false, collection: Candidate::STAR.all, label_method: :title, value_method: :code, include_blank: false %>
           <%= f.input :rashi, wrapper: false, collection: Candidate::RASHI.all, label_method: :title, value_method: :code, include_blank: false %>

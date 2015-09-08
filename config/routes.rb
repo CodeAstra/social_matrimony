@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :candidates
+  resources :sub_castes
   get 'matches' => 'candidates#index'
   resources :candidates do
     member do
@@ -6,6 +9,7 @@ Rails.application.routes.draw do
       delete 'unstar'
     end
   end
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   devise_scope :user do
     delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150907210108) do
+ActiveRecord::Schema.define(version: 20150907233524) do
 
   create_table "candidates", force: :cascade do |t|
     t.string   "name"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20150907210108) do
     t.text     "work"
     t.integer  "marital_status"
     t.integer  "caste"
-    t.integer  "subcaste"
+    t.integer  "sub_caste"
     t.string   "gothram"
     t.integer  "height"
     t.integer  "weight"
@@ -46,9 +46,26 @@ ActiveRecord::Schema.define(version: 20150907210108) do
     t.integer  "family_type"
     t.integer  "family_values"
     t.integer  "family_status"
+    t.integer  "mother_tongue"
+    t.integer  "religion"
   end
 
   add_index "candidates", ["user_id"], name: "index_candidates_on_user_id"
+
+  create_table "castes", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sub_castes", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "caste_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "sub_castes", ["caste_id"], name: "index_sub_castes_on_caste_id"
 
   create_table "user_search_preferences", force: :cascade do |t|
     t.integer  "caste_pref_wt",      default: 1
@@ -62,7 +79,7 @@ ActiveRecord::Schema.define(version: 20150907210108) do
     t.integer  "age_pref_wt",        default: 1
     t.integer  "age_pref_min"
     t.integer  "age_pref_max"
-    t.integer  "complexion_pref",    default: 1
+    t.integer  "complexion_pref",    default: 2
   end
 
   add_index "user_search_preferences", ["user_id"], name: "index_user_search_preferences_on_user_id"
