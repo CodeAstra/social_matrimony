@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150821103100) do
+ActiveRecord::Schema.define(version: 20150907233524) do
 
   create_table "candidates", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "gender"
+    t.integer  "gender"
     t.date     "birthday"
     t.string   "hometown"
     t.string   "location"
@@ -29,26 +29,43 @@ ActiveRecord::Schema.define(version: 20150821103100) do
     t.text     "work"
     t.integer  "marital_status"
     t.integer  "caste"
-    t.integer  "subcaste"
+    t.integer  "sub_caste"
     t.string   "gothram"
-    t.string   "height"
-    t.string   "weight"
+    t.integer  "height"
+    t.integer  "weight"
     t.integer  "body_type"
     t.integer  "complexion"
     t.integer  "physical_status"
-    t.string   "salary"
+    t.integer  "salary"
+    t.integer  "dosham"
+    t.integer  "star"
+    t.integer  "rashi"
     t.integer  "food_habits"
     t.integer  "smoking"
     t.integer  "drinking"
-    t.integer  "dosham"
-    t.string   "star"
-    t.string   "rashi"
     t.integer  "family_type"
     t.integer  "family_values"
     t.integer  "family_status"
+    t.integer  "mother_tongue"
+    t.integer  "religion"
   end
 
   add_index "candidates", ["user_id"], name: "index_candidates_on_user_id"
+
+  create_table "castes", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sub_castes", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "caste_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "sub_castes", ["caste_id"], name: "index_sub_castes_on_caste_id"
 
   create_table "user_search_preferences", force: :cascade do |t|
     t.integer  "caste_pref_wt",      default: 1
@@ -59,6 +76,10 @@ ActiveRecord::Schema.define(version: 20150821103100) do
     t.integer  "user_id"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+    t.integer  "age_pref_wt",        default: 1
+    t.integer  "age_pref_min"
+    t.integer  "age_pref_max"
+    t.integer  "complexion_pref",    default: 2
   end
 
   add_index "user_search_preferences", ["user_id"], name: "index_user_search_preferences_on_user_id"
@@ -66,19 +87,20 @@ ActiveRecord::Schema.define(version: 20150821103100) do
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",       default: 0, null: false
+    t.integer  "sign_in_count",       default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
     t.string   "auth_token"
     t.datetime "auth_expires_at"
     t.string   "image"
+    t.string   "star_ids",            default: ""
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

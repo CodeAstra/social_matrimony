@@ -60,8 +60,8 @@ module CandidateProfileExtensions
     [:ocassionally, 2, "Ocassionally"]
   ])
   DOSHAM = ProfileInfoValues.new([
-    [:yes,  0, "Yes"],
-    [:no,   1, "No"]
+    [:yes,  true, "Yes"],
+    [:no,   false, "No"]
   ])
   FAMILY_TYPE = ProfileInfoValues.new([
     [:joint,    0, "Joint"],
@@ -87,8 +87,7 @@ module CandidateProfileExtensions
     validates :physical_status,numericality: true, inclusion: PHYSICAL_STATUS.all_codes,allow_nil: true
     validates :food_habits,    numericality: true, inclusion: FOOD_HABITS.all_codes,    allow_nil: true
     validates :smoking,        numericality: true, inclusion: SMOKING.all_codes,        allow_nil: true
-    validates :drinking,       numericality: true, inclusion: DRINKING.all_codes,       allow_nil: true
-    validates :dosham,         numericality: true, inclusion: DOSHAM.all_codes,         allow_nil: true
+    validates :drinking,       numericality: true, inclusion: DRINKING.all_codes,       allow_nil: true         
     validates :family_type,    numericality: true, inclusion: FAMILY_TYPE.all_codes,    allow_nil: true
     validates :family_values,  numericality: true, inclusion: FAMILY_VALUES.all_codes,  allow_nil: true
     validates :family_status,  numericality: true, inclusion: FAMILY_STATUS.all_codes,  allow_nil: true

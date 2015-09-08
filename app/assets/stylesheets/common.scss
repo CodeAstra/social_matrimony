@@ -1,7 +1,12 @@
 // header // 
 
-header{
+.head-top{
   text-align: right;
+  border-bottom: 1px solid black;
+  .main_logo{
+    text-decoration: none;
+    color: $font-head-color;
+  }
   h2{
     font-family: $font-head;
     color: $font-head-color;
@@ -20,11 +25,11 @@ header{
     font-size: 1em;
   }
   .navbar{
-    background-color: $navbar-bg-color;
-    margin-bottom: 0px;
-    border: 0;
+    background-color: transparent;
+    margin: 0;
     -webkit-border-radius: 0;
             border-radius: 0;
+    border: #353F42;
   }
   .power{
     border: 0.5px solid $dark-fb-color;
@@ -51,9 +56,9 @@ header{
     margin-top: 6px;
       font-size: 2em;
       text-decoration: none;
-      background-color: $navbar-bg-color;
+      background-color: transparent;
       padding: 3px 20px 2px 19px;
-      color: $dark-fb-color;
+      color: #fff;
 
       &:hover {
         border: 1.5px solid $dark-fb-color;
@@ -84,14 +89,15 @@ header{
 // footer
 
 footer{
-  color: white;
-  position: absolute;
+  color: $font-head-color;
+  position: relative;
   bottom: 0;
   left: 0;
   right: 0;
   height: 40px;
-  background-color: $footer-bg-color;
+  background-color: transparent;
   opacity: 0.8;
+  border-top: 1px solid black;
   .follow{
     float: right;
     font-family: $font-head;

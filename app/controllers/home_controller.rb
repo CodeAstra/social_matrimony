@@ -10,6 +10,11 @@ class HomeController < ApplicationController
   end
 
   def welcome
+    if current_candidate.caste
+      @sub_castes = current_candidate.caste.sub_castes.all
+    else
+      @sub_castes = []
+    end
   end
 
 end

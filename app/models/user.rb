@@ -15,12 +15,15 @@
 #  provider            :string
 #  uid                 :string
 #  name                :string
-#  image               :string
 #  auth_token          :string
 #  auth_expires_at     :datetime
+#  image               :string
+#  star_ids            :string           default("")
 #
 
 class User < ActiveRecord::Base
+  STAR_IDS_SEPARATOR = ","
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   # devise :database_authenticatable, :registerable,
@@ -59,10 +62,32 @@ class User < ActiveRecord::Base
     graph.get_object("me",fields: "about,address,birthday,education,email,gender,hometown,languages,location,name,religion,work")
   end
 
+  def star_candidate(cnd)
+    set_star_ids_array(get_star_ids_array.push(cnd.id).uniq)
+  end
+
+  def unstar_candidate(cnd)
+    arr = get_star_ids_array
+    arr.delete(cnd.id)
+    set_star_ids_array(arr)
+  end
+
+  def starred?(cnd)
+    get_star_ids_array.include?(cnd.id)
+  end
+
 private
   def populate_candidate
     self.create_candidate
     self.candidate.populate!
+  end
+
+  def get_star_ids_array
+    self.star_ids.split(STAR_IDS_SEPARATOR).collect!(&:to_i)
+  end
+
+  def set_star_ids_array(arr)
+    self.update_attribute(:star_ids, arr.join(STAR_IDS_SEPARATOR))
   end
 end
 

@@ -1,13 +1,14 @@
 // Land page //
 
+
 #land{
   width: 100%;
-  min-height: 92vh;
+  min-height: 100vh;
   overflow: hidden;
   font-family: $font-stack;
-  color: white;
-  background-size: cover;
   background-image: image-url('Home.jpg');
+  background-size: cover;
+  color: white;
   .login{
     height: 55vh; 
     h1{
@@ -34,6 +35,10 @@
     top: 10vh;
     #carousel-generic{
       color: #FFF;
+      img{
+        -webkit-border-radius: 50%;
+                border-radius: 50%;
+      }
     }
     .carousel-inner {
       overflow: visible;
@@ -69,13 +74,23 @@
 //welcome page//
 
 #welcome{
-  width:90vw;
+  width:100vw;
   font-family: $font-stack;
   position: relative;
-  height: 90vh;
+  height: 100vh;
+  background-color: #EEEEEE;
   .nav{
-    li a{
+    padding-top: 2vmin;
+    span {
+      padding-left: 5vw;
+    a{
       font-size: 1.2em;
+      padding-left: 5vw;
+      text-decoration: none;
+      &:hover{
+        color: #000;
+      }
+    }
     }
   }
 
@@ -109,10 +124,8 @@
       float: right;
       font-size: 1.5em;
       text-decoration: none;
-      border: 0.5px solid $lighter-fb-color;
-      background-color: $lighter-fb-color;
       padding: 3px;
-      color: #fff;
+      color: $lighter-fb-color;
       .next{
         display: inline-block;
         padding-left: 9px;
@@ -140,12 +153,12 @@
     dt{
       margin-left: 0vw;
       font-size: 1.1em;
-      padding-top: 30px;
+      // padding-top: 30px;
       &.edu{
-        margin-top: 5vh;
+        margin-top: 3vh;
       }
       &.prof{
-        margin-top: 5vh;
+        margin-top: 3vh;
       }
       
     }
@@ -170,10 +183,10 @@
       }
     }
     .previous {
-      margin-top: 10em;      
+      margin-top: 3em;      
     a{
       text-decoration: none;
-      font-size: 1.3em;
+      font-size: 1.5em;
       margin-left: 5vw;
       .double-left{
         padding: 5px;
@@ -183,7 +196,7 @@
     .next a{
       float: right;
       text-decoration: none;
-      font-size: 1.3em;
+      font-size: 1.5em;
       .double-right{
         padding: 5px;
         display: inline-block;

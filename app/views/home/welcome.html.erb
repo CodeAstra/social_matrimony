@@ -1,11 +1,14 @@
 <section id="welcome" class="container">
+  <%= render 'common/header' %>
   <!-- Nav tabs -->
-  <ul class="nav nav-pills nav-justified" role="tablist">
-    <li role="presentation" class="basic-info active"><a href="#basic-info" id="basic-info-tab" aria-controls="basic-info" role="tab" data-toggle="tab">Basic Info</a></li>
-    <li role="presentation" class="professional-info"><a href="#prof-info" id="prof-info-tab" aria-controls="prof-info" role="tab" data-toggle="tab">Professional Info</a></li>
-    <li role="presentation" class="personal-info"><a href="#personal-info" id="personal-info-tab" aria-controls="personal-info" role="tab" data-toggle="tab">Personal Details</a></li>
-    <li role="presentation" class="partner-pref"><a href="#partner-pref" id="partner-pref-tab" aria-controls="partner-pref" role="tab" data-toggle="tab">Partner Preferences</a></li>
-  </ul>
+  <nav class="navbar navbar-default">
+  <div class="nav" role="tablist">
+    <span role="presentation" class="basic-info active"><a href="#basic-info" id="basic-info-tab" aria-controls="basic-info" role="tab" data-toggle="tab">Basic Info</a></span>
+    <span role="presentation" class="professional-info"><a href="#prof-info" id="prof-info-tab" aria-controls="prof-info" role="tab" data-toggle="tab">Professional Info</a></span>
+    <span role="presentation" class="personal-info"><a href="#personal-info" id="personal-info-tab" aria-controls="personal-info" role="tab" data-toggle="tab">Personal Details</a></span>
+    <span role="presentation" class="partner-pref"><a href="#partner-pref" id="partner-pref-tab" aria-controls="partner-pref" role="tab" data-toggle="tab">Partner Preferences</a></span>
+  </div>
+  </nav>
 
     <!-- Tab panes -->
     <div class="tab-content">
@@ -53,6 +56,7 @@
         <% end %>
         <% prof_info = Marshal.load(current_candidate.work) %>
         <% if prof_info.try(:any?) %>
+        <hr>
         <dt class="prof">Profession Info</dt>
         <dd class="prof-fb"><% prof_info.each do |prof| %>
           <%= prof %>
@@ -90,4 +94,5 @@
     </a>
   </div>
 </div>
+<%= render 'common/footer' %>
 </section>
