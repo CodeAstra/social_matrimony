@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 20150907233524) do
     t.integer  "age_pref_wt",        default: 1
     t.integer  "age_pref_min"
     t.integer  "age_pref_max"
-    t.integer  "complexion_pref",    default: 1
+    t.integer  "complexion_pref",    default: 2
   end
 
   add_index "user_search_preferences", ["user_id"], name: "index_user_search_preferences_on_user_id"
