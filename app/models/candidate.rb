@@ -47,7 +47,7 @@ class Candidate < ActiveRecord::Base
   belongs_to :user
   belongs_to :caste
   belongs_to :sub_caste
-  
+
   def populate!
     fb_data = user.fb_profile
     self.dump_fb_data = Marshal.dump(fb_data)
@@ -66,7 +66,7 @@ class Candidate < ActiveRecord::Base
     self.birthday = Date.strptime(fb_data["birthday"],"%m/%d/%Y") if fb_data["birthday"]
     self.work = work_from_dump_data
     self.education = education_from_dump_data
-    self.save!
+    self.save
   end
 
   def age_in_years
