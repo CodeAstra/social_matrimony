@@ -45,7 +45,9 @@ class Candidate < ActiveRecord::Base
 
 
   belongs_to :user
-
+  belongs_to :caste
+  belongs_to :sub_caste
+  
   def populate!
     fb_data = user.fb_profile
     self.dump_fb_data = Marshal.dump(fb_data)
