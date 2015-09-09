@@ -2,7 +2,6 @@
 
 .head-top{
   text-align: right;
-  border-bottom: 1px solid black;
   .main_logo{
     text-decoration: none;
     color: $font-head-color;
@@ -14,8 +13,8 @@
     margin-left: 30px;
     font-size: 2.4em;
     margin-top: 0;
-    font-weight: 700;
     font-style: italic;
+    font-weight: 100;
   }
   .caption{
     float: left;
@@ -35,9 +34,7 @@
     border: 0.5px solid $dark-fb-color;
     padding: 10px;
     padding-top: 20px;
-    background-color: $power-bg-color;
     font-size:1.4em;
-    color: #fff;
     margin-right: 20px;
     i{
       padding-top:9px;
@@ -90,23 +87,23 @@
 
 footer{
   color: $font-head-color;
-  position: relative;
-  bottom: 0;
+  bottom: 0px;
   left: 0;
   right: 0;
   height: 40px;
   background-color: transparent;
   opacity: 0.8;
-  border-top: 1px solid black;
+  padding-top: 7px;
+  // border-top: 1px solid black;
   .follow{
     float: right;
     font-family: $font-head;
     padding-right: 20px;
     margin-top: 2vh;
   }
-  p{
+  .text{
     text-align: center;
-    margin-top: 2vh;
+    margin-top: 4vh;
   }
   #heart-icon{
     color: red;
@@ -115,7 +112,7 @@ footer{
     float:right;
     display: block;
     font-size: 2em;
-    margin-right: 2vw;
+    // margin-right: 2vw;
     padding-left: 10px;
   }
   .icon2{

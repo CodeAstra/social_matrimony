@@ -37,7 +37,7 @@
       color: #FFF;
       img{
         -webkit-border-radius: 50%;
-                border-radius: 50%;
+        border-radius: 50%;
       }
     }
     .carousel-inner {
@@ -50,7 +50,7 @@
   }
 
   @media only screen and (max-width: 767px) {
-   
+
     iframe{
       visibility: hidden;
     }
@@ -74,45 +74,48 @@
 //welcome page//
 
 #welcome{
-  width:100vw;
   font-family: $font-stack;
   position: relative;
-  height: 100vh;
+  width: 100%;
   background-color: #EEEEEE;
-  .nav{
-    padding-top: 2vmin;
-    span {
-      padding-left: 5vw;
-    a{
-      font-size: 1.2em;
-      padding-left: 5vw;
-      text-decoration: none;
-      &:hover{
-        color: #000;
+  .nav-top{
+    background-color: #BFBFBF;
+    .nav-one{
+      padding-top: 3vmin;
+      span {
+        padding-left: 4vw;
+        padding-right: 4vw;
+        a{
+          text-decoration: none;
+          color: #4183D7;
+          margin-left: 4vw;
+        margin-right: 4vw;
+          &:hover{
+            color: #000;
+          }
+        }
       }
-    }
     }
   }
 
   #basic-info{
-   
+    // bottom: 0;
     dt{
       margin-left: 10vw;
       font-size: 1.1em;
-      padding-top: 30px;
+      padding-top: 20px;
       color: $dark-fb-color;
+      margin-bottom: 24 px;
+      padding: 22px;
       .icon{
         display: inline-block;
         padding-right: 10px;
-      }
-      .name{
-        margin-top: 30vh;
       }
     }
     dd{
       margin-left: 30vw;
       font-size: 1.0em;
-      padding-top: 28px;
+      padding-top: 18px;
       &.name-fb{
         margin-top: 60px;
       }
@@ -122,6 +125,7 @@
     }
     a{
       float: right;
+      margin-right: 5vw;
       font-size: 1.5em;
       text-decoration: none;
       padding: 3px;
@@ -138,7 +142,7 @@
         margin: 0;
         margin-left: 118px;
         margin-top: -45px;
-          &.name-fb{
+        &.name-fb{
           margin-top: 0px;
         }
       }
@@ -149,7 +153,7 @@
   }
   
   #prof-info{
-    height: 80vh;
+    padding: 43px;
     dt{
       margin-left: 0vw;
       font-size: 1.1em;
@@ -165,25 +169,25 @@
     dd{
       margin-left: 20vw;
       font-size: 1.0em;
-       &.edu-fb{
+      &.edu-fb{
         .school{
           margin-top: 10vh;
         }
         .details{
           margin-left: 30vw;
           margin-top: -24px;
-         .specialization{
+          .specialization{
            padding-left: 29px;
          }
-        }
+       }
 
-      }
-      &.prof-fb{
-        margin-top: 10vh;
-      }
+     }
+     &.prof-fb{
+      margin-top: 10vh;
     }
-    .previous {
-      margin-top: 3em;      
+  }
+  .previous {
+    margin-top: 3em;      
     a{
       text-decoration: none;
       font-size: 1.5em;
@@ -202,77 +206,94 @@
         display: inline-block;
       }
     }
-   }
   }
+}
 
-  #personal-info{
-    height:210vh;
-    #accordion{
-        margin-top: 5em;
-    }
-    .next a{
-      position: fixed;
-      bottom:50;
-      float: right;
-      margin-left: 60vw;
+#personal-info{
+  height:200vh;
+  #accordion{
+  }
+  .next a{
+    position: fixed;
+    bottom:50;
+    float: right;
+    margin-left: 60vw;
+    font-size: 1.5em;
+    text-decoration: none;
+  }
+  .previous{
+    position: relative;
+    bottom:50px;
+    margin-top: 68px;
+    a{
       font-size: 1.5em;
       text-decoration: none;
+      margin-left: 5vw;
     }
-    .previous{
-      position: relative;
-      bottom:50px;
-        margin-top: 68px;
-      a{
-        font-size: 1.5em;
-        text-decoration: none;
-        margin-left: 5vw;
-      }
-    }
-    .double-left, .double-right{
-      display: inline-block;
-      padding: 5px;
-    }
-    .save{
-      float: right;
-    }
-   .collapsed{
-     text-decoration: none;
-     color:black;
-   }
-   a{
-     text-decoration: none;
-   }
-   #headingOne , #headingTwo , #headingThree{
-     background-color: $nav-one-bg-color;
-     color: #fff;
-   }
   }
+  .double-left, .double-right{
+    display: inline-block;
+    padding: 5px;
+  }
+  .save{
+    float: right;
+    margin-right: 5vw;
+  }
+  .collapsed{
+   text-decoration: none;
+   color:black;
+ }
 
-  #partner-pref{
-    .container{
-      width: 890px;
-    }
-    .save{
-      float: right;
-      margin-top: 5em;
-    }
-    .previous {
-      a{
-        border: 0.5px solid $dark-fb-color;
-        font-size: 1.5em;
-        text-decoration: none;
-        margin-bottom: 10px;
-        margin-left: 5vw;
-        padding: 3px;
-        color : #fff;
-        background-color: $lighter-fb-color;
-      }
-    }
-    .double-left, .double-right{
-      display: inline-block;
-      padding: 5px;
+ a{
+   text-decoration: none;
+ }
+ #headingOne , #headingTwo , #headingThree{
+   background-color: $nav-one-bg-color;
+   color: #fff;
+ }
+ .form-control{
+   width:20%;
+   display: inline-table;
+   margin: 30px;
+ }
+ .radio_buttons{
+  .radio, .checkbox {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+  }
+}
+}
+
+#partner-pref{
+  .container{
+    width: 100%;
+  }
+  .form-control{
+    width: 70%;
+    #complexion_pref_wt{
+      padding-top: 10px;
     }
   }
+  .save{
+    float: right;
+    margin-top: 8em;
+    margin-right: 5vw;
+  }
+  .previous {
+    a{
+      font-size: 1.5em;
+      text-decoration: none;
+      margin-left: 5vw;
+      padding: 3px;
+      color : $lighter-fb-color;
+    }
+  }
+  .double-left{
+    display: inline-block;
+    padding: 5px;
+  }
+}
 }
 
 
