@@ -1,5 +1,5 @@
 class CandidatesController < ApplicationController
-  before_action :fetch_candidate, only: [:star, :unstar]
+  before_action :fetch_candidate, only: [:star, :unstar, :ignore, :unignore]
 
   def update
     @candidate = current_candidate
@@ -19,6 +19,17 @@ class CandidatesController < ApplicationController
     current_user.unstar_candidate(@candidate)
     render :reload
   end
+
+  def ignore
+    current_user.ignore_candidate(@candidate)
+    render :reload
+  end
+
+  def unignore
+    current_user.unignore_candidate(@candidate)
+    render :reload
+  end
+
 
 private
   def personalinfo_params
