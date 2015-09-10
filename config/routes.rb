@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     member do
       post 'star'
       delete 'unstar'
+      post 'ignore'
+      delete 'unignore'
     end
   end
 
