@@ -30,6 +30,16 @@ class CandidatesController < ApplicationController
     render :reload
   end
 
+  def starred_profiles
+    @matches = current_candidate.matches
+    @stared_array = current_user.star_ids.split(",").map(&:to_i)
+  end
+
+  def ignored_profiles
+    @matches = current_candidate.matches
+    @ignored_array = current_user.ignore_ids.split(",").map(&:to_i)
+  end
+
 
 private
   def personalinfo_params

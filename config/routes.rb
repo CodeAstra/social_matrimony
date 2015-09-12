@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :candidates
   resources :sub_castes
   get 'matches' => 'candidates#index'
+  get 'starredprofiles' => 'candidates#starred_profiles'
+  get 'ignoredprofiles' => 'candidates#ignored_profiles'
   resources :candidates do
     member do
       post 'star'

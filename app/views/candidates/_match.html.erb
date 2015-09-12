@@ -3,7 +3,7 @@
     <div class="caption">
       <p>
         <% if current_user.starred?(match) %>
-          <%= link_to fa_icon("star"), unstar_candidate_path(match), method: :delete, remote: true, class: "btn btn-primary btn-sm fill_star" %>
+          <%= link_to fa_icon("star 2x"), unstar_candidate_path(match), method: :delete, remote: true, class: "btn btn-primary btn-sm fill_star" %>
         <% else %>
           <%= link_to fa_icon("star"), star_candidate_path(match), method: :post, remote: true, class: "btn btn-primary btn-sm" %>
         <% end %>
