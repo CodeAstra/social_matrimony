@@ -29,9 +29,9 @@
         "Male"
         end %>
       </dd>
-      <span class="image">
+      <!-- <span class="image">
         <img src="<%= current_candidate.image %>" alt="image">
-      </span>
+      </span> -->
       <dt>Age</dt>
       <dd><%= current_candidate.age_in_years%> years </dd>
       <dt><%= fa_icon("calendar", class: "icon") %>Birthday</dt>
@@ -65,7 +65,7 @@
     <% end %>
     <% prof_info = Marshal.load(current_candidate.work) %>
     <% if prof_info.try(:any?) %>
-    <hr>
+    <br>
     <dt class="prof">Profession Info</dt>
     <dd class="prof-fb"><% prof_info.each do |prof| %>
       <%= prof %>
@@ -93,11 +93,11 @@
 </div>
 <div role="tabpanel" class="tab-pane fade" id="partner-pref">
  <%= render 'candidates/personal_preferences' %>
- <span class="previous">
+ <div class="previous">
    <a href="#" data-target="#personal-info-tab" class="next_tab_trigger"><%= fa_icon("angle-double-left", class: "double-left") %>
     Previous
   </a>
-</span>
+</div>
 </div>
 <%= render 'common/footer' %>
 </section>
