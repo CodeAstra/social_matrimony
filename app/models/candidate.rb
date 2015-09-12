@@ -17,8 +17,6 @@
 #  education       :text
 #  work            :text
 #  marital_status  :integer
-#  caste           :integer
-#  sub_caste       :integer
 #  gothram         :string
 #  height          :integer
 #  weight          :integer
@@ -37,6 +35,8 @@
 #  family_status   :integer
 #  mother_tongue   :integer
 #  religion        :integer
+#  caste_id        :integer
+#  sub_caste_id    :integer
 #
 
 class Candidate < ActiveRecord::Base

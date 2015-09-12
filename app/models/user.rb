@@ -19,6 +19,7 @@
 #  auth_expires_at     :datetime
 #  image               :string
 #  star_ids            :string           default("")
+#  ignore_ids          :string           default("")
 #
 
 class User < ActiveRecord::Base
