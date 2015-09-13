@@ -77,10 +77,10 @@
   font-family: $font-stack;
   position: relative;
   width: 100%;
-  background-color: #ECECEC;
+  background-color: $edit-page-bg-color;
   overflow: hidden;
   .nav-top{
-    background-color: #3A5795;
+    background-color: $navbar-bg-color;
     .nav-one{
       padding-top: 2.0vmin;
       span {
@@ -93,10 +93,10 @@
           margin-left: 4vw;
           margin-right: 4vw;
           &:hover{
-            color: orange;
+            color: black;
           }
           a:active{
-            color: orange;
+            color: black;
           }
         }
       }

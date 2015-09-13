@@ -1,0 +1,25 @@
+#candidate-information{
+  .information{
+    margin-top: 1em;
+  }
+  .main{
+    background-color: $edit-page-bg-color;
+    h4{
+      margin-top: 30px;
+    }
+  }
+  .information{
+    background-color: $index-bg-color;
+    .details-one, .details-two{
+      dt{
+        padding-top: 10px;
+        text-align: left;
+      }
+      dd{
+        padding-left: 20px;
+        padding-top: 10px;
+        color: #fff;
+      }
+    }
+  }
+}

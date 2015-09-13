@@ -95,7 +95,6 @@ footer{
   opacity: 0.8;
   padding-top: 7px;
   position: absolute;
-  // border-top: 1px solid black;
   .follow{
     float: right;
     font-family: $font-head;
@@ -109,27 +108,13 @@ footer{
   #heart-icon{
     color: red;
   }
-  .icon1{
-    float:right;
-    display: block;
-    font-size: 2em;
-    // margin-right: 2vw;
-    padding-left: 10px;
-  }
-  .icon2{
-    float:right;
-    font-size: 2em;
-  }
-
+  
   @media only screen and (max-width: 767px) {
     p{
       text-align: center;
     }
     .follow{
       visibility: hidden;
-    }
-    .icon1 .icon2{
-      padding: 0;
     }
   }
 }
