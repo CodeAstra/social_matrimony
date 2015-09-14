@@ -18,6 +18,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'dotenv-rails', :require => 'dotenv/rails-now'
+  gem 'faker'
 end
 
 group :development do
