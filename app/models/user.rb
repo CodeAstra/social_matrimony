@@ -19,10 +19,11 @@
 #  auth_expires_at     :datetime
 #  image               :string
 #  star_ids            :string           default("")
+#  ignore_ids          :string           default("")
 #
 
 class User < ActiveRecord::Base
-  STAR_IDS_SEPARATOR = ","
+  STAR_IGNORE_IDS_SEPARATOR = ","
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -76,6 +77,20 @@ class User < ActiveRecord::Base
     get_star_ids_array.include?(cnd.id)
   end
 
+  def ignore_candidate(cnd)
+    set_ignore_ids_array(get_ignore_ids_array.push(cnd.id).uniq)
+  end
+
+  def unignore_candidate(cnd)
+    arr = get_ignore_ids_array
+    arr.delete(cnd.id)
+    set_ignore_ids_array(arr)
+  end
+
+  def ignored?(cnd)
+    get_ignore_ids_array.include?(cnd.id)
+  end
+
 private
   def populate_candidate
     self.create_candidate
@@ -83,10 +98,18 @@ private
   end
 
   def get_star_ids_array
-    self.star_ids.split(STAR_IDS_SEPARATOR).collect!(&:to_i)
+    self.star_ids.split(STAR_IGNORE_IDS_SEPARATOR).collect!(&:to_i)
   end
 
   def set_star_ids_array(arr)
-    self.update_attribute(:star_ids, arr.join(STAR_IDS_SEPARATOR))
+    self.update_attribute(:star_ids, arr.join(STAR_IGNORE_IDS_SEPARATOR))
+  end
+
+  def get_ignore_ids_array
+    self.ignore_ids.split(STAR_IGNORE_IDS_SEPARATOR).collect!(&:to_i)
+  end
+
+  def set_ignore_ids_array(arr)
+    self.update_attribute(:ignore_ids, arr.join(STAR_IGNORE_IDS_SEPARATOR))
   end
 end

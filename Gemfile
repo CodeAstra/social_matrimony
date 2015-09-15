@@ -18,6 +18,15 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'dotenv-rails', :require => 'dotenv/rails-now'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'guard'
+  gem 'guard-rspec', require: false
+end
+
+group :test do
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
   gem 'faker'
 end
 
@@ -36,4 +45,4 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'koala'
 gem 'simple_form'
-
+gem "rails-erd"
