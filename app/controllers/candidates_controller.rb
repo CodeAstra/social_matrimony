@@ -31,13 +31,13 @@ class CandidatesController < ApplicationController
   end
 
   def starred_profiles
-    @matches = current_candidate.matches
-    @stared_array = current_user.star_ids.split(",").map(&:to_i)
+    star_ids = current_user.star_ids.split(User::STAR_IGNORE_IDS_SEPARATOR).collect(&:to_i)
+    @matches = Candidate.where(id: star_ids)
   end
 
   def ignored_profiles
-    @matches = current_candidate.matches
-    @ignored_array = current_user.ignore_ids.split(",").map(&:to_i)
+    ignore_ids = current_user.ignore_ids.split(User::STAR_IGNORE_IDS_SEPARATOR).collect(&:to_i)
+    @matches = Candidate.where(id: ignore_ids)
   end
 
 
