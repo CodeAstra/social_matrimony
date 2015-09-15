@@ -1,82 +1,15 @@
 <%= render 'common/header' %>
 
-<!-- <div class="container-fluid">
+<div class="container-fluid">
+<div class="container">
   <div class="row">
+  <div>
+    <%= link_to "Starred Profiles", starredprofiles_path, class: "btn btn-primary btn-lg"%>
+    <%= link_to "Ignored Profiles", ignoredprofiles_path, class: "pull-right btn btn-primary btn-lg"%>
+  </div>
     <% @matches.each do |match| %>
       <%= render partial: "candidates/match", locals: {match: match} %>
     <% end %>
-  </div>
-</div> -->
-
-<div class="container-fluid" id="candidate-information">
-  <div class="row main">
-    <div class="col-md-4 col-xs-6">
-      <img src="<%= current_user.image %>" alt="" height="200px" width="200px" clas="img-responsive">
-    </div>
-    <div class="col-md-4">
-      <h3><%= current_user.name %></h3>
-      <h4><%= current_candidate.birthday %></h4>
-      <h4><%= current_candidate.hometown %></h4>
-    </div>
-    <div class="col-md-4">
-      <h3><%= current_candidate.email %></h3>  
-      <h4><%= current_candidate.age_in_years %>years Old</h4>
-      <h4><%= current_candidate.location %></h4>
-    </div>
-  </div>
-<hr>
-  <div class="row information">
-    <div class="col-md-6">
-      <dl class="dl-horizontal details-one">
-        <dt>Marital status</dt>
-        <dd><%= CandidateProfile:: MARITAL_STATUS.title_from_code(current_candidate.marital_status) %></dd>
-        <dt>Candidate Religion</dt>
-        <dd><%= CandidateProfile:: RELIGION.title_from_code(current_candidate.religion) %></dd>
-        <dt>Caste</dt>
-        <dd><%= current_candidate.caste_id %></dd>
-        <dt>Sub-caste</dt>
-        <dd><%= current_candidate.sub_caste_id %></dd>
-        <dt>Gothram</dt>
-        <dd><%= current_candidate.gothram %></dd>
-        <dt>Body Type</dt>
-        <dd><%= CandidateProfile:: BODY_TYPE.title_from_code(current_candidate.body_type) %></dd>
-        <dt>Height</dt>
-        <dd><%= current_candidate.height %> cm</dd>
-        <dt>Weight</dt>
-        <dd><%= current_candidate.weight %> Kg</dd>
-        <dt>Complexion</dt>
-        <dd><%= CandidateProfile:: COMPLEXION.title_from_code(current_candidate.complexion) %></dd>
-        <dt>Physical status</dt>
-        <dd><%= CandidateProfile:: PHYSICAL_STATUS.title_from_code(current_candidate.physical_status) %></dd>
-        <dt></dt>
-      </dl>
-    </div>
-    <div class="col-md-6">
-      <dl class="dl-horizontal details-two">
-        <dt>Rashi</dt>
-        <dd><%= CandidateProfile:: RASHI.title_from_code(current_candidate.rashi) %></dd>
-        <dt>Star</dt>
-        <dd><%= CandidateProfile:: STAR.title_from_code(current_candidate.star) %></dd>
-        <dt>Dosham</dt>
-        <dd><%= current_candidate.dosham %></dd>
-        <dt>Food Habits</dt>
-        <dd><%= CandidateProfile:: FOOD_HABITS.title_from_code(current_candidate.food_habits) %></dd>
-        <dt>Smoking</dt>
-        <dd><%= CandidateProfile:: SMOKING.title_from_code(current_candidate.smoking) %></dd>
-        <dt>Drinking</dt>
-        <dd><%= CandidateProfile:: DRINKING.title_from_code(current_candidate.drinking) %></dd>
-        <dt>Family Type</dt>
-        <dd><%= CandidateProfile:: FAMILY_TYPE.title_from_code(current_candidate.family_type) %></dd>
-        <dt>Family Values</dt>
-        <dd><%= CandidateProfile:: FAMILY_VALUES.title_from_code(current_candidate.family_values) %></dd>
-        <dt>Fmaily Status</dt>
-        <dd><%= CandidateProfile:: FAMILY_STATUS.title_from_code(current_candidate.family_status) %></dd>
-        <dt>Mother Tongue</dt>
-        <dd><%= CandidateProfile:: MOTHER_TONGUE.title_from_code(current_candidate.mother_tongue) %></dd>
-        <dt>Candidate Salary</dt>
-        <dd><%= current_candidate.salary %></dd>
-      </dl>
-    </div>
   </div>
 </div>
 

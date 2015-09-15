@@ -43,7 +43,6 @@ class Candidate < ActiveRecord::Base
   include CandidateProfile
   include CandidateMatcher
 
-
   belongs_to :user
   belongs_to :caste
   belongs_to :sub_caste
