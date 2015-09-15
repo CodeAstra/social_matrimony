@@ -37,18 +37,6 @@ def dot
   print "."
 end
 
-puts "Populating Users"
-# fb_test_users.each do |hsh|
-#   User.find_or_create_by(uid: hsh[:uid]) do |usr|
-#     usr.name = hsh[:name]
-#     usr.auth_token = hsh[:auth_token]
-#     usr.provider = "facebook"
-#     usr.email = hsh[:email]
-#   end
-#   dot
-# end
-puts ""
-
 puts "Populating Castes"
 castes_json = JSON.parse(File.read("#{Rails.root}/db/seed_data/castes.json"))
 castes_json.each do |caste_hash|
@@ -59,6 +47,103 @@ castes_json.each do |caste_hash|
     SubCaste.find_or_create_by(caste_id: caste.id, name: subcaste_hash["title"])
     dot
   end
+end
+puts ""
+
+
+def seed_user(hsh)
+  usr = User.find_or_create_by(uid: hsh[:uid]) do |usr|
+    usr = User.new(uid: hsh[:uid])
+    usr.name = hsh[:name]
+    usr.auth_token = hsh[:auth_token]
+    usr.provider = "facebook"
+    usr.email = hsh[:email]
+  end
+
+  dot
+
+  return usr
+end
+
+def random_education
+  edu = []
+  rand(4).times do
+    univ_name = Faker::University.name
+    edu.push([univ_name, 2007+rand(9), nil])
+  end
+
+  return Marshal.dump(edu)
+end
+
+def random_work
+  work = []
+  rand(4).times do
+    work.push([Faker::Company.name, 2007+rand(9)])
+  end
+
+  return Marshal.dump(work)
+end
+
+def random_gothram
+  gothram = ["Angiras", "Atri", "Bhardwaj", "Bhargav", "Dasodia", 
+              "Gautam", "Gargya", "Grandhisila", "Hansaj", "Harinama", 
+              "Jamadagni", "Kashyapa", "Koundinya", "Kulsa", "Lohitaksha",
+              "Marichi", "Mudgal", "Naidhruva", "Pamidikula", "Parthiva",
+              "Serawat", "Shandilya", "Shankha", "Siwa", "Upamanyu",
+              "Vasishtha", "Vishwamitra"]
+
+  rand_gothra = gothram[rand(gothram.length-1)]
+
+  return rand_gothra
+end
+
+def seed_candidate(usr)
+  rand_caste = Caste.all.sample
+  cdn = Candidate.find_or_create_by(user_id: usr.id) do |cdn|
+    cdn.name            = usr.name
+    cdn.email           = usr.email
+    cdn.gender          = Candidate::GENDER.all_codes.sample
+    cdn.birthday        = Faker::Date.between(30.years.ago, 20.years.ago)
+    cdn.image           = usr.image
+    cdn.mother_tongue   = Candidate::MOTHER_TONGUE.all_codes.sample
+    cdn.religion        = Candidate::RELIGION.all_codes.sample
+    cdn.marital_status  = Candidate::MARITAL_STATUS.all_codes.sample
+    cdn.body_type       = Candidate::BODY_TYPE.all_codes.sample
+    cdn.complexion      = Candidate::COMPLEXION.all_codes.sample
+    cdn.physical_status = Candidate::PHYSICAL_STATUS.all_codes.sample
+    cdn.dosham          = Candidate::DOSHAM.all_codes.sample
+    cdn.star            = Candidate::STAR.all_codes.sample
+    cdn.rashi           = Candidate::RASHI.all_codes.sample
+    cdn.food_habits     = Candidate::FOOD_HABITS.all_codes.sample
+    cdn.smoking         = Candidate::SMOKING.all_codes.sample
+    cdn.drinking        = Candidate::DRINKING.all_codes.sample
+    cdn.family_type     = Candidate::FAMILY_TYPE.all_codes.sample
+    cdn.family_status   = Candidate::FAMILY_STATUS.all_codes.sample
+    cdn.family_values   = Candidate::FAMILY_VALUES.all_codes.sample
+    cdn.hometown        = Faker::Address.city
+    cdn.location        = Faker::Address.city
+    cdn.height          = (rand(50) + 130)
+    cdn.weight          = (rand(30) + 50)  
+    cdn.caste           = rand_caste
+    cdn.sub_caste       = rand_caste.sub_castes.all.sample 
+    cdn.salary          = (rand(5) + 1)*500000
+    cdn.gothram         = random_gothram
+    cdn.education       = random_education
+    cdn.work            = random_work
+  end
+
+  dot
+  
+  return cdn
+end
+
+puts "Populating Users"
+class User
+  skip_callback :create, :after, :populate_candidate
+end
+fb_test_users.each do |hsh|
+  usr = seed_user(hsh)
+  cdn = seed_candidate(usr)
 end
 puts ""
 
