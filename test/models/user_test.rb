@@ -20,6 +20,7 @@
 #  image               :string
 #  star_ids            :string           default("")
 #  ignore_ids          :string           default("")
+#  gender              :integer
 #
 
 require 'test_helper'
