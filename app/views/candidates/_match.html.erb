@@ -1,14 +1,19 @@
 <div id="<%= dom_id(match) %>" class="col-sm-6 col-md-4">
   <div class="thumbnail">
     <div class="caption">
-      <h3 class= "text-center"><%= match.name %></h3>
       <p>
         <% if current_user.starred?(match) %>
-          <%= link_to "Unstar", unstar_candidate_path(match), method: :delete, remote: true, class: "btn btn-primary btn-sm" %>
+          <%= link_to fa_icon("star 2x"), unstar_candidate_path(match), method: :delete, remote: true, class: "btn btn-primary btn-sm fill_star" %>
         <% else %>
-          <%= link_to "Star", star_candidate_path(match), method: :post, remote: true, class: "btn btn-primary btn-sm" %>
+          <%= link_to fa_icon("star"), star_candidate_path(match), method: :post, remote: true, class: "btn btn-primary btn-sm" %>
+        <% end %>
+        <% if current_user.ignored?(match) %>
+          <%= link_to "Unignore", unignore_candidate_path(match), method: :delete, remote: true, class: "pull-right btn btn-primary btn-sm un_ignore" %>
+        <% else %>
+          <%= link_to "ignore", ignore_candidate_path(match), method: :post, remote: true, class: "pull-right btn btn-primary btn-sm" %>
         <% end %>
       </p>
+      <h3 class= "text-center"><%= match.name %></h3>
     </div>
   </div>
 </div>

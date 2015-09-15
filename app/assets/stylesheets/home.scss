@@ -6,7 +6,7 @@
   min-height: 100vh;
   overflow: hidden;
   font-family: $font-stack;
-  background-image: image-url('Home.jpg');
+  background-image: image-url('Home2.jpg');
   background-size: cover;
   color: white;
   .login{
@@ -25,16 +25,21 @@
   }
 
 
-  .information p{
-    margin-top: 35px;
-    text-align: justify;
-    margin-left: 12px;
+  .information{
+     p{
+      margin-top: 35px;
+      text-align: justify;
+      margin-left: 12px;
+      font-size: 1.2em;
+      line-height: 25px;
+    }
   }
 
-  .parent, .bride{
+  .parent{
     top: 10vh;
     #carousel-generic{
       color: #FFF;
+      background-color: #000;
       img{
         -webkit-border-radius: 50%;
         border-radius: 50%;
@@ -103,7 +108,11 @@
     }
   }
 
-
+  .tab-pane{
+    &:active{
+      color:black;
+    }
+  }
   #basic-info{
       // margin-bottom: 35 px;
       height: 76vh;
@@ -242,6 +251,12 @@
   .save{
     float: right;
     margin-right: 5vw;
+    border: 1px solid #3A5795;
+    padding: 10px;
+    background-color: #3A5795;
+    color: #fff;
+    -webkit-border-radius: 10%;
+            border-radius: 10%;
   }
   .collapsed{
    text-decoration: none;
@@ -255,12 +270,12 @@
    background-color: $nav-one-bg-color;
    color: #fff;
   }
-  .form-control{
-   width:20%;
-   display: inline-table;
-   margin: 30px;
-   margin-left: 200px;
-  }
+  // .form-control{
+  //  width:20%;
+  //  display: inline-table;
+  //  margin: 30px;
+  //  margin-left: 200px;
+  // }
    #candidate_mother_tongue{
      margin-right: 50px;
    }
