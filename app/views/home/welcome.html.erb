@@ -1,0 +1,97 @@
+<section id="welcome" class="container">
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="basic-info active"><a href="#basic-info" id="basic-info-tab" aria-controls="basic-info" role="tab" data-toggle="tab">Basic Info</a></li>
+    <li role="presentation" class="professional-info"><a href="#prof-info" id="prof-info-tab" aria-controls="prof-info" role="tab" data-toggle="tab">Professional Info</a></li>
+    <li role="presentation" class="personal-info"><a href="#personal-info" id="personal-info-tab" aria-controls="personal-info" role="tab" data-toggle="tab">Personal Details</a></li>
+    <li role="presentation" class="partner-pref"><a href="#partner-pref" id="partner-pref-tab" aria-controls="partner-pref" role="tab" data-toggle="tab">Partner Preferences</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in active" id="basic-info">
+      <dl class="dl-horizontal">
+        <dt class="name"><%= fa_icon("user", class: "icon") %> Name</dt>
+          <dd class="name-fb"><%= current_candidate.name %></dd>
+        <dt><%= fa_icon("envelope", class: "icon") %>Email</dt>
+          <dd><%= current_candidate.email %></dd>
+        <dt>Gender</dt>
+          <dd><%= if (current_candidate.gender == 2)
+                    "Female"
+                  else
+                    "Male"
+                  end %>
+          </dd>
+        <div class="image">
+          <img src="<%= current_candidate.image %>" alt="image">
+        </div>
+        <dt>Age</dt>
+          <dd><%= current_candidate.age_in_years%> years </dd>
+        <dt><%= fa_icon("calendar", class: "icon") %>Birthday</dt>
+          <dd><%= current_candidate.birthday %></dd>
+        <dt><%= fa_icon("home", class: "icon") %>Hometown</dt>
+          <dd><%= current_candidate.hometown %></dd>
+        <dt><%= fa_icon("globe", class: "icon") %>Location</dt>
+          <dd><%= current_candidate.location %></dd>
+        <div>
+          <a href="#" data-target="#prof-info-tab" class="next_tab_trigger">Next<%= fa_icon("angle-double-right", class: "next") %>
+          </a>
+        </div>
+      </dl>
+    </div>
+
+    <div role="tabpanel" class="tab-pane fade" id="prof-info">
+      <dl class="dl-horizontal">
+        <dt class="edu">Education</dt>
+          <dd class="edu-fb">
+            <% Marshal.load(current_candidate.education).each do |edu| %>
+              <div class="school"><%= edu[0] %></div>
+              <% if edu[1] || edu[2] %>
+                <div class="details">
+                  <span class="year"><%= edu[1] %></span>
+                  <span class="specialization"><%= edu[2] %></span>
+                </div>
+              <% end %>
+            <% end %>
+          </dd>
+        <dt class="prof">Profession Info</dt>
+          <dd class="prof-fb"><% Marshal.load(current_candidate.work).each do |prof| %>
+            <%= prof %>
+            <% end %>
+          </dd>
+      </dl>
+      <div class="previous">
+        <a href="#" data-target="#basic-info-tab" class="next_tab_trigger"><%= fa_icon("angle-double-left", class: "double-left") %>Previous
+        </a>
+        <span class="next">
+          <a href="#" data-target="#personal-info-tab" class="next_tab_trigger">Next<%= fa_icon("angle-double-right", class: "double-right") %>
+          </a>
+        </span>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="personal-info">
+      <!-- <h3>Personal Info</h3> -->
+      <%= render 'candidates/candidate_form' %>
+      <div class="previous">
+        <a href="#" data-target="#prof-info-tab" class="next_tab_trigger"><%= fa_icon("angle-double-left", class: "double-left") %>Previous
+        </a>
+      </div>
+      <div class="next">
+        <a href="#" data-target="#partner-pref-tab" class="next_tab_trigger">Next<%= fa_icon("angle-double-right", class: "double-right") %>
+        </a>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="partner-pref">
+      <%= render 'candidates/personal_preferences' %>
+      <div class="previous">
+        <a href="#" data-target="#personal-info-tab" class="next_tab_trigger"><%= fa_icon("angle-double-left", class: "double-left") %>
+          Previous
+        </a>
+        <span class="next">
+          <a href="#" data-target="#" class="next_tab_trigger">Finish<%= fa_icon("angle-double-right", class: "double-right") %>
+          </a>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>

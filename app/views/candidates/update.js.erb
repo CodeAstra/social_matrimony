@@ -1,0 +1,5 @@
+<% if @save_success %>
+  $('#partner-pref-tab').tab('show')
+<% else %>
+  alert("Unable to save the data due to <%= j @candidate.errors.full_messages.join(", ") %>");
+<% end %>

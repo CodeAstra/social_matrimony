@@ -1,0 +1,66 @@
+<div class="container">
+  <h3 class="text-center">Search Preferences</h3>
+  <p>Please provide your search preferences for each of the following criteria:</p>
+  <%= simple_form_for current_user.user_search_preference do |f| %>
+    <table class="table table-striped table-hover">
+      <tr>
+        <td>
+          <b>Caste</b><br>
+          How important is that the castes match?
+        </td>
+        <td>
+          <%= f.input :caste_pref_wt, label: false, wrapper: false, collection: UserSearchPreference::Weights.all, value_method: :code, label_method: :title, include_blank: false %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>Age</b><br>
+          How important is that the age matches your preferred range?
+        </td>
+        <td>
+          <%= f.input :age_pref_wt, label: false, wrapper: false, collection: UserSearchPreference::Weights.all, value_method: :code, label_method: :title, include_blank: false %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>Preferred Age Range</b><br>
+          What is your preferred range of age?
+        </td>
+        <td>
+          <%= f.input :age_pref_min, label: false, wrapper: false %>years to 
+          <%= f.input :age_pref_max, label: false, wrapper: false %>years
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>Height</b><br>
+          How important is that the height matches your preferred range?
+        </td>
+        <td>
+          <%= f.input :height_pref_wt, label: false, wrapper: false, collection: UserSearchPreference::Weights.all, value_method: :code, label_method: :title, include_blank: false %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>Preferred Height Range</b><br>
+          What is your preferred range of height?
+        </td>
+        <td>
+          <%= f.input :height_pref_min, label: false, wrapper: false %>cm to 
+          <%= f.input :height_pref_max, label: false, wrapper: false %>cm
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>Complexion</b><br>
+          How important is that the complexion matches your preferred complexion?
+        </td>
+        <td>
+          <%= f.input :complexion_pref, label: false, wrapper: false, collection: Candidate::COMPLEXION.all, label_method: :title, value_method: :code, include_blank: false %>
+          <%= f.input :complexion_pref_wt, label: false, wrapper: false, collection: UserSearchPreference::Weights.all, value_method: :code, label_method: :title, include_blank: false %>
+        </td>
+      </tr>
+    </table>
+    <%= f.submit "Save", class: "btn btn-primary save" %>
+  <% end %>
+</div> 
