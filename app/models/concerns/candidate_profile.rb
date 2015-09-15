@@ -150,7 +150,7 @@ module CandidateProfile
     [:uttara,           12,  "Uttara or UttaraPhalguni" ],
     [:hasta,            13,  "Hasta" ],
     [:chitra,           14,  "Chitra" ],
-    [:svati,            15,  "Svati"],
+    [:swati,            15,  "Swati"],
     [:visakha,          16,  "Visakha" ],
     [:anuradha,         17,  "Anuradha" ], 
     [:jyeshtha,         18,  "Jyeshtha" ],
