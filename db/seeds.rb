@@ -105,6 +105,8 @@ def seed_candidate(usr)
     cdn.gender          = Candidate::GENDER.all_codes.sample
     cdn.birthday        = Faker::Date.between(30.years.ago, 20.years.ago)
     cdn.image           = usr.image
+    cdn.mother_tongue   = Candidate::MOTHER_TONGUE.all_codes.sample
+    cdn.religion        = Candidate::RELIGION.all_codes.sample
     cdn.marital_status  = Candidate::MARITAL_STATUS.all_codes.sample
     cdn.body_type       = Candidate::BODY_TYPE.all_codes.sample
     cdn.complexion      = Candidate::COMPLEXION.all_codes.sample
