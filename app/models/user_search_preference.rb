@@ -45,8 +45,5 @@ class UserSearchPreference < ActiveRecord::Base
   validates :complexion_pref_wt, presence: true, numericality: true, inclusion: Weights.all_codes
   validates :age_pref_wt,        presence: true, numericality: true, inclusion: Weights.all_codes
   validates :complexion_pref,    presence: true, numericality: true, inclusion: Candidate::COMPLEXION.all_codes
-  
-  def height_preferred?
-    self.height_pref_wt != Weights::DONT_CARE
-  end
+
 end

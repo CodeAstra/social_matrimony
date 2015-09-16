@@ -1,6 +1,9 @@
+<%= render 'common/header' %>
+
+<div class="container-fluid">
 <div class="container">
   <div class="row">
-  <div>
+  <div class="star_ignore_tab">
     <%= link_to "Starred Profiles", starredprofiles_path, class: "btn btn-primary btn-lg"%>
     <%= link_to "Ignored Profiles", ignoredprofiles_path, class: "pull-right btn btn-primary btn-lg"%>
   </div>
@@ -9,3 +12,5 @@
     <% end %>
   </div>
 </div>
+
+

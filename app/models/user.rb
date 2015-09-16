@@ -20,6 +20,7 @@
 #  image               :string
 #  star_ids            :string           default("")
 #  ignore_ids          :string           default("")
+#  gender              :integer
 #
 
 class User < ActiveRecord::Base
@@ -113,3 +114,4 @@ private
     self.update_attribute(:ignore_ids, arr.join(STAR_IGNORE_IDS_SEPARATOR))
   end
 end
+

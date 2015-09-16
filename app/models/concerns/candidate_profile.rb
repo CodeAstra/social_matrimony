@@ -14,6 +14,10 @@ module CandidateProfile
       @vals.select{|val| val[0] == prop}[0][1]
     end
 
+    def title_from_code(code)
+      @vals.select{|val| val[1] == code}[0][2]   
+    end
+
     def all_codes
       @vals.collect{|val| val[1]}
     end

@@ -1,17 +1,16 @@
 <%= simple_form_for current_candidate, remote: true do |f| %>
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingOne">
-      <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <h4 class="panel-title">
           Personal Info
-        </a>
-      </h4>
-    </div>
+        </h4>
+      </div>
+    </a>
     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
       <div class="panel-body">
           <%= f.input :marital_status,:as => :radio_buttons,collection: Candidate::MARITAL_STATUS.all, label_method: :title, value_method: :code %>
-          <%= f.input :mother_tongue, wrapper: false, collection: Candidate::MOTHER_TONGUE.all, label_method: :title, value_method: :code, include_blank: false %>
           <%= f.input :religion, wrapper: false, collection: Candidate::RELIGION.all, label_method: :title, value_method: :code, include_blank: false %>
           <%= f.input :caste_id, wrapper: false, collection: Caste.all,include_blank: false, input_html: {id: "candidate_caste_input"} %>
 
@@ -22,6 +21,7 @@
           <%= f.input :gothram %>
           <%= f.input :height %>
           <%= f.input :weight %>
+          <%= f.input :mother_tongue, wrapper: false, collection: Candidate::MOTHER_TONGUE.all, label_method: :title, value_method: :code, include_blank: false %>
           <%= f.input :body_type, :as => :radio_buttons, collection: Candidate::BODY_TYPE.all, label_method: :title, value_method: :code %>
           <%= f.input :complexion, :as => :radio_buttons,collection: Candidate::COMPLEXION.all, label_method: :title, value_method: :code %>
           <%= f.input :physical_status,:as => :radio_buttons, collection: Candidate::PHYSICAL_STATUS.all, label_method: :title, value_method: :code  %>
@@ -33,13 +33,13 @@
     </div>
   </div>
   <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingTwo">
-      <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      <div class="panel-heading" role="tab" id="headingTwo">
+        <h4 class="panel-title">
           Habits
-        </a>
-      </h4>
-    </div>
+        </h4>
+      </div>
+    </a>
     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
       <div class="panel-body">
           <%= f.input :food_habits, :as => :radio_buttons, collection: Candidate::FOOD_HABITS.all, label_method: :title, value_method: :code%>
@@ -49,13 +49,13 @@
     </div>
   </div>
   <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingThree">
-      <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+      <div class="panel-heading" role="tab" id="headingThree">
+        <h4 class="panel-title">
           Family Details
-        </a>
-      </h4>
-    </div>
+        </h4>
+      </div>
+    </a>
     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
           <%= f.input :family_type,:as => :radio_buttons,collection:Candidate::FAMILY_TYPE.all, label_method: :title, value_method: :code  %>
@@ -65,5 +65,5 @@
     </div>
   </div>
 </div>
-  <%= f.submit "Save",class: "btn btn-primary" %>
+  <%= f.submit "Save", class: "save" %>
 <% end %>

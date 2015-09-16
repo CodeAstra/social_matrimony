@@ -1,9 +1,12 @@
-<div id="<%= dom_id(match) %>" class="col-sm-6 col-md-4">
+<div id="<%= dom_id(match) %>" class="col-sm-6 col-md-4 column">
   <div class="thumbnail">
+    <div class="match_image">
+      <img src="http://khalil-shreateh.com/khalil.shtml/images/FB_PROFILE.jpg" alt="<%= match.name %>" class="img-responsive">
+    </div>
     <div class="caption">
       <p>
         <% if current_user.starred?(match) %>
-          <%= link_to fa_icon("star 2x"), unstar_candidate_path(match), method: :delete, remote: true, class: "btn btn-primary btn-sm fill_star" %>
+          <%= link_to fa_icon("star"), unstar_candidate_path(match), method: :delete, remote: true, class: "btn btn-primary btn-sm fill_star" %>
         <% else %>
           <%= link_to fa_icon("star"), star_candidate_path(match), method: :post, remote: true, class: "btn btn-primary btn-sm" %>
         <% end %>

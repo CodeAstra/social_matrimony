@@ -57,6 +57,7 @@
         </td>
         <td>
           <%= f.input :complexion_pref, label: false, wrapper: false, collection: Candidate::COMPLEXION.all, label_method: :title, value_method: :code, include_blank: false %>
+          <br>
           <%= f.input :complexion_pref_wt, label: false, wrapper: false, collection: UserSearchPreference::Weights.all, value_method: :code, label_method: :title, include_blank: false %>
         </td>
       </tr>
