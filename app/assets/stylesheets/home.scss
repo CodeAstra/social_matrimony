@@ -114,12 +114,11 @@
     }
   }
   #basic-info{
-      // margin-bottom: 35 px;
-      height: 76vh;
+      height: 81vh;
     dt{
       margin-left: 10vw;
       font-size: 1.1em;
-      padding-top: 20px;
+      // padding-top: 15px;
       color: $dark-fb-color;
       padding: 22px;
       .icon{
@@ -130,7 +129,7 @@
     dd{
       margin-left: 30vw;
       font-size: 1.0em;
-      padding-top: 18px;
+      padding-top: 15px;
       &.name-fb{
         margin-top: 60px;
       }

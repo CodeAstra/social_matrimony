@@ -1,11 +1,11 @@
 <%= render 'common/header' %>
 
 <% if @matches.empty? %>
-  <h3>Oops..You havent stared any profiles yet!!</h3>
+  <h3>Oops..You havent starred any profiles yet!!</h3>
 <% else %>
   <div class="container">
     <div class="row">
-      <h2>The following are the stared profiles from your search</h2>
+      <h2>The following are the starred profiles from your search</h2>
       <% @matches.each do |match| %>
         <div class="col-sm-6 col-md-4">
           <br>
@@ -22,5 +22,3 @@
     </div>
   </div>
 <% end %>
-
-<%= render 'common/footer' %>
