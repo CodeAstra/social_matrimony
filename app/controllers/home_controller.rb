@@ -11,7 +11,7 @@ class HomeController < ApplicationController
 
   def welcome
     if current_candidate.caste
-      @sub_castes = current_candidate.caste.sub_castes
+      @sub_castes = current_candidate.caste.sub_castes.all
     else
       @sub_castes = []
     end

@@ -14,7 +14,7 @@
 #  age_pref_wt        :integer          default(1)
 #  age_pref_min       :integer
 #  age_pref_max       :integer
-#  complexion_pref    :integer          default(1)
+#  complexion_pref    :integer          default(2)
 #
 
 class UserSearchPreference < ActiveRecord::Base
@@ -45,8 +45,5 @@ class UserSearchPreference < ActiveRecord::Base
   validates :complexion_pref_wt, presence: true, numericality: true, inclusion: Weights.all_codes
   validates :age_pref_wt,        presence: true, numericality: true, inclusion: Weights.all_codes
   validates :complexion_pref,    presence: true, numericality: true, inclusion: Candidate::COMPLEXION.all_codes
-  
-  def height_preferred?
-    self.height_pref_wt != Weights::DONT_CARE
-  end
+
 end

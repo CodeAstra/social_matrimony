@@ -1,4 +1,6 @@
-header{
+// header // 
+
+.head-top{
   text-align: right;
   .main_logo{
     text-decoration: none;
@@ -9,28 +11,30 @@ header{
     color: $font-head-color;
     float: left;
     margin-left: 30px;
-    font-size: 3em;
+    font-size: 2.4em;
     margin-top: 0;
+    font-style: italic;
+    font-weight: 100;
   }
   .caption{
     float: left;
     font-family: $font-head;
     margin-top: 5vh;
     color: $caption-head-color;
-    font-size: 1.5em;
+    font-size: 1em;
   }
   .navbar{
-    background-color: $navbar-bg-color;
-    margin-bottom: 0px;
-    border: 0;
+    background-color: transparent;
+    margin: 0;
+    -webkit-border-radius: 0;
+            border-radius: 0;
+    border: #353F42;
   }
   .power{
     border: 0.5px solid $dark-fb-color;
     padding: 10px;
     padding-top: 20px;
-    background-color: $power-bg-color;
     font-size:1.4em;
-    color: #fff;
     margin-right: 20px;
     i{
       padding-top:9px;
@@ -38,7 +42,43 @@ header{
   }
   .log{
     font-size: 1em;
+    img{
+      -webkit-border-radius: 50%;
+              border-radius: 50%;
+    }
   }
+  .fb{
+    margin-right: 30px;
+    a{
+    margin-top: 6px;
+      font-size: 2em;
+      text-decoration: none;
+      background-color: transparent;
+      padding: 3px 20px 2px 19px;
+      color: #fff;
+
+      &:hover {
+        border: 1.5px solid $dark-fb-color;
+        color: $lighter-fb-color;
+        background-color: #FFF;
+      }
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    h2{
+      font-size: 1.4em;
+      margin-top: 20px;
+    }
+    .caption{
+      visibility: hidden;
+    }
+    .fb{
+      a{
+      margin-top: 50px;
+        font-size: 1.3em;
+      }
+    }
+   }
 }
 
 
@@ -46,34 +86,42 @@ header{
 // footer
 
 footer{
-  color: black;
-  position: fixed;
-  bottom : 0;
+  color: $font-head-color;
+  bottom: 0px;
   left: 0;
   right: 0;
-  background-color: $footer-bg-color;
+  height: 40px;
+  background-color: transparent;
   opacity: 0.8;
+  padding-top: 7px;
+  position: absolute;
   .follow{
     float: right;
     font-family: $font-head;
     padding-right: 20px;
     margin-top: 2vh;
   }
-  p{
+  .text{
     text-align: center;
-    margin-top: 2vh;
+    margin-top: 4vh;
   }
   #heart-icon{
     color: red;
   }
-  .icon1{
-    float:right;
-    font-size: 2em;
-    margin-right: 2vw;
-    padding-left: 10px;
+  
+  @media only screen and (max-width: 767px) {
+    p{
+      text-align: center;
+    }
+    .follow{
+      visibility: hidden;
+    }
   }
-  .icon2{
-    float:right;
-    font-size: 2em;
+}
+
+.fill_star{
+  color: #E8B71A;
+  &:hover{
+    color: #E8B71A;
   }
 }

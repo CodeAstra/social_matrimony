@@ -1,0 +1,24 @@
+<%= render 'common/header' %>
+
+<% if @matches.empty? %>
+  <h3>Oops..You havent starred any profiles yet!!</h3>
+<% else %>
+  <div class="container">
+    <div class="row">
+      <h2>The following are the starred profiles from your search</h2>
+      <% @matches.each do |match| %>
+        <div class="col-sm-6 col-md-4">
+          <br>
+          <div class="thumbnail">
+            <div class="match_image">
+              <img src="http://khalil-shreateh.com/khalil.shtml/images/FB_PROFILE.jpg" alt="<%= match.name %>" class="img-responsive">
+            </div>
+            <div class="caption">
+              <h3 class="text-center"><%= match.name %></h3>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150907233524) do
+ActiveRecord::Schema.define(version: 20150915174342) do
 
   create_table "candidates", force: :cascade do |t|
     t.string   "name"
@@ -28,8 +28,6 @@ ActiveRecord::Schema.define(version: 20150907233524) do
     t.text     "education"
     t.text     "work"
     t.integer  "marital_status"
-    t.integer  "caste"
-    t.integer  "sub_caste"
     t.string   "gothram"
     t.integer  "height"
     t.integer  "weight"
@@ -48,8 +46,12 @@ ActiveRecord::Schema.define(version: 20150907233524) do
     t.integer  "family_status"
     t.integer  "mother_tongue"
     t.integer  "religion"
+    t.integer  "caste_id"
+    t.integer  "sub_caste_id"
   end
 
+  add_index "candidates", ["caste_id"], name: "index_candidates_on_caste_id"
+  add_index "candidates", ["sub_caste_id"], name: "index_candidates_on_sub_caste_id"
   add_index "candidates", ["user_id"], name: "index_candidates_on_user_id"
 
   create_table "castes", force: :cascade do |t|
@@ -101,6 +103,8 @@ ActiveRecord::Schema.define(version: 20150907233524) do
     t.datetime "auth_expires_at"
     t.string   "image"
     t.string   "star_ids",            default: ""
+    t.string   "ignore_ids",          default: ""
+    t.integer  "gender"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
